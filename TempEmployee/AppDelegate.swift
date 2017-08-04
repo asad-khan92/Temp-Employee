@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
         if Defaults[.hasUserRegistered] {
-            
+             Intercom.registerUser(withEmail: Defaults[.email]!)
             LoginService().loginEmployerWith(email: Defaults[.email]!, password: Defaults[.password]!, completionHandler: {result in
                 
                 switch result {

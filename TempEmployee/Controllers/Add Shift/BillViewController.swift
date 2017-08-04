@@ -23,27 +23,11 @@ class BillViewController: UIViewController {
     
     var shift : Shift!
     var isEditingShift:  Bool?
+    var charges: Charges?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.perHourCharges.text = "£\(self.shift.getTotalPPH())"
-        self.tempProvideFee.text =  "£25"
-        self.cardCharges.text =  "£3"
-        self.vatCharges.text =  "£22"
-        
-        let cCharges = self.removeCurrencySignAndConvertToDouble(str: self.cardCharges.text!)
-        let fee      = self.removeCurrencySignAndConvertToDouble(str: self.tempProvideFee.text!)
-        let vCharges = self.removeCurrencySignAndConvertToDouble(str: self.vatCharges.text!)
-        
-        
-        self.subTotal.text =  "£\(self.shift.getSubtotal(cardCharges: cCharges, tempProvide:fee))"
-        
-        if let sT = self.subTotal.text{
-         let sTotal = self.removeCurrencySignAndConvertToDouble(str: sT)
-        self.totalCharges.text =  "\(self.shift.getTotalIncludig(vat:vCharges , subTotal: sTotal))"
-        }
-        
-        
+        self.getShiftCharges(service: CreateShift())
     }
 
    
@@ -96,6 +80,26 @@ class BillViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func addCharges(){
+        
+        self.perHourCharges.text = "£\(self.shift.getTotalPPH())"
+        self.tempProvideFee.text =  "£\(self.charges?.tempProvideFee ?? 25)"
+        self.cardCharges.text =  "£\(self.charges?.cardCharges ?? 3)"
+        self.vatCharges.text =  "£\(self.charges?.valueAddedTax ?? 22)"
+        
+        let cCharges = self.removeCurrencySignAndConvertToDouble(str: self.cardCharges.text!)
+        let fee      = self.removeCurrencySignAndConvertToDouble(str: self.tempProvideFee.text!)
+        let vCharges = self.removeCurrencySignAndConvertToDouble(str: self.vatCharges.text!)
+        
+        
+        self.subTotal.text =  "£\(self.shift.getSubtotal(cardCharges: cCharges, tempProvide:fee))"
+        
+        if let sT = self.subTotal.text{
+            let sTotal = self.removeCurrencySignAndConvertToDouble(str: sT)
+            self.totalCharges.text =  "\(self.shift.getTotalIncludig(vat:vCharges , subTotal: sTotal))"
+        }
+    }
     @IBAction func getCoveredPressed(_ sender: Any) {
         
         if (self.isEditingShift)!{
@@ -120,6 +124,30 @@ class BillViewController: UIViewController {
 
 
 extension BillViewController{
+    
+    
+    func getShiftCharges(service:CreateShift)  {
+        
+        HUD.show(.progress,onView: self.view)
+        service.getCharges(completionHandler:{result in
+            
+            switch result {
+                
+            case .Success(let response):
+                if response.success{
+                    HUD.flash(.success, delay: 0.0)
+                    self.charges = response
+                    self.addCharges()
+                }else{
+                    HUD.flash(.error, delay: 0.0)
+                    self.errorAlert(description: response.message)
+                }
+            case .Failure(let error):
+                HUD.flash(.error, delay: 0.0)
+                self.errorAlert(description: error.localizedDescription)
+            }
+        })
+    }
     
     func postShift(service:CreateShift)  {
         

@@ -50,10 +50,10 @@ class Shifts : Meta{
                     
                     var ShiftObject = Shift(role: shift["role"] as? String, from_time: shift["from_time"] as? String, interview_time: shift["interview_time"] as? String, shift_hours: shift["shift_hours"] as? String, address: shift["address"] as? String, price_per_hour: shift["price_per_hour"] as? String, shift_date: shift["shift_date"] as? String, reporting_to: shift["reporting_to"] as? String, phone: shift["phone"] as? String, details: shift["details"] as? String, special_info: shift["special_info"] as? String, site_instructions: shift["site_instructions"] as? String, required_licenses:  licenceArray, id : shift["id"] as! Int,assigned_job_seeker_id: shift["assigned_job_seeker_id"] as? Int, lat: shift["lat"] as! Double, lng : shift["lng"] as! Double, assign_status:status ,created_at:shift["created_at"] as? String)
                     
-                    // I can't understand why jobseeker object is in Array
+                    
                     if shift["jobseeker_data"] != nil{
                     
-                        let dict = (shift["jobseeker_data"] as? [Any])?.first as? [String:Any]
+                        let dict = shift["jobseeker_data"] as? [String:Any]
                         
                     ShiftObject.jobSeeker = JobSeeker(email:dict?["email"] as? String , username: dict?["username"] as? String, phone: dict?["phone"] as? String, city: dict?["city"] as? String, post_code: dict?["post_code"] as? String, address1: dict?["address1"] as? String, address2: dict?["address2"] as? String, dob: dict?["dob"] as? String, ni_no: dict?["ni_no"] as? String, image_path: dict?["image_path"] as? String, average_rating: dict?["average_rating"] as? Int)
                     }

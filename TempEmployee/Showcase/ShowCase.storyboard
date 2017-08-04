@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DhK-2d-9ZL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DhK-2d-9ZL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,7 +23,7 @@
         <!--Main View Controller-->
         <scene sceneID="pAu-oi-PVJ">
             <objects>
-                <viewController storyboardIdentifier="ShowCaseController" id="DhK-2d-9ZL" customClass="MainViewController" customModule="TempEmployee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowCaseController" id="DhK-2d-9ZL" customClass="MainViewController" customModule="Temployer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cKg-rg-I2v"/>
                         <viewControllerLayoutGuide type="bottom" id="rkr-Jn-eFK"/>
@@ -159,7 +159,7 @@
                                             <constraint firstAttribute="height" constant="43" id="zJs-Pb-XGZ"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin@train4security.com" placeholder="  Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BA4-Fl-yZL">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BA4-Fl-yZL">
                                         <rect key="frame" x="45" y="49" width="285" height="43"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -167,7 +167,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,7 +180,7 @@
                                             <constraint firstAttribute="height" constant="43" id="PWe-cS-dhy"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="click123" placeholder="  Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxu-An-MZ9">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxu-An-MZ9">
                                         <rect key="frame" x="45" y="112" width="285" height="43"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -188,14 +188,14 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5X-pM-kwr">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5X-pM-kwr">
                                         <rect key="frame" x="117" y="163" width="142" height="15"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -316,15 +316,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guy Texting Smiling" translatesAutoresizingMaskIntoConstraints="NO" id="w4a-oz-zvD">
                                 <rect key="frame" x="-110" y="-46" width="789" height="588"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 199" translatesAutoresizingMaskIntoConstraints="NO" id="426-TM-ors">
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 199" translatesAutoresizingMaskIntoConstraints="NO" id="426-TM-ors">
                                 <rect key="frame" x="-165" y="-102" width="704" height="704"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 200" translatesAutoresizingMaskIntoConstraints="NO" id="QiI-hJ-VxL">
+                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 200" translatesAutoresizingMaskIntoConstraints="NO" id="QiI-hJ-VxL">
                                 <rect key="frame" x="-93" y="-30" width="560" height="560"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" tag="4" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 201" translatesAutoresizingMaskIntoConstraints="NO" id="EGK-sj-Uiv">
-                                <rect key="frame" x="-16" y="46" width="406" height="406"/>
+                            <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 201" translatesAutoresizingMaskIntoConstraints="NO" id="EGK-sj-Uiv">
+                                <rect key="frame" x="-16" y="46" width="406" height="407"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orange Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="K5H-Vn-IEH">
                                 <rect key="frame" x="0.0" y="325" width="375" height="342"/>
@@ -352,6 +352,7 @@
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.1450980392" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="426-TM-ors" firstAttribute="leading" secondItem="Mwd-EG-B9j" secondAttribute="leading" constant="-165" id="6gi-aZ-haZ"/>
+                            <constraint firstItem="asD-o0-8Hk" firstAttribute="top" secondItem="EGK-sj-Uiv" secondAttribute="bottom" constant="214" id="Fdk-nu-HFw"/>
                             <constraint firstItem="0oM-M4-F4n" firstAttribute="centerX" secondItem="Mwd-EG-B9j" secondAttribute="centerX" id="J2h-XU-zKq"/>
                             <constraint firstItem="w4a-oz-zvD" firstAttribute="top" secondItem="Mwd-EG-B9j" secondAttribute="top" constant="-46" id="Kec-if-Gvd"/>
                             <constraint firstItem="asD-o0-8Hk" firstAttribute="top" secondItem="K5H-Vn-IEH" secondAttribute="bottom" id="Rta-V9-eu7"/>
@@ -359,17 +360,16 @@
                             <constraint firstItem="w4a-oz-zvD" firstAttribute="leading" secondItem="Mwd-EG-B9j" secondAttribute="leading" constant="-110" id="V9O-ls-Tsc"/>
                             <constraint firstItem="QiI-hJ-VxL" firstAttribute="leading" secondItem="Mwd-EG-B9j" secondAttribute="leading" constant="-93" id="Xq2-Hr-BvO"/>
                             <constraint firstItem="8OH-Ge-mVa" firstAttribute="leading" secondItem="Mwd-EG-B9j" secondAttribute="leading" id="a7M-cI-OIE"/>
-                            <constraint firstItem="EGK-sj-Uiv" firstAttribute="top" secondItem="zmw-3s-4sq" secondAttribute="bottom" constant="26" id="bFW-xr-awp"/>
                             <constraint firstAttribute="trailing" secondItem="8OH-Ge-mVa" secondAttribute="trailing" id="c4L-gG-fSn"/>
                             <constraint firstAttribute="bottom" secondItem="w4a-oz-zvD" secondAttribute="bottom" constant="125" id="eNE-FV-cXw"/>
                             <constraint firstItem="426-TM-ors" firstAttribute="top" secondItem="Mwd-EG-B9j" secondAttribute="top" constant="-102" id="eju-ap-VXz"/>
                             <constraint firstItem="asD-o0-8Hk" firstAttribute="top" secondItem="8OH-Ge-mVa" secondAttribute="bottom" id="fQ2-M6-JoO"/>
                             <constraint firstAttribute="trailing" secondItem="EGK-sj-Uiv" secondAttribute="trailing" constant="-15" id="gHF-qM-eTc"/>
-                            <constraint firstItem="0oM-M4-F4n" firstAttribute="top" secondItem="EGK-sj-Uiv" secondAttribute="bottom" constant="9" id="hKf-gS-QeM"/>
                             <constraint firstItem="QiI-hJ-VxL" firstAttribute="top" secondItem="Mwd-EG-B9j" secondAttribute="top" constant="-30" id="mJm-LX-YS6"/>
                             <constraint firstAttribute="trailing" secondItem="K5H-Vn-IEH" secondAttribute="trailing" id="mgz-y2-lSe"/>
                             <constraint firstItem="asD-o0-8Hk" firstAttribute="top" secondItem="QiI-hJ-VxL" secondAttribute="bottom" constant="137" id="mui-4j-uTu"/>
                             <constraint firstAttribute="trailing" secondItem="QiI-hJ-VxL" secondAttribute="trailing" constant="-92" id="svp-Ce-qCa"/>
+                            <constraint firstItem="EGK-sj-Uiv" firstAttribute="top" secondItem="zmw-3s-4sq" secondAttribute="bottom" constant="26" id="tOd-xP-3tu"/>
                             <constraint firstItem="asD-o0-8Hk" firstAttribute="top" secondItem="426-TM-ors" secondAttribute="bottom" constant="65" id="tVv-1B-Vst"/>
                             <constraint firstAttribute="trailing" secondItem="426-TM-ors" secondAttribute="trailing" constant="-164" id="y92-Xp-HZC"/>
                             <constraint firstItem="K5H-Vn-IEH" firstAttribute="leading" secondItem="Mwd-EG-B9j" secondAttribute="leading" id="yOy-GA-eHy"/>
@@ -408,14 +408,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guy Texting Coffee" translatesAutoresizingMaskIntoConstraints="NO" id="XgL-05-eLP">
                                 <rect key="frame" x="-178" y="-30" width="827" height="555"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 199" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-5b-n2h">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 199" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-5b-n2h">
                                 <rect key="frame" x="-165" y="-102" width="704" height="705"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 200" translatesAutoresizingMaskIntoConstraints="NO" id="JDe-U9-S8i">
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 200" translatesAutoresizingMaskIntoConstraints="NO" id="JDe-U9-S8i">
                                 <rect key="frame" x="-93" y="-30" width="560" height="561"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 201" translatesAutoresizingMaskIntoConstraints="NO" id="q2e-Mo-UJL">
+                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 201" translatesAutoresizingMaskIntoConstraints="NO" id="q2e-Mo-UJL">
                                 <rect key="frame" x="-16" y="46" width="406" height="407"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orange Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="HtK-qv-vWd">
@@ -501,14 +501,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guy Texting Standing" translatesAutoresizingMaskIntoConstraints="NO" id="Xlp-jS-eHo">
                                 <rect key="frame" x="-537" y="-48" width="1113" height="762"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.64999997615814209" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 199" translatesAutoresizingMaskIntoConstraints="NO" id="ww6-cA-SIB">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 199" translatesAutoresizingMaskIntoConstraints="NO" id="ww6-cA-SIB">
                                 <rect key="frame" x="-165" y="-102" width="704" height="705"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 200" translatesAutoresizingMaskIntoConstraints="NO" id="EWY-R6-0VR">
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 200" translatesAutoresizingMaskIntoConstraints="NO" id="EWY-R6-0VR">
                                 <rect key="frame" x="-93" y="-30" width="560" height="561"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999403953552" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 201" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-DO-uTa">
+                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 201" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-DO-uTa">
                                 <rect key="frame" x="-16" y="46" width="406" height="407"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orange Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="7tF-Gr-93T">
@@ -581,7 +581,7 @@
         <!--My Custom Page View Controller-->
         <scene sceneID="0cL-E2-cYx">
             <objects>
-                <viewController storyboardIdentifier="page_4" id="sf7-mV-kg1" customClass="MyCustomPageViewController" customModule="TempEmployee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="page_4" id="sf7-mV-kg1" customClass="MyCustomPageViewController" customModule="Temployer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6wb-01-FiL"/>
                         <viewControllerLayoutGuide type="bottom" id="Jgv-U7-5UG"/>

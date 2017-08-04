@@ -44,6 +44,7 @@ class ShiftsCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.progressTimer = nil
+        self.hideOptionsView()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -51,12 +52,12 @@ class ShiftsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func hideMoreOptions(_ sender: Any) {
+    func hideOptionsView(){
         
         self.cellBoxWidthConstraint.constant = 0
         self.cellBoxheightConstraint.constant = 0
         
-         self.hideMoreButton.alpha = 0
+        self.hideMoreButton.alpha = 0
         
         self.viewButton.alpha = 0
         self.viewLabel.alpha = 0
@@ -68,6 +69,10 @@ class ShiftsCell: UITableViewCell {
         self.deleteLabel.alpha = 0
         
         self.moreOptionsView.isUserInteractionEnabled = false
+        
+    }
+    @IBAction func hideMoreOptions(_ sender: Any) {
+        self.hideOptionsView()
     }
     @IBAction func showMoreOptions(_ sender: Any) {
         
@@ -138,7 +143,9 @@ class ShiftsCell: UITableViewCell {
             str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 10)!], range: NSMakeRange(minStr.characters.count, str.length - minStr.characters.count))
             
             self.shiftStatus.attributedText = str
+            self.shiftStatus.isHidden = false
             self.progressBar.isHidden = false
+            self.repostButton.isHidden = true
             self.countDown = 60 - component.minute! // difference in minutes
             self.updateTimer() // call once before timer starts updating value
             self.attachTimer() // also set shiftPostedDate
@@ -148,6 +155,7 @@ class ShiftsCell: UITableViewCell {
             self.progressTimer = nil
             self.shiftStatus.isHidden = true
             self.repostButton.isHidden = false
+            self.shiftStatus.isHidden = true
         }
 
     }
@@ -164,7 +172,8 @@ class ShiftsCell: UITableViewCell {
         if self.countDown == 0{
             self.progressTimer?.invalidate()
             self.progressBar.isHidden = true
-            
+            self.repostButton.isHidden = false
+            self.completedView.isHidden = true
             return
         }
         self.countDown -= 1

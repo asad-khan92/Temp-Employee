@@ -139,8 +139,10 @@ extension MainViewController{
             switch result {
             case .Success(let user):
                 
-                print("User access token = \(user.access_token?.characters.count)")
-                if (user.access_token?.characters.count)! > 0{
+                //print("User access token = \(user.access_token?.characters.count)")
+                
+                
+                if user.access_token != nil{
                     HUD.flash(.success, delay: 0.0)
                     Defaults[.accessToken] = user.access_token
                     Defaults[.accessTokenExpiresIn] = user.expires_in!

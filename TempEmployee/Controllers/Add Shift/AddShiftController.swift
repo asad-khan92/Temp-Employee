@@ -235,7 +235,7 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
                 if let dataTask = self?.dataTask {
                     dataTask.cancel()
                 }
-                self?.fetchAutocompletePlaces(text)
+                self?.fetchAutocompletePlaces("\(text) in United Kingdom")
             }
         }
         

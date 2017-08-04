@@ -75,7 +75,7 @@ class ShiftsViewController: UIViewController {
         
         
         
-        //self.isPostedWithinAnHour()
+        //self.fetchShifts(service: ShiftsService(),showIndicator: false)
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleRefresh(_:)), name: NSNotification.Name(rawValue: Constants.Notifications.shiftPosted), object: nil)
@@ -154,7 +154,7 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
         cell.shiftJobAddress.text = shift.address
         cell.shiftJobTitle.text = shift.role?.uppercased()
         cell.shiftDate.text = shift.shift_date
-        cell.shiftRate.text = "£\(shift.price_per_hour!)"
+        cell.shiftRate.text = "£\(shift.price_per_hour ?? "12")"
         
         cell.deleteButton.addTarget(self, action: #selector(deleteShift(_:)), for: .touchUpInside)
         cell.editButton.addTarget(self, action: #selector(editShift(_:)), for: .touchUpInside)
@@ -170,7 +170,7 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
                 
                 cell.attachTimerIfNeed(shift:shift)
             }
-            
+            break
         case .covered:
             
             let shiftStr = "SHIFT"
@@ -182,8 +182,11 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
              cell.shiftStatus.attributedText = str
              cell.progressBar.isHidden = true
              cell.repostButton.isHidden = true
+            
+            break
         case .completed:
             cell.completedView.alpha = 1
+            break
             
         }
         return cell
@@ -317,6 +320,8 @@ extension ShiftsViewController{
         }
         service.fetchMyShifts(with: {result in
             
+             self.refreshControl.endRefreshing()
+            
             switch result{
                 
             case .Success(let response):
@@ -330,7 +335,7 @@ extension ShiftsViewController{
                     self.errorAlert(description: response.message)
                 }
             case .Failure(let error):
-                
+
                 HUD.hide()
                 self.errorAlert(description: error.localizedDescription)
                 print(error)

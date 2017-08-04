@@ -14,16 +14,16 @@ struct Constants {
     
     struct Notifications {
         
-        static let shiftPosted: String          = "shiftPostedSuccessfully"
-        static let refreshShiftsList: String          = "refreshShifts"
+        static let shiftPosted: String                  = "shiftPostedSuccessfully"
+        static let refreshShiftsList: String            = "refreshShifts"
     }
     
     struct EndPoints {
         struct Post {
             static let Login : String                   = "employers/login"
             static let LicenceDetails : String          = "employers/licenseDetails"
-            static let CreateShift : String              = "employers/shifts"
-            static let JobSeekerRating : String          = "employers/jobSeekerRating"
+            static let CreateShift : String             = "employers/shifts"
+            static let JobSeekerRating : String         = "employers/jobSeekerRating"
         }
         
         
@@ -32,6 +32,7 @@ struct Constants {
             static let shifts : String                      = "employers/shifts"
             static let repostShift : String                 = "employers/repostShift"
             static let licences : String                    = "licenseTypes"
+            static let TaxAndCharges :String                = "settings"
         }
         /**
          Repeats a string `times` times.
@@ -50,11 +51,11 @@ struct Constants {
     }
     
     struct Employer {
-        static let accessToken : String                             = "access_token"
-        static let accessTokenExpireIn : String                     = "accessTokenExpireIn"
-        static let licencePosted : String                           = "licencePosted"
-        static let email : String                                   = "employer_email"
-        static let password : String                                = "employer_password"
+        static let accessToken : String                 = "access_token"
+        static let accessTokenExpireIn : String         = "accessTokenExpireIn"
+        static let licencePosted : String               = "licencePosted"
+        static let email : String                       = "employer_email"
+        static let password : String                    = "employer_password"
         
          static let Registered : String                 = "userRegistered"
          static let LicencesUploaded : String           = "licencesUploaded"

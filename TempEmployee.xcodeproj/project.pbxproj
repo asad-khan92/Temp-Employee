@@ -151,7 +151,7 @@
 		4786196B1EDF3E6B00870F12 /* ShiftsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShiftsCell.swift; path = TableViewCells/ShiftsCell.swift; sourceTree = "<group>"; };
 		4786196C1EDF3E6B00870F12 /* ShiftsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShiftsCell.xib; path = TableViewCells/ShiftsCell.xib; sourceTree = "<group>"; };
 		478619701EDF482B00870F12 /* ShiftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftsViewController.swift; sourceTree = "<group>"; };
-		47881CB61EDC5E6300FEC0EE /* TempEmployee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TempEmployee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47881CB61EDC5E6300FEC0EE /* Temployer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Temployer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47881CB91EDC5E6300FEC0EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47881CBB1EDC5E6300FEC0EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47881CBE1EDC5E6300FEC0EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		4791B5D11EE0270100EDA1CF /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		4791C9781EDCAA7C0028972A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4791C9791EDCAA7C0028972A /* MyCustomPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomPageViewController.swift; sourceTree = "<group>"; };
-		4791C97A1EDCAA7C0028972A /* ShowCase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowCase.storyboard; sourceTree = "<group>"; };
+		4791C97A1EDCAA7C0028972A /* ShowCase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ShowCase.storyboard; path = Showcase/ShowCase.storyboard; sourceTree = "<group>"; };
 		479902B11EEC4E7A0000831C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		479B29F21EED971800075247 /* RatingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingService.swift; sourceTree = "<group>"; };
 		479C5ECE1EE4874500090094 /* AddShiftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShiftController.swift; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 		47881CB71EDC5E6300FEC0EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47881CB61EDC5E6300FEC0EE /* TempEmployee.app */,
+				47881CB61EDC5E6300FEC0EE /* Temployer.app */,
 				47881CCA1EDC5E6300FEC0EE /* TempEmployeeTests.xctest */,
 				47881CD51EDC5E6300FEC0EE /* TempEmployeeUITests.xctest */,
 			);
@@ -368,6 +368,7 @@
 				47881CBB1EDC5E6300FEC0EE /* ViewController.swift */,
 				475FDA801EE2DB5E00BC117C /* AddShift.storyboard */,
 				47881CBD1EDC5E6300FEC0EE /* Main.storyboard */,
+				4791C97A1EDCAA7C0028972A /* ShowCase.storyboard */,
 				47881CC01EDC5E6300FEC0EE /* Assets.xcassets */,
 				47881CC21EDC5E6300FEC0EE /* LaunchScreen.storyboard */,
 				47881CC51EDC5E6300FEC0EE /* Info.plist */,
@@ -464,7 +465,6 @@
 			children = (
 				4791C9781EDCAA7C0028972A /* MainViewController.swift */,
 				4791C9791EDCAA7C0028972A /* MyCustomPageViewController.swift */,
-				4791C97A1EDCAA7C0028972A /* ShowCase.storyboard */,
 			);
 			name = Showcase;
 			path = ../Showcase;
@@ -524,7 +524,7 @@
 			);
 			name = TempEmployee;
 			productName = TempEmployee;
-			productReference = 47881CB61EDC5E6300FEC0EE /* TempEmployee.app */;
+			productReference = 47881CB61EDC5E6300FEC0EE /* Temployer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		47881CC91EDC5E6300FEC0EE /* TempEmployeeTests */ = {
@@ -1036,7 +1036,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Temployer;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1053,7 +1053,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Temployer;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
