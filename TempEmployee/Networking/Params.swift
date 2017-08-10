@@ -37,7 +37,6 @@ class Params {
             "reporting_to":data.reporting_to!,
             "phone":data.phone!,
             "details":data.details!,
-            "special_info":data.special_info!,
             "site_instructions":data.site_instructions!,
             "lat": data.lat!,
             "lng": data.lng!,

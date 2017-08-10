@@ -11,6 +11,7 @@ import PKHUD
 import QuartzCore
 import Intercom
 import AFDateHelper
+import SDWebImage
 
 class ShiftsViewController: UIViewController {
 
@@ -149,12 +150,15 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        SDImageCache.shared().clearMemory()
+        SDImageCache.shared().clearDisk()
+        
         let cell = self.tableView.dequeueReusableCell(withIdentifier:self.reuseIndentifier , for: indexPath) as! ShiftsCell
         let shift = self.shiftsData[indexPath.row]
         cell.shiftJobAddress.text = shift.address
         cell.shiftJobTitle.text = shift.role?.uppercased()
-        cell.shiftDate.text = shift.shift_date
-        cell.shiftRate.text = "£\(shift.price_per_hour ?? "12")"
+        cell.shiftDate.text = shift.convertShiftDate()
+        cell.shiftRate.text = "£\(shift.price_per_hour!)"
         
         cell.deleteButton.addTarget(self, action: #selector(deleteShift(_:)), for: .touchUpInside)
         cell.editButton.addTarget(self, action: #selector(editShift(_:)), for: .touchUpInside)
@@ -182,13 +186,64 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
              cell.shiftStatus.attributedText = str
              cell.progressBar.isHidden = true
              cell.repostButton.isHidden = true
-            
+            cell.completedView.isHidden = true
+            if shift.jobSeeker?.image_path != nil{
+                print(shift.jobSeeker?.image_path!)
+                let manager:SDWebImageManager = SDWebImageManager.shared()
+                manager.loadImage(with: URL(string:(shift.jobSeeker?.image_path!)!), options: SDWebImageOptions.refreshCached, progress: nil, completed: {[weak self] (image,data, error, cachedType,  finished, url) in
+                
+                    if (error == nil && (image != nil) && finished) {
+                    
+                        cell.shiftApplicantImage?.image = image
+                        cell.shiftApplicantImage.isHidden = false
+                    }
+                    else {
+                    
+                        self?.errorAlert(description:(error?.localizedDescription)! )
+                    }
+                
+                
+                })
+            }
             break
-        case .completed:
-            cell.completedView.alpha = 1
-            break
+//        case .completed:
+//            cell.completedView.alpha = 1
+//            break
             
         }
+        
+            
+        if (shift.shift_status! == .SHIFT_TO_BE_COVERED && shift.assign_status! == .pending){
+            
+            cell.completedView.isHidden = true
+            cell.progressBar.isHidden = false
+            //cell.progressTimer = nil
+            cell.shiftStatus.isHidden = false
+            cell.repostButton.isHidden = true
+            cell.shiftStatus.isHidden = true
+            cell.shiftApplicantImage.isHidden = true
+        }
+        
+        
+        else if shift.shift_status! == .SHIFT_FULLY_COVERED{
+            cell.completedView.isHidden = false
+            cell.completedView.alpha = 1
+            cell.shiftCompletedLabel.text = "Shift Partially Covered"
+        }
+        else if shift.shift_status! == .SHIFT_PARTIALLY_COVERED{
+            cell.completedView.isHidden = false
+            cell.completedView.alpha = 1
+            cell.shiftCompletedLabel.text = "Shift Fuly Covered"
+        }
+        else if (shift.shift_status! == .SHIFT_UNCOVERED_OR_EXPIRED){
+            cell.completedView.isHidden = false
+            cell.completedView.alpha = 1
+            cell.shiftCompletedLabel.text = "Shift Uncovered"
+        }
+        
+            
+        
+        
         return cell
     }
     
@@ -197,13 +252,47 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
         let nCell = cell as! ShiftsCell
         let shift = self.shiftsData[indexPath.row]
         
-        if shift.assign_status == ShiftStatus.completed {
+        if  let component =  shift.isPostedWithinAnHour() {
             
-            nCell.completedView.isHidden = false
-        }else{
-            
-            nCell.completedView.isHidden = true
+            if (shift.shift_status! == .SHIFT_TO_BE_COVERED && shift.assign_status! == .pending && component.hour! <= 1){
+                
+                nCell.completedView.isHidden = true
+                nCell.progressBar.isHidden = false
+                //nCell.progressTimer = nil
+                nCell.repostButton.isHidden = true
+                nCell.shiftStatus.isHidden = false
+                nCell.shiftApplicantImage.isHidden = true
+            }
+            else if (shift.shift_status! == .SHIFT_TO_BE_COVERED && shift.assign_status! == .pending && component.hour! >= 1){
+                
+                nCell.completedView.isHidden = true
+                nCell.progressBar.isHidden = true
+                nCell.progressTimer = nil
+                nCell.repostButton.isHidden = false
+                nCell.shiftStatus.isHidden = true
+                nCell.shiftApplicantImage.isHidden = true
+            }
+                
+            else if shift.shift_status! == .SHIFT_FULLY_COVERED{
+                nCell.completedView.isHidden = false
+                nCell.completedView.alpha = 1
+                nCell.shiftCompletedLabel.text = "Shift Partially Covered"
+            }
+            else if shift.shift_status! == .SHIFT_PARTIALLY_COVERED{
+                nCell.completedView.isHidden = false
+                nCell.completedView.alpha = 1
+                nCell.shiftCompletedLabel.text = "Shift Fuly Covered"
+            }
+            else if (shift.shift_status! == .SHIFT_UNCOVERED_OR_EXPIRED){
+                nCell.completedView.isHidden = false
+                nCell.completedView.alpha = 1
+                nCell.shiftCompletedLabel.text = "Shift Uncovered"
+            }
         }
+        
+        
+        
+        
         if self.animateTableViewCell{
        
             nCell.alpha = 0
@@ -293,9 +382,17 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
     }
     func repostShift(_ sender:UIButton)  {
         let index : IndexPath = self.tableView.indexPath(of: sender)!
-        let sObj = self.shiftsData[index.row]
+        var sObj = self.shiftsData[index.row]
+//
+//        
+        sObj.shift_mode  = ShiftMode(rawValue: 2)
+        let storyboard = UIStoryboard.init(name: "AddShift", bundle: nil)
         
-        self.repostShift(service: ShiftsService(), shiftID: sObj.id, showIndicator: true)
+        let addShiftVC : AddShiftController = storyboard.instantiateViewController()
+        addShiftVC.shift = sObj
+        addShiftVC.isEditingShift = true
+        self.navigationController?.pushViewController(addShiftVC, animated: true)
+        
     }
     func viewShiftData(shift:Shift) {
         
@@ -380,34 +477,7 @@ extension ShiftsViewController{
         })
     }
     
-    func repostShift(service:ShiftsService ,shiftID : Int, showIndicator:Bool)  {
-        
-        if showIndicator {
-            HUD.show(.progress,onView: self.view)
-        }
-        
-        service.repostShift(id: shiftID, completionHandler:   {result in
-            
-            switch result{
-                
-            case .Success(let response):
-                print(response)
-                HUD.hide()
-                if response.success{
-                    self.fetchShifts(service: ShiftsService(),showIndicator: true)
-                }else{
-                    HUD.hide()
-                    
-                    self.errorAlert(description: response.message)
-                }
-            case .Failure(let error):
-                
-                HUD.hide()
-                self.errorAlert(description: error.localizedDescription)
-                print(error)
-            }
-        })
-    }
+    
     
     func addNewShift(sender: UIButton!) {
         

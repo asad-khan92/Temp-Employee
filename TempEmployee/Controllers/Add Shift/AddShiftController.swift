@@ -48,6 +48,8 @@ class AddShiftController: UIViewController {
     var dropDown : DropDown!
     let validator = Validator()
     let timeArray = Constants.Shift.time
+    var predictions : NSArray!
+    
     // set initial location in London
     let initialLocation = CLLocation(latitude: 51.50699, longitude: -0.13606)
     let regionRadius: CLLocationDistance = 2000
@@ -82,9 +84,15 @@ class AddShiftController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if self.isEditingShift{
+            
+            
+        }else{
+            
+            self.price = Constants.Shift.defaultPrice
+            self.hours = Constants.Shift.defaultHours
+        }
         
-        self.price = Constants.Shift.defaultPrice
-        self.hours = Constants.Shift.defaultHours
     }
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
@@ -129,7 +137,7 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
             cell.jobRollField.text = self.shift?.role
             cell.jobAddressField.text = self.shift?.address
             cell.hoursField.text = self.shift?.shift_hours
-            cell.pricePerHourField.text = self.shift?.price_per_hour
+            cell.pricePerHourField.text = "\(self.shift!.price_per_hour!)"
             cell.startTimeField.text = self.shift?.from_time
             
             if let dateStr = self.shift?.shift_date{
@@ -156,7 +164,7 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
                 self.addTagView(selectedLicenceObject: lic)
             }
             
-            self.fetchAutocompletePlaces(cell.jobAddressField.text!)
+            //self.fetchAutocompletePlaces(cell.jobAddressField.text!)
             
         }else{
        
@@ -235,18 +243,40 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
                 if let dataTask = self?.dataTask {
                     dataTask.cancel()
                 }
-                self?.fetchAutocompletePlaces("\(text) in United Kingdom")
+                self?.fetchAutocompletePlaces("\(text) in United Kingdom",completionHandler: {predictionsArray in
+                    
+                    self?.predictions = predictionsArray!
+                    
+                    print((self?.predictions.firstObject as! [String:Any])["place_id"] as! String)
+                })
             }
         }
         
         autocompleteTextfield.onSelect = {[weak self] text, indexpath in
-            Location.geocodeAddressString(text, completion: { (placemark, error) -> Void in
-                if let coordinate = placemark?.location?.coordinate {
-                    self?.addAnnotation(coordinate, address: text)
-                    self?.mapView.setCenterCoordinate(coordinate, zoomLevel: 12, animated: true)
-                    self?.coordinate = coordinate
-                }
+            
+            let plcaeID = (self?.predictions.object(at: indexpath.row) as! [String:Any])["place_id"] as! String
+            
+            
+            self?.fetchLatLongByPlaceID(plcaeID, completionHandler: {result in
+                
+                let lat = result?["lat"] as! NSNumber
+                let long = result?["lng"] as! NSNumber
+                
+                let coord = CLLocationCoordinate2DMake(CLLocationDegrees(lat), CLLocationDegrees(long))
+                self?.addAnnotation(coord, address: text)
+                self?.mapView.setCenterCoordinate(coord, zoomLevel: 12, animated: true)
+                self?.coordinate = coord
+                
             })
+            
+            
+//            Location.geocodeAddressString(text, completion: { (placemark, error) -> Void in
+//                if let coordinate = placemark?.location?.coordinate {
+//                    self?.addAnnotation(coordinate, address: text)
+//                    self?.mapView.setCenterCoordinate(coordinate, zoomLevel: 12, animated: true)
+//                    self?.coordinate = coordinate
+//                }
+//            })
         }
     }
     
@@ -325,7 +355,7 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
        
         let calendar  : Calendar    =   Calendar(identifier: .gregorian)
         let startDate : Date        =   Date.init(timeIntervalSinceNow: 0)
-        let endDate   : Date        =   Date.init(timeIntervalSinceNow: 24*60*60*7-1)
+        let endDate   : Date        =   Date.init(timeIntervalSinceNow: 24*60*60*14-1)
         
        let dateRange = calendar.dateRange(start: startDate, end: endDate, stepUnits: .day, stepValue: 1)
         
@@ -401,14 +431,14 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
             self.shift?.address = self.cell?.jobAddressField.text
             self.shift?.from_time = self.cell?.startTimeField.text
             self.shift?.shift_hours = hour
-            self.shift?.price_per_hour = price
+            self.shift?.price_per_hour = Float.init(price!)
             self.shift?.shift_date = self.cell?.dateField.text
             self.shift?.required_licenses = self.selectedLicences
             self.shift?.lat = coord.latitude
             self.shift?.lng = coord.longitude
             
         }else{
-            self.shift = Shift(role: self.cell?.jobRollField.text, from_time: self.cell?.startTimeField.text, shift_hours:hour , address: self.cell?.jobAddressField.text, price_per_hour:price , shift_date: self.cell?.dateField.text, required_licenses: self.selectedLicences,latitude:coord.latitude,longitude:coord.longitude)
+            self.shift = Shift(role: self.cell?.jobRollField.text, from_time: self.cell?.startTimeField.text, shift_hours:hour , address: self.cell?.jobAddressField.text, price_per_hour:Float.init(price!) , shift_date: self.cell?.dateField.text, required_licenses: self.selectedLicences,latitude:coord.latitude,longitude:coord.longitude)
         }
         
         self.moveToNextStep()

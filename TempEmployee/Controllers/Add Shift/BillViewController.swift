@@ -86,18 +86,18 @@ class BillViewController: UIViewController {
         self.perHourCharges.text = "£\(self.shift.getTotalPPH())"
         self.tempProvideFee.text =  "£\(self.charges?.tempProvideFee ?? 25)"
         self.cardCharges.text =  "£\(self.charges?.cardCharges ?? 3)"
-        self.vatCharges.text =  "£\(self.charges?.valueAddedTax ?? 22)"
+        self.vatCharges.text =  "\(self.charges?.valueAddedTax ?? 20)%"
         
         let cCharges = self.removeCurrencySignAndConvertToDouble(str: self.cardCharges.text!)
         let fee      = self.removeCurrencySignAndConvertToDouble(str: self.tempProvideFee.text!)
-        let vCharges = self.removeCurrencySignAndConvertToDouble(str: self.vatCharges.text!)
+       // let vCharges = self.removeCurrencySignAndConvertToDouble(str: self.vatCharges.text!)
         
         
         self.subTotal.text =  "£\(self.shift.getSubtotal(cardCharges: cCharges, tempProvide:fee))"
         
         if let sT = self.subTotal.text{
             let sTotal = self.removeCurrencySignAndConvertToDouble(str: sT)
-            self.totalCharges.text =  "\(self.shift.getTotalIncludig(vat:vCharges , subTotal: sTotal))"
+            self.totalCharges.text =  "\(self.shift.getTotalIncludig(vat:(self.charges?.valueAddedTax)! , subTotal: sTotal))"
         }
     }
     @IBAction func getCoveredPressed(_ sender: Any) {
@@ -119,6 +119,7 @@ class BillViewController: UIViewController {
     
     func popToRoot() {
         let _ = self.navigationController?.popToRootViewController(animated: false)
+        self.tabBarController?.selectedIndex = 0
     }
 }
 
@@ -194,4 +195,34 @@ extension BillViewController{
         })
     }
     
+    
+    func repostShift(service:ShiftsService ,shiftID : Int, showIndicator:Bool)  {
+        
+        if showIndicator {
+            HUD.show(.progress,onView: self.view)
+        }
+        
+        service.repostShift(id: shiftID, completionHandler:   {result in
+            
+            switch result{
+                
+            case .Success(let response):
+                print(response)
+                HUD.hide()
+                if response.success{
+                    NotificationCenter.default.post(name:NSNotification.Name(rawValue: Constants.Notifications.shiftPosted) , object: nil)
+                    self.popToRoot()
+                }else{
+                    HUD.hide()
+                    
+                    self.errorAlert(description: response.message)
+                }
+            case .Failure(let error):
+                
+                HUD.hide()
+                self.errorAlert(description: error.localizedDescription)
+                print(error)
+            }
+        })
+    }
 }

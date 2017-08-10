@@ -54,7 +54,7 @@ class ViewShiftInfoController: UIViewController {
         self.shiftCostLabel.text = "£\(self.shift.price_per_hour!)"
         
        
-        if shift.assign_status == ShiftStatus.completed {
+        if self.shift.assigned_job_seeker_id == nil {
             self.editPressed.isHidden = true
         }
         if self.shift.assigned_job_seeker_id != nil {
@@ -85,10 +85,14 @@ class ViewShiftInfoController: UIViewController {
     }
     @IBAction func ratingButtonPressed(_ sender: UIButton) {
         
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let rateVC : RateViewController = storyboard.instantiateViewController()
-        rateVC.shift = self.shift
-        self.navigationController?.pushViewController(rateVC, animated: true)
+        if self.shift.shift_status != .SHIFT_TO_BE_COVERED{
+            self.errorAlert(description: "Sorry!, you can't rate untill the job is finish")
+        }else{
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let rateVC : RateViewController = storyboard.instantiateViewController()
+            rateVC.shift = self.shift
+            self.navigationController?.pushViewController(rateVC, animated: true)
+        }
     }
    
 

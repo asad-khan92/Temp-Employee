@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
-            timestampString = "523364495.50811"
+            timestampString = "523803079.028217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "fetchShifts(service:showIndicator:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TempEmployee/Controllers/Add Shift/AddShiftController.swift"
-            timestampString = "519072366.964722"
+            timestampString = "523559090.217084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "addTagView(selectedLicenceObject:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -153,54 +153,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Controllers/Add Shift/BillViewController.swift"
-            timestampString = "523434780.900717"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "postShift(service:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Temployer.BillViewController.postShift (service : Temployer.CreateShift) -&gt; ()"
-                  moduleName = "Temployer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/KashifSaeed/Attribes/TempEmployee/TempEmployee/Controllers/Add%20Shift/BillViewController.swift"
-                  timestampString = "523474444.373932"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "3420">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Temployer.BillViewController.(postShift (service : Temployer.CreateShift) -&gt; ()).(closure #1)"
-                  moduleName = "Temployer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/KashifSaeed/Attribes/TempEmployee/TempEmployee/Controllers/Add%20Shift/BillViewController.swift"
-                  timestampString = "523474444.375989"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "172"
-                  endingLineNumber = "172"
-                  offsetFromSymbolStart = "1256">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TempEmployee/Controllers/ViewShiftInfoController.swift"
             timestampString = "518887963.10359"
             startingColumnNumber = "9223372036854775807"
@@ -250,12 +202,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TempEmployee/Models/ShiftStruct.swift"
-            timestampString = "519074152.133551"
+            timestampString = "523560319.114545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "init(role:from_time:interview_time:shift_hours:address:price_per_hour:shift_date:reporting_to:phone:details:special_info:site_instructions:required_licenses:id:assigned_job_seeker_id:lat:lng:assign_status:created_at:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "init(role:from_time:interview_time:shift_hours:address:price_per_hour:shift_date:reporting_to:phone:details:special_info:site_instructions:required_licenses:id:assigned_job_seeker_id:lat:lng:assign_status:created_at:shift_status:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -282,12 +234,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TempEmployee/Models/ShiftStruct.swift"
-            timestampString = "519074152.133551"
+            timestampString = "523560319.114545"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "init(role:from_time:interview_time:shift_hours:address:price_per_hour:shift_date:reporting_to:phone:details:special_info:site_instructions:required_licenses:id:assigned_job_seeker_id:lat:lng:assign_status:created_at:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "init(role:from_time:interview_time:shift_hours:address:price_per_hour:shift_date:reporting_to:phone:details:special_info:site_instructions:required_licenses:id:assigned_job_seeker_id:lat:lng:assign_status:created_at:shift_status:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -330,7 +282,7 @@
                   moduleName = "Temployer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/KashifSaeed/Attribes/TempEmployee/TempEmployee/AppDelegate.swift"
-                  timestampString = "523474444.399244"
+                  timestampString = "523803079.387966"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
@@ -345,7 +297,7 @@
                   moduleName = "Temployer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/KashifSaeed/Attribes/TempEmployee/TempEmployee/AppDelegate.swift"
-                  timestampString = "523474444.401386"
+                  timestampString = "523803079.390313"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
@@ -394,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
-            timestampString = "523364495.50811"
+            timestampString = "523803079.028217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
+            startingLineNumber = "482"
+            endingLineNumber = "482"
             landmarkName = "repostShift(service:shiftID:showIndicator:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,157 +362,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
-            timestampString = "523360780.394412"
+            timestampString = "523563490.646614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "shiftsData"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
-            timestampString = "523361720.116448"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Controllers/ViewShiftInfoController.swift"
-            timestampString = "523365727.442857"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Controllers/ViewShiftInfoController.swift"
-            timestampString = "523365735.650652"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Controllers/ViewShiftInfoController.swift"
-            timestampString = "523365737.714519"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Networking/ShiftsService.swift"
-            timestampString = "523375625.042973"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "fetchMyShifts(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Networking/CreateShiftService.swift"
-            timestampString = "523434476.082747"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "init(jsonDict:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Controllers/Add Shift/BillViewController.swift"
-            timestampString = "523434618.501239"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "getShiftCharges(service:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Networking/CreateShiftService.swift"
-            timestampString = "523434672.211061"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "init(jsonDict:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Networking/CreateShiftService.swift"
-            timestampString = "523473398.162919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "getCharges(completionHandler:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -582,16 +390,192 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TempEmployee/Controllers/Add Shift/BillViewController.swift"
-            timestampString = "523474714.881633"
+            timestampString = "523551331.758713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "addCharges()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/Add Shift/AddShiftController.swift"
+            timestampString = "523559090.217084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "handleTextFieldInterfaces(autocompleteTextfield:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Temployer.AddShiftController.((handleTextFieldInterfaces in _F05B3B43519DFE14AA8DBD82C99048A1) (autocompleteTextfield : Temployer.AutoCompleteTextField) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "Temployer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/KashifSaeed/Attribes/TempEmployee/TempEmployee/Controllers/Add%20Shift/AddShiftController.swift"
+                  timestampString = "523551562.500303"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Temployer.AddShiftController.((handleTextFieldInterfaces in _F05B3B43519DFE14AA8DBD82C99048A1) (autocompleteTextfield : Temployer.AutoCompleteTextField) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "Temployer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/KashifSaeed/Attribes/TempEmployee/TempEmployee/Controllers/Add%20Shift/AddShiftController.swift"
+                  timestampString = "523551562.503958"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "316">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/Add Shift/AddShiftController.swift"
+            timestampString = "523559090.217084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "handleTextFieldInterfaces(autocompleteTextfield:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Temployer.AddShiftController.((handleTextFieldInterfaces in _F05B3B43519DFE14AA8DBD82C99048A1) (autocompleteTextfield : Temployer.AutoCompleteTextField) -&gt; ()).(closure #2)"
+                  moduleName = "Temployer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/KashifSaeed/Attribes/TempEmployee/TempEmployee/Controllers/Add%20Shift/AddShiftController.swift"
+                  timestampString = "523551625.378765"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Temployer.AddShiftController.((handleTextFieldInterfaces in _F05B3B43519DFE14AA8DBD82C99048A1) (autocompleteTextfield : Temployer.AutoCompleteTextField) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "Temployer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/KashifSaeed/Attribes/TempEmployee/TempEmployee/Controllers/Add%20Shift/AddShiftController.swift"
+                  timestampString = "523551625.382389"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "242"
+                  endingLineNumber = "242"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523803079.028217"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523744671.801855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523744671.801855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523744671.801855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523744671.801855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -601,13 +585,125 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TempEmployee/Models/ShiftStruct.swift"
-            timestampString = "523474834.646508"
+            filePath = "TempEmployee/Networking/Params.swift"
+            timestampString = "523780378.171613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "getTotalPPH()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "paramsForPostShift(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523784185.215016"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/TableViewCells/ShiftsCell.swift"
+            timestampString = "523784189.397885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "attachTimerIfNeed(shift:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/TableViewCells/ShiftsCell.swift"
+            timestampString = "523784191.902305"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "attachTimerIfNeed(shift:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523790843.372826"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523803079.028217"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "tableView(_:willDisplay:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523802397.183446"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TempEmployee/Controllers/ShiftsViewController.swift"
+            timestampString = "523802862.832998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "tableView(_:willDisplay:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

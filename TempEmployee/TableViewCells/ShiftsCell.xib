@@ -29,18 +29,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-Hj-oxW">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-Hj-oxW">
                         <rect key="frame" x="35" y="5" width="304" height="148"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cell Box" translatesAutoresizingMaskIntoConstraints="NO" id="gDn-Lc-y52">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="148"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-S2-XTp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-S2-XTp">
                                 <rect key="frame" x="240" y="58" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4TC-8D-jn7"/>
                                     <constraint firstAttribute="width" constant="44" id="WKb-Yv-YTj"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.78000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue Circle Tick" translatesAutoresizingMaskIntoConstraints="NO" id="2oQ-TY-iOH">
                                 <rect key="frame" x="240" y="58" width="44" height="44"/>
@@ -102,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECURITY GUARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW8-lr-HL5">
-                                <rect key="frame" x="20" y="43" width="135.5" height="19"/>
+                                <rect key="frame" x="20" y="43" width="258" height="19"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                 <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -165,6 +170,7 @@
                             <constraint firstItem="H2E-nZ-Vma" firstAttribute="trailing" secondItem="2oQ-TY-iOH" secondAttribute="trailing" id="Yjz-gV-c5F"/>
                             <constraint firstAttribute="trailing" secondItem="gSn-S2-XTp" secondAttribute="trailing" constant="20" id="a4p-6r-2Np"/>
                             <constraint firstItem="1Y7-Y9-yRw" firstAttribute="leading" secondItem="oi6-Hj-oxW" secondAttribute="leading" constant="20" id="b5G-Qn-CXG"/>
+                            <constraint firstAttribute="trailing" secondItem="JW8-lr-HL5" secondAttribute="trailing" constant="26" id="dhV-MJ-9UJ"/>
                             <constraint firstItem="ZBu-XA-Wnd" firstAttribute="trailing" secondItem="2oQ-TY-iOH" secondAttribute="trailing" id="eZK-gm-t5V"/>
                             <constraint firstItem="ZBu-XA-Wnd" firstAttribute="leading" secondItem="2oQ-TY-iOH" secondAttribute="leading" id="g1C-9b-SJz"/>
                             <constraint firstAttribute="trailing" secondItem="gDn-Lc-y52" secondAttribute="trailing" id="gCy-p0-4r1"/>
@@ -337,6 +343,7 @@
                 <outlet property="progressBar" destination="H2E-nZ-Vma" id="cKp-Ts-7V5"/>
                 <outlet property="repostButton" destination="ZBu-XA-Wnd" id="RUb-TB-6hU"/>
                 <outlet property="shiftApplicantImage" destination="gSn-S2-XTp" id="Prg-5h-ouQ"/>
+                <outlet property="shiftCompletedLabel" destination="OX2-wc-aiK" id="PVm-w2-nF0"/>
                 <outlet property="shiftDate" destination="vTd-gP-HLb" id="iqf-lg-H53"/>
                 <outlet property="shiftJobAddress" destination="1Y7-Y9-yRw" id="1Q6-Av-ZfX"/>
                 <outlet property="shiftJobTitle" destination="JW8-lr-HL5" id="h5V-Gg-erJ"/>

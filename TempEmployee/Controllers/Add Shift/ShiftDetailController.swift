@@ -20,7 +20,7 @@ class ShiftDetailController: UIViewController {
     
     
     @IBOutlet weak var siteInstructionField: SkyFloatingLabelTextField!
-    @IBOutlet weak var specialInfoField: SkyFloatingLabelTextField!
+   // @IBOutlet weak var specialInfoField: SkyFloatingLabelTextField!
     @IBOutlet weak var detailsField: SkyFloatingLabelTextField!
     @IBOutlet weak var contactNumberField: SkyFloatingLabelTextField!
     @IBOutlet weak var reportingField: SkyFloatingLabelTextField!
@@ -34,14 +34,14 @@ class ShiftDetailController: UIViewController {
 
         validator.registerField(reportingField , errorLabel:reportingErrorLabel, rules: [RequiredRule()])
         validator.registerField(contactNumberField , errorLabel:contactNumberErrorField, rules: [RequiredRule(),MaxLengthRule(length: 11),MinLengthRule(length: 7)])
-      
+       validator.registerField(detailsField , errorLabel:detailsErrorLabel, rules: [RequiredRule()])
         
     }
 
     func filledTextFieldWithShiftData()  {
         
         self.siteInstructionField.text = self.shift?.site_instructions
-        self.specialInfoField.text  = self.shift?.special_info
+        //self.specialInfoField.text  = self.shift?.special_info
         self.detailsField.text = self.shift?.details
         self.contactNumberField.text = self.shift?.phone
         self.reportingField.text = self.shift?.reporting_to
@@ -63,7 +63,7 @@ class ShiftDetailController: UIViewController {
         super.viewWillAppear(animated)
         
         self.siteInstructionField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
-        self.specialInfoField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
+        //self.specialInfoField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
         self.detailsField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
         self.contactNumberField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
         self.reportingField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
@@ -86,7 +86,7 @@ extension ShiftDetailController:ValidationDelegate{
         
             self.shift?.details = self.detailsField.text
         
-            self.shift?.special_info = self.specialInfoField.text
+             //self.shift?.special_info = self.specialInfoField.text
         
             self.shift?.site_instructions = self.siteInstructionField.text
         

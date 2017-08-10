@@ -9,11 +9,29 @@
 import Foundation
 import AFDateHelper
 
-public enum ShiftStatus :Int{
+
+public enum ShiftMode :Int{
+    case posting = 0
+    case editing = 1
+    case reposting = 2
+    
+}
+
+
+public enum AssignStatus :Int{
     case pending = 0
     case covered = 1
-    case completed = 2
+    //case completed = 2
 
+}
+
+public enum ShiftStatus :Int{
+    
+    case SHIFT_TO_BE_COVERED = 0
+    case SHIFT_FULLY_COVERED = 1
+    case SHIFT_PARTIALLY_COVERED = 2
+    case SHIFT_UNCOVERED_OR_EXPIRED = 3
+    
 }
 
 struct Shift  {
@@ -25,7 +43,7 @@ struct Shift  {
     var interview_time: String?
     var shift_hours: String?
     var address: String?
-    var price_per_hour: String?
+    var price_per_hour: Float!
     var shift_date: String?
     var lat: Double?
     var lng: Double?
@@ -37,10 +55,12 @@ struct Shift  {
     var site_instructions: String?
     var required_licenses: [Licence]
     var jobSeeker: JobSeeker?
-    var assign_status : ShiftStatus!
+    var assign_status : AssignStatus!
     var created_at : String!
+    var shift_status : ShiftStatus!
+    var shift_mode : ShiftMode! =  ShiftMode(rawValue: 0)
     
-    init(role:String?,from_time: String?, interview_time: String?,shift_hours: String?,address: String?,price_per_hour: String?,shift_date: String?,reporting_to: String?,phone: String?,details: String?,special_info: String?,site_instructions: String?,required_licenses: [Licence],id:Int,assigned_job_seeker_id:Int?, lat: Double, lng:Double,assign_status:ShiftStatus!, created_at:String?) {
+    init(role:String?,from_time: String?, interview_time: String?,shift_hours: String?,address: String?,price_per_hour: Float!,shift_date: String?,reporting_to: String?,phone: String?,details: String?,special_info: String?,site_instructions: String?,required_licenses: [Licence],id:Int,assigned_job_seeker_id:Int?, lat: Double, lng:Double,assign_status:AssignStatus!, created_at:String?,shift_status:ShiftStatus) {
         
         self.id = id
         self.assigned_job_seeker_id = assigned_job_seeker_id
@@ -61,10 +81,12 @@ struct Shift  {
         self.required_licenses = required_licenses
         self.assign_status = assign_status
         self.created_at = created_at
+        self.shift_status = shift_status
+        
         
     }
     
-    init(role:String?,from_time: String?,shift_hours: String?,address: String?,price_per_hour: String?,shift_date: String?,required_licenses: [Licence] , latitude:Double, longitude:Double) {
+    init(role:String?,from_time: String?,shift_hours: String?,address: String?,price_per_hour: Float!,shift_date: String?,required_licenses: [Licence] , latitude:Double, longitude:Double) {
         
         self.role = role
         self.from_time = from_time
@@ -80,7 +102,7 @@ struct Shift  {
     func getTotalPPH() -> Double {
         let pph = Double(self.price_per_hour!)
         let hours = Double(self.shift_hours!)
-        return (pph! * hours!)
+        return (pph * hours!)
     }
     func getSubtotal(cardCharges:Double,tempProvide fee:Double) -> Double {
       
@@ -90,7 +112,7 @@ struct Shift  {
     }
     func getTotalIncludig(vat:Double , subTotal : Double) -> Double {
         
-        return (subTotal + vat)
+        return (subTotal + (subTotal * vat)/100)
     }
     
     func isPostedWithinAnHour() -> DateComponents? {
@@ -102,5 +124,15 @@ struct Shift  {
         
         return  Calendar.current.dateComponents([.hour,.minute], from: shiftCreatedAt!, to: currentDate)
  
+    }
+    
+    func convertShiftDate() -> String? {
+        
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone.init(secondsFromGMT: 0)
+        let date = dateFormatter.date(from: self.shift_date!)
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        return dateFormatter.string(from: date!)
     }
 }

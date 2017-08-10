@@ -11,9 +11,9 @@ import Foundation
 
 class Charges:Meta{
     
-    var valueAddedTax : Int!
-    var tempProvideFee : Int!
-    var cardCharges : Int!
+    var valueAddedTax : Double!
+    var tempProvideFee : Double!
+    var cardCharges : Double!
     
     override init(jsonDict: JSONDict) {
         
@@ -25,9 +25,10 @@ class Charges:Meta{
            /// for charge in chargesArray!{
                 
                // let licenceObject =  licence["id"] as! NSNumber, license_name: licence["license_name"] as! String)
-                tempProvideFee = Int.init(chargesDic?["temp_provide_fee"] as! String)
-                valueAddedTax  =  Int.init(chargesDic?["vat"] as! String)
-                cardCharges =  Int.init(chargesDic?["card_charge"] as! String)
+            
+                tempProvideFee = Double.init(chargesDic?["temp_provide_fee"] as! String)
+                valueAddedTax  =  Double.init(chargesDic?["vat"] as! String)
+                cardCharges =  Double.init(chargesDic?["card_charge"] as! String)
                 
             //}
         }

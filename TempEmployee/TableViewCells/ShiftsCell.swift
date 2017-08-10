@@ -12,6 +12,7 @@ import AFDateHelper
 
 class ShiftsCell: UITableViewCell {
     
+    @IBOutlet weak var shiftCompletedLabel: UILabel!
     @IBOutlet weak var progressBar: CircleProgressBar!
     @IBOutlet weak var completedView: UIView!
     @IBOutlet weak var deleteLabel: UILabel!
@@ -146,9 +147,11 @@ class ShiftsCell: UITableViewCell {
             self.shiftStatus.isHidden = false
             self.progressBar.isHidden = false
             self.repostButton.isHidden = true
+            self.shiftApplicantImage.isHidden = true
             self.countDown = 60 - component.minute! // difference in minutes
             self.updateTimer() // call once before timer starts updating value
             self.attachTimer() // also set shiftPostedDate
+            self.completedView.isHidden = true
         }else{
             
             self.progressBar.isHidden = true
@@ -156,6 +159,8 @@ class ShiftsCell: UITableViewCell {
             self.shiftStatus.isHidden = true
             self.repostButton.isHidden = false
             self.shiftStatus.isHidden = true
+            self.shiftApplicantImage.isHidden = true
+            self.completedView.isHidden = true
         }
 
     }
