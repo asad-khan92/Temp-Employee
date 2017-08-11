@@ -12,7 +12,31 @@ import Alamofire
 
 typealias SuccessHandler<T> = (Result<T>) -> Void
 
-
+enum NetworkError : Error {
+    case noNetwork
+    case serverError(String)
+    case incorrectUrl(String)
+    case userCancelled
+    case invalidCredentials
+    case tokenExpired
+    var localizedDescription : String {
+        
+        switch self {
+        case .noNetwork:
+            return "Please check if you are connected to internet."
+        case .serverError(let error):
+            return error
+        case .incorrectUrl(let url):
+            return "The url \(url) is not correct"
+        case .userCancelled: // for facebook login error
+            return "Request cancelled"
+        case .invalidCredentials:
+            return "Incorrect email or password"
+        case .tokenExpired:
+            return "access_denied"
+        }
+    }
+}
 
 enum Result<T> {
     case Success(T)

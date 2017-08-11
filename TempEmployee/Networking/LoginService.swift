@@ -40,7 +40,7 @@ class LoginData{
     var access_token : String?
     var token_type : String?
     var expires_in : Int?
-                
+    var refresh_token : String?            
     
     
     init(jsonDict: JSONDict) {
@@ -48,7 +48,7 @@ class LoginData{
         access_token = jsonDict["access_token"] as? String
         token_type = jsonDict["token_type"] as? String
         expires_in = jsonDict["expires_in"] as? Int
-        
+        refresh_token = jsonDict["refresh_token"] as? String
     }
 }
 
@@ -81,6 +81,9 @@ struct LoginService {
                 
             case .Success(let response):
                     print (response )
+                    if (response["error"] as? String) != nil{
+                        completionHandler(.Failure(NetworkError.tokenExpired))
+                    }
                     let object = LoginData(jsonDict: response as JSONDict)
                     print("parsed data = ", object)
                 completionHandler(.Success(object))
@@ -98,6 +101,25 @@ struct LoginService {
             
         })
       
+    }
+    
+    func refreshToken(completionHandler: @escaping (Result<LoginData> ) -> Void) {
+        
+        NetworkManager.callServer(with_request: TemProvideRouter.refreshToken(), completionHandler: {result in
+            
+            switch result {
+                
+            case .Success(let response):
+                
+                let object = LoginData(jsonDict: response as JSONDict)
+                completionHandler(.Success(object))
+                
+            case .Failure(let error):
+                completionHandler(.Failure(error))
+            }
+            
+        })
+        
     }
 }
 

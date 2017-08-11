@@ -28,9 +28,12 @@ public enum AssignStatus :Int{
 public enum ShiftStatus :Int{
     
     case SHIFT_TO_BE_COVERED = 0
-    case SHIFT_FULLY_COVERED = 1
-    case SHIFT_PARTIALLY_COVERED = 2
-    case SHIFT_UNCOVERED_OR_EXPIRED = 3
+    case SHIFT_ASSIGNED = 1
+    case SHIFT_COMPLETED = 2
+    case SHIFT_EMPLOYEE_ABSENT = 3
+    case SHIFT_CANCELLED = 4
+    case SHIFT_EMPLOYEE_ISPAID = 5
+    case SHIFT_EXPIRED = 6
     
 }
 
@@ -59,8 +62,9 @@ struct Shift  {
     var created_at : String!
     var shift_status : ShiftStatus!
     var shift_mode : ShiftMode! =  ShiftMode(rawValue: 0)
+    var totalCost: Float!
     
-    init(role:String?,from_time: String?, interview_time: String?,shift_hours: String?,address: String?,price_per_hour: Float!,shift_date: String?,reporting_to: String?,phone: String?,details: String?,special_info: String?,site_instructions: String?,required_licenses: [Licence],id:Int,assigned_job_seeker_id:Int?, lat: Double, lng:Double,assign_status:AssignStatus!, created_at:String?,shift_status:ShiftStatus) {
+    init(role:String?,from_time: String?, interview_time: String?,shift_hours: String?,address: String?,price_per_hour: Float!,shift_date: String?,reporting_to: String?,phone: String?,details: String?,special_info: String?,site_instructions: String?,required_licenses: [Licence],id:Int,assigned_job_seeker_id:Int?, lat: Double, lng:Double,assign_status:AssignStatus!, created_at:String?,shift_status:ShiftStatus,totalCost:Float!) {
         
         self.id = id
         self.assigned_job_seeker_id = assigned_job_seeker_id
@@ -82,7 +86,7 @@ struct Shift  {
         self.assign_status = assign_status
         self.created_at = created_at
         self.shift_status = shift_status
-        
+        self.totalCost = totalCost
         
     }
     

@@ -26,7 +26,7 @@ enum TemProvideRouter: URLRequestConvertible {
         case deleteShift(Int)
         case repostShift(Int)
         case postRating(Int,Int,Int,String) // jobseeker ID, shift ID, Rating Int, Review text
-    
+        case refreshToken()
   func asURLRequest() throws -> URLRequest {
    
     // create a variable of type HTTPMethod to set Api call type
@@ -35,7 +35,7 @@ enum TemProvideRouter: URLRequestConvertible {
       switch self {
       case .get,.getSIALicence,.taxesAndCharges:
         return .get
-      case .login,.create,.postSlotId,.postRating:
+      case .login,.create,.postSlotId,.postRating,.refreshToken:
         return .post
       case .deleteShift:
         return .delete
@@ -60,6 +60,9 @@ enum TemProvideRouter: URLRequestConvertible {
         return (Params.paramsForSlotBooking(slotID: slotID))
       case .postRating(let jobseekerID, let shiftID, let Rating, let reviewText):
         return Params.paramsForPostRating(jobseekerID: jobseekerID, shiftID: shiftID, rating: Rating, review: reviewText)
+        
+      case .refreshToken:
+        return (Params.paramsForRefreshingToken())
       
       }
     }()
@@ -88,6 +91,9 @@ enum TemProvideRouter: URLRequestConvertible {
         relativePath = "\(Constants.EndPoints.Get.repostShift)/\(id)"
       case .taxesAndCharges:
         relativePath = Constants.EndPoints.Get.TaxAndCharges
+        
+      case .refreshToken:
+        relativePath = Constants.EndPoints.Post.refreshToken
         
       }
         

@@ -25,5 +25,5 @@ extension DefaultsKeys {
     static let accessTokenExpiresIn = DefaultsKey<Int>(Constants.Employer.accessTokenExpireIn)
     // Setting App Root VC flags
     static let hasUserRegistered = DefaultsKey<Bool>(Constants.Employer.Registered)
-
+    static let refreshToken = DefaultsKey<String?>(Constants.Employer.refreshToken)
 }

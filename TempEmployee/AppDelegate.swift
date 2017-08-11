@@ -45,24 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
-        if Defaults[.hasUserRegistered] {
-             Intercom.registerUser(withEmail: Defaults[.email]!)
-            LoginService().loginEmployerWith(email: Defaults[.email]!, password: Defaults[.password]!, completionHandler: {result in
-                
-                switch result {
-                case .Success(let user):
-                    
-                    print("User access token = \(user.access_token?.characters.count)")
-                    if (user.access_token?.characters.count)! > 0{
-                        Defaults[.accessToken] = user.access_token
-                        Defaults[.accessTokenExpiresIn] = user.expires_in!
-                    }
-                    
-                case .Failure(let error):
-                    print(error)
-                }
-                
-            })
+        if Defaults[.accessToken] != nil {
+            self.refreshToken()
+            
         }
     }
     
@@ -75,6 +60,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
         
+//        if Defaults[.accessToken] != nil {
+//             self.refreshToken()
+//            
+//        }
+       
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -126,6 +116,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController  =  self.window?.rootViewController as? UINavigationController
         
         navigationController?.setViewControllers([controller], animated: false)
+    }
+    
+    func refreshToken()  {
+        
+        Intercom.registerUser(withEmail: Defaults[.email]!)
+        LoginService().refreshToken(completionHandler:{result in
+            
+            switch result {
+            case .Success(let user):
+                
+                //  print("User access token = \(user.access_token?.characters.count)")
+                if user.access_token != nil{
+                    Defaults[.accessToken] = user.access_token
+                    Defaults[.accessTokenExpiresIn] = user.expires_in!
+                    Defaults[.refreshToken] = user.refresh_token!
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+            
+        })
     }
 }
 

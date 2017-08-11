@@ -72,4 +72,15 @@ class Params {
             "slot_id":slotID
         ]
     }
+    
+    public static func paramsForRefreshingToken()-> [String:Any]{
+        
+        return [
+            "client_id": "1",
+            "client_secret": "test",
+            "grant_type": "refresh_token",
+            "refresh_token": Defaults[.refreshToken] ?? ""
+        ]
+        
+    }
 }

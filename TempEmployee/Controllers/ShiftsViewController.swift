@@ -154,11 +154,11 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
         SDImageCache.shared().clearDisk()
         
         let cell = self.tableView.dequeueReusableCell(withIdentifier:self.reuseIndentifier , for: indexPath) as! ShiftsCell
-        let shift = self.shiftsData[indexPath.row]
+        var shift = self.shiftsData[indexPath.row]
         cell.shiftJobAddress.text = shift.address
         cell.shiftJobTitle.text = shift.role?.uppercased()
         cell.shiftDate.text = shift.convertShiftDate()
-        cell.shiftRate.text = "£\(shift.price_per_hour!)"
+        cell.shiftRate.text = "£\(shift.totalCost!)"
         
         cell.deleteButton.addTarget(self, action: #selector(deleteShift(_:)), for: .touchUpInside)
         cell.editButton.addTarget(self, action: #selector(editShift(_:)), for: .touchUpInside)
@@ -166,16 +166,25 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
         cell.repostButton.addTarget(self, action: #selector(repostShift(_:)), for: .touchUpInside)
         cell.progressBar.setProgress(self.returnProgress(value: indexPath.row), animated: true)
         
-        switch shift.assign_status!{
+        
+//        case SHIFT_TO_BE_COVERED = 0
+//        case SHIFT_ASSIGNED = 1
+//        case SHIFT_COMPLETED = 2
+//        case SHIFT_EMPLOYEE_ABSENT = 3
+//        case SHIFT_CANCELLED = 4
+//        case SHIFT_EMPLOYEE_ISPAID = 5
+//        case SHIFT_EXPIRED = 6
+        //shift.shift_status = ShiftStatus(rawValue: 2)
+        switch shift.shift_status!{
             
-        case .pending:
+        case .SHIFT_TO_BE_COVERED:
             
             if shift.created_at != nil{
                 
                 cell.attachTimerIfNeed(shift:shift)
             }
             break
-        case .covered:
+        case .SHIFT_ASSIGNED:
             
             let shiftStr = "SHIFT"
             let str = NSMutableAttributedString(string: "\(shiftStr) COVERED")
@@ -187,60 +196,104 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
              cell.progressBar.isHidden = true
              cell.repostButton.isHidden = true
             cell.completedView.isHidden = true
+            cell.blueTickMark.isHidden = false
             if shift.jobSeeker?.image_path != nil{
-                print(shift.jobSeeker?.image_path!)
-                let manager:SDWebImageManager = SDWebImageManager.shared()
-                manager.loadImage(with: URL(string:(shift.jobSeeker?.image_path!)!), options: SDWebImageOptions.refreshCached, progress: nil, completed: {[weak self] (image,data, error, cachedType,  finished, url) in
-                
-                    if (error == nil && (image != nil) && finished) {
-                    
-                        cell.shiftApplicantImage?.image = image
-                        cell.shiftApplicantImage.isHidden = false
-                    }
-                    else {
-                    
-                        self?.errorAlert(description:(error?.localizedDescription)! )
-                    }
-                
-                
-                })
+                //print(shift.jobSeeker?.image_path!)
+                cell.shiftApplicantImage.sd_setImage(with: URL(string:(shift.jobSeeker?.image_path!)!), placeholderImage: nil, options: SDWebImageOptions.refreshCached)
+
             }
             break
-//        case .completed:
-//            cell.completedView.alpha = 1
-//            break
             
-        }
-        
             
-        if (shift.shift_status! == .SHIFT_TO_BE_COVERED && shift.assign_status! == .pending){
+        case .SHIFT_COMPLETED,.SHIFT_EMPLOYEE_ISPAID:
             
-            cell.completedView.isHidden = true
-            cell.progressBar.isHidden = false
-            //cell.progressTimer = nil
-            cell.shiftStatus.isHidden = false
+            let shiftStr = "SHIFT"
+            let str = NSMutableAttributedString(string: "\(shiftStr) COMPLETED")
+            
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 10)!], range: NSMakeRange(0, shiftStr.characters.count))
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 10)!], range: NSMakeRange(shiftStr.characters.count, str.length - shiftStr.characters.count))
+            str.addAttributes([NSForegroundColorAttributeName: UIColor.init(hex: "A8C73E")], range:NSMakeRange(0, str.length))
+            
+            cell.shiftStatus.attributedText = str
+            cell.progressBar.isHidden = true
             cell.repostButton.isHidden = true
-            cell.shiftStatus.isHidden = true
+            cell.completedView.isHidden = true
+            cell.blueTickMark.isHidden = false
+            if shift.jobSeeker?.image_path != nil{
+                //print(shift.jobSeeker?.image_path!)
+                cell.shiftApplicantImage.sd_setImage(with: URL(string:(shift.jobSeeker?.image_path!)!), placeholderImage: nil, options: SDWebImageOptions.refreshCached)
+                
+            
+            
+            }
+            
+            break
+        case .SHIFT_EMPLOYEE_ABSENT:
+            let shiftStr = "Jobseeker"
+            let str = NSMutableAttributedString(string: "\(shiftStr) ABSENT")
+            
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 10)!], range: NSMakeRange(0, shiftStr.characters.count))
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 10)!], range: NSMakeRange(shiftStr.characters.count, str.length - shiftStr.characters.count))
+            str.addAttributes([NSForegroundColorAttributeName: UIColor.red], range:NSMakeRange(0, str.length))
+            
+            cell.shiftStatus.attributedText = str
+            cell.progressBar.isHidden = true
+            cell.repostButton.isHidden = true
+            cell.completedView.isHidden = true
+            cell.blueTickMark.isHidden = false
+            if shift.jobSeeker?.image_path != nil{
+                //print(shift.jobSeeker?.image_path!)
+                cell.shiftApplicantImage.sd_setImage(with: URL(string:(shift.jobSeeker?.image_path!)!), placeholderImage: nil, options: SDWebImageOptions.refreshCached)
+                
+                
+                
+            }
+            
+            break
+            
+            
+        case .SHIFT_CANCELLED:
+            let shiftStr = "SHIFT"
+            let str = NSMutableAttributedString(string: "\(shiftStr) CANCELLED")
+            
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 10)!], range: NSMakeRange(0, shiftStr.characters.count))
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 10)!], range: NSMakeRange(shiftStr.characters.count, str.length - shiftStr.characters.count))
+            str.addAttributes([NSForegroundColorAttributeName: UIColor.red], range:NSMakeRange(0, str.length))
+            
+            cell.shiftStatus.attributedText = str
+            cell.progressBar.isHidden = true
+            cell.repostButton.isHidden = true
+            cell.completedView.isHidden = true
+            cell.blueTickMark.isHidden = true
+            if shift.jobSeeker?.image_path != nil{
+                //print(shift.jobSeeker?.image_path!)
+                cell.shiftApplicantImage.sd_setImage(with: URL(string:(shift.jobSeeker?.image_path!)!), placeholderImage: nil, options: SDWebImageOptions.refreshCached)
+                
+                
+                
+            }
+            
+            break
+            
+        case .SHIFT_EXPIRED:
+            let shiftStr = "SHIFT"
+            let str = NSMutableAttributedString(string: "\(shiftStr) EXPIRED")
+            
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 10)!], range: NSMakeRange(0, shiftStr.characters.count))
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 10)!], range: NSMakeRange(shiftStr.characters.count, str.length - shiftStr.characters.count))
+            str.addAttributes([NSForegroundColorAttributeName: UIColor.red], range:NSMakeRange(0, str.length))
+            
+            cell.shiftStatus.attributedText = str
+            cell.progressBar.isHidden = true
+            cell.repostButton.isHidden = true
+            cell.completedView.isHidden = true
+            cell.blueTickMark.isHidden = true
             cell.shiftApplicantImage.isHidden = true
-        }
+            
+            break
         
-        
-        else if shift.shift_status! == .SHIFT_FULLY_COVERED{
-            cell.completedView.isHidden = false
-            cell.completedView.alpha = 1
-            cell.shiftCompletedLabel.text = "Shift Partially Covered"
+            
         }
-        else if shift.shift_status! == .SHIFT_PARTIALLY_COVERED{
-            cell.completedView.isHidden = false
-            cell.completedView.alpha = 1
-            cell.shiftCompletedLabel.text = "Shift Fuly Covered"
-        }
-        else if (shift.shift_status! == .SHIFT_UNCOVERED_OR_EXPIRED){
-            cell.completedView.isHidden = false
-            cell.completedView.alpha = 1
-            cell.shiftCompletedLabel.text = "Shift Uncovered"
-        }
-        
             
         
         
@@ -252,43 +305,43 @@ extension ShiftsViewController: UITableViewDataSource, UITableViewDelegate{
         let nCell = cell as! ShiftsCell
         let shift = self.shiftsData[indexPath.row]
         
-        if  let component =  shift.isPostedWithinAnHour() {
-            
-            if (shift.shift_status! == .SHIFT_TO_BE_COVERED && shift.assign_status! == .pending && component.hour! <= 1){
-                
-                nCell.completedView.isHidden = true
-                nCell.progressBar.isHidden = false
-                //nCell.progressTimer = nil
-                nCell.repostButton.isHidden = true
-                nCell.shiftStatus.isHidden = false
-                nCell.shiftApplicantImage.isHidden = true
-            }
-            else if (shift.shift_status! == .SHIFT_TO_BE_COVERED && shift.assign_status! == .pending && component.hour! >= 1){
-                
-                nCell.completedView.isHidden = true
-                nCell.progressBar.isHidden = true
-                nCell.progressTimer = nil
-                nCell.repostButton.isHidden = false
-                nCell.shiftStatus.isHidden = true
-                nCell.shiftApplicantImage.isHidden = true
-            }
-                
-            else if shift.shift_status! == .SHIFT_FULLY_COVERED{
-                nCell.completedView.isHidden = false
-                nCell.completedView.alpha = 1
-                nCell.shiftCompletedLabel.text = "Shift Partially Covered"
-            }
-            else if shift.shift_status! == .SHIFT_PARTIALLY_COVERED{
-                nCell.completedView.isHidden = false
-                nCell.completedView.alpha = 1
-                nCell.shiftCompletedLabel.text = "Shift Fuly Covered"
-            }
-            else if (shift.shift_status! == .SHIFT_UNCOVERED_OR_EXPIRED){
-                nCell.completedView.isHidden = false
-                nCell.completedView.alpha = 1
-                nCell.shiftCompletedLabel.text = "Shift Uncovered"
-            }
-        }
+//        if  let component =  shift.isPostedWithinAnHour() {
+//            
+//            if (shift.shift_status! == .SHIFT_TO_BE_COVERED && shift.assign_status! == .pending && component.hour! <= 1){
+//                
+//                nCell.completedView.isHidden = true
+//                nCell.progressBar.isHidden = false
+//                //nCell.progressTimer = nil
+//                nCell.repostButton.isHidden = true
+//                nCell.shiftStatus.isHidden = false
+//                nCell.shiftApplicantImage.isHidden = true
+//            }
+//            else if (shift.shift_status! == .SHIFT_TO_BE_COVERED && shift.assign_status! == .pending && component.hour! >= 1){
+//                
+//                nCell.completedView.isHidden = true
+//                nCell.progressBar.isHidden = true
+//                nCell.progressTimer = nil
+//                nCell.repostButton.isHidden = false
+//                nCell.shiftStatus.isHidden = true
+//                nCell.shiftApplicantImage.isHidden = true
+//            }
+//                
+//            else if shift.shift_status! == .SHIFT_FULLY_COVERED{
+//                nCell.completedView.isHidden = false
+//                nCell.completedView.alpha = 1
+//                nCell.shiftCompletedLabel.text = "Shift Partially Covered"
+//            }
+//            else if shift.shift_status! == .SHIFT_PARTIALLY_COVERED{
+//                nCell.completedView.isHidden = false
+//                nCell.completedView.alpha = 1
+//                nCell.shiftCompletedLabel.text = "Shift Fuly Covered"
+//            }
+//            else if (shift.shift_status! == .SHIFT_UNCOVERED_OR_EXPIRED){
+//                nCell.completedView.isHidden = false
+//                nCell.completedView.alpha = 1
+//                nCell.shiftCompletedLabel.text = "Shift Uncovered"
+//            }
+//        }
         
         
         

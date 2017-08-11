@@ -24,6 +24,7 @@ struct Constants {
             static let LicenceDetails : String          = "employers/licenseDetails"
             static let CreateShift : String             = "employers/shifts"
             static let JobSeekerRating : String         = "employers/jobSeekerRating"
+            static let refreshToken : String            = "refreshToken"
         }
         
         
@@ -56,7 +57,7 @@ struct Constants {
         static let licencePosted : String               = "licencePosted"
         static let email : String                       = "employer_email"
         static let password : String                    = "employer_password"
-        
+        static let refreshToken : String                = "refresh_token"
          static let Registered : String                 = "userRegistered"
          static let LicencesUploaded : String           = "licencesUploaded"
          static let ProfilePicUploaded : String         = "profilePicUploaded"

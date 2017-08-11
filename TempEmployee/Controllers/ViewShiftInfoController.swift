@@ -51,7 +51,7 @@ class ViewShiftInfoController: UIViewController {
         self.timendHourLabel.text = "\(self.shift.from_time!) - \(self.shift.shift_hours!)"
         self.addresslabel.text = self.shift.address
         
-        self.shiftCostLabel.text = "£\(self.shift.price_per_hour!)"
+        self.shiftCostLabel.text = "£\(self.shift.totalCost!)"
         
        
         if self.shift.assigned_job_seeker_id == nil {

@@ -9,7 +9,8 @@
 import UIKit
 import CircleProgressBar
 import AFDateHelper
-
+import SDWebImage
+ 
 class ShiftsCell: UITableViewCell {
     
     @IBOutlet weak var shiftCompletedLabel: UILabel!
@@ -33,6 +34,7 @@ class ShiftsCell: UITableViewCell {
     @IBOutlet weak var shiftDate: UILabel!
     @IBOutlet weak var repostButton: UIButton!
    
+    @IBOutlet weak var blueTickMark: UIImageView!
     var progressTimer : Timer?
     var shiftPostedDate = 0.0
     
@@ -152,6 +154,7 @@ class ShiftsCell: UITableViewCell {
             self.updateTimer() // call once before timer starts updating value
             self.attachTimer() // also set shiftPostedDate
             self.completedView.isHidden = true
+            self.blueTickMark.isHidden = true
         }else{
             
             self.progressBar.isHidden = true
@@ -161,6 +164,7 @@ class ShiftsCell: UITableViewCell {
             self.shiftStatus.isHidden = true
             self.shiftApplicantImage.isHidden = true
             self.completedView.isHidden = true
+            self.blueTickMark.isHidden = true
         }
 
     }

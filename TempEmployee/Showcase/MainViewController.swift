@@ -149,6 +149,7 @@ extension MainViewController{
                     Defaults[.hasUserRegistered] = true
                     Defaults[.email] = email
                     Defaults[.password] = password
+                    Defaults[.refreshToken] = user.refresh_token
                      Intercom.registerUser(withEmail: email)
                     self.moveToNextRegistrationStep()
                 }else{
