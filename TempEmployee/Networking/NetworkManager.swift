@@ -68,6 +68,13 @@ extension NetworkManager {
     
      func callServer(with_request request: URLRequestConvertible, completionHandler: @escaping (Result<[String:Any]>) -> Void){
         
+        if Defaults[.accessToken] != nil {
+            
+            sessionManager.adapter = oauthHandler
+            sessionManager.retrier = oauthHandler
+            
+        }
+        
         sessionManager.request(request).validate().responseJSON { response in
             if let errorData = response.result.error {
                 completionHandler(.Failure(errorData))
