@@ -75,7 +75,7 @@ struct ShiftsService {
 
     func fetchMyShifts(with completionHandler: @escaping (Result<Shifts> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.get, completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.get, completionHandler: {result in
             
             switch result {
                 
@@ -94,7 +94,7 @@ struct ShiftsService {
     }
     func deleteShift(id:Int, completionHandler: @escaping (Result<Meta> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.deleteShift(id), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.deleteShift(id), completionHandler: {result in
             
             switch result {
                 
@@ -113,7 +113,7 @@ struct ShiftsService {
     }
     func repostShift(id:Int, completionHandler: @escaping (Result<Meta> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.repostShift(id), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.repostShift(id), completionHandler: {result in
             
             switch result {
                 

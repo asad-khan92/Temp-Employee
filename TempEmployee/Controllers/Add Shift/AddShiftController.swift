@@ -86,7 +86,8 @@ class AddShiftController: UIViewController {
         super.viewWillAppear(animated)
         if self.isEditingShift{
             
-            
+            self.price = Int((self.shift?.price_per_hour)!)
+            self.hours = Int((self.shift?.shift_hours)!)
         }else{
             
             self.price = Constants.Shift.defaultPrice
@@ -107,6 +108,7 @@ class AddShiftController: UIViewController {
         self.cell?.jobRollField.text = ""
         self.cell?.startTimeField.text = ""
         self.cell?.pricePerHourField.text = ""
+        self.cell?.jobAddressField.text = ""
         
         self.cell?.addressErrorLabel.text = ""
         self.cell?.rollErrorLabel.text = ""
@@ -116,6 +118,8 @@ class AddShiftController: UIViewController {
         self.cell?.licenceView.subviews.forEach({ $0.removeFromSuperview() })
         self.coordinate = nil
         self.centerMapOnLocation(location: self.initialLocation)
+        
+        self.selectedLicences.removeAll()
     }
 }
 extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,ValidationDelegate , UITextFieldDelegate,UIGestureRecognizerDelegate,MKMapViewDelegate{
@@ -301,7 +305,9 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
     }
     
     func cancelButtonPressed()  {
-        let _ = self.navigationController?.popToRootViewController(animated: true)
+        self.clearPrefilledData()
+        //let _ = self.navigationController?.popToRootViewController(animated: true)
+        self.tabBarController?.selectedIndex = 0
     }
     
     func addLicence(_ sender : UIButton)  {

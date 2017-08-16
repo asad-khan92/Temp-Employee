@@ -26,4 +26,6 @@ extension DefaultsKeys {
     // Setting App Root VC flags
     static let hasUserRegistered = DefaultsKey<Bool>(Constants.Employer.Registered)
     static let refreshToken = DefaultsKey<String?>(Constants.Employer.refreshToken)
+    
+    //static let hasUserSignedIn = DefaultsKey<Bool>(Constants.Employee.SignedIn)
 }

@@ -36,7 +36,7 @@ struct LicenceService {
     
     func fetchSIALicence(with completionHandler: @escaping (Result<SIALicenc> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.getSIALicence, completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.getSIALicence, completionHandler: {result in
             
             switch result {
                 

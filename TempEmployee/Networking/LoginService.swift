@@ -75,7 +75,7 @@ struct LoginService {
     
     func loginEmployerWith(email:String, password:String ,completionHandler: @escaping (Result<LoginData> ) -> Void) {
     
-        NetworkManager.callServer(with_request: TemProvideRouter.login(email,password), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.login(email,password), completionHandler: {result in
         
             switch result {
                 
@@ -105,7 +105,7 @@ struct LoginService {
     
     func refreshToken(completionHandler: @escaping (Result<LoginData> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.refreshToken(), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.refreshToken(), completionHandler: {result in
             
             switch result {
                 

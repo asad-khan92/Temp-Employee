@@ -9,9 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HalisR-Bold.otf">
-            <string>HalisR-Bold</string>
-        </array>
         <array key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </array>
@@ -101,7 +98,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TUESDAY 4TH MAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTd-gP-HLb">
-                                <rect key="frame" x="20" y="13" width="108" height="14"/>
+                                <rect key="frame" x="20" y="13" width="109" height="14"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -122,7 +119,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVV-fW-68g">
-                                <rect key="frame" x="20" y="113" width="49" height="26"/>
+                                <rect key="frame" x="20" y="113" width="51.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -240,7 +237,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIEW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoD-C5-elG">
-                                <rect key="frame" x="64.5" y="100" width="24.5" height="12"/>
+                                <rect key="frame" x="63.5" y="100" width="26.5" height="12"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -251,46 +248,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTW-0b-CgG">
-                                <rect key="frame" x="7" y="7" width="290" height="134"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHIFT COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OX2-wc-aiK">
-                                        <rect key="frame" x="63.5" y="57.5" width="164.5" height="21"/>
-                                        <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="18"/>
-                                        <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqH-6P-Vz2">
-                                        <rect key="frame" x="122" y="80.5" width="46" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="3KO-2I-RPI"/>
-                                            <constraint firstAttribute="width" constant="46" id="RDj-D3-NCE"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="12"/>
-                                        <state key="normal" title="VIEW">
-                                            <color key="titleColor" red="0.99215686270000003" green="0.42352941179999998" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.99215686270000003" green="0.42352941179999998" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="tqH-6P-Vz2" firstAttribute="centerX" secondItem="cTW-0b-CgG" secondAttribute="centerX" id="5gD-LO-poW"/>
-                                    <constraint firstItem="OX2-wc-aiK" firstAttribute="centerX" secondItem="cTW-0b-CgG" secondAttribute="centerX" id="H7A-Iw-wEP"/>
-                                    <constraint firstItem="OX2-wc-aiK" firstAttribute="centerY" secondItem="cTW-0b-CgG" secondAttribute="centerY" id="Qfs-cG-fR8"/>
-                                    <constraint firstItem="tqH-6P-Vz2" firstAttribute="top" secondItem="OX2-wc-aiK" secondAttribute="bottom" constant="1.5" id="gKU-Nl-Kza"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -299,19 +256,15 @@
                             <constraint firstItem="JoD-C5-elG" firstAttribute="centerX" secondItem="Aaw-aG-XRl" secondAttribute="centerX" id="37i-p6-JpF"/>
                             <constraint firstItem="Aaw-aG-XRl" firstAttribute="centerY" secondItem="ZNt-qa-bct" secondAttribute="centerY" id="9xn-2X-GhT"/>
                             <constraint firstItem="14d-QO-owa" firstAttribute="top" secondItem="9PT-om-ldU" secondAttribute="bottom" constant="3" id="KyY-dB-5gn"/>
-                            <constraint firstItem="cTW-0b-CgG" firstAttribute="leading" secondItem="ZNt-qa-bct" secondAttribute="leading" constant="7" id="Vgz-ez-w9K"/>
                             <constraint firstItem="olE-bC-v4A" firstAttribute="top" secondItem="1U9-mq-nBW" secondAttribute="bottom" constant="3" id="WTL-kc-8op"/>
                             <constraint firstItem="1U9-mq-nBW" firstAttribute="leading" secondItem="9PT-om-ldU" secondAttribute="trailing" constant="30" id="a80-CX-2ln"/>
                             <constraint firstItem="mkh-tS-PgX" firstAttribute="top" secondItem="ZNt-qa-bct" secondAttribute="top" constant="9" id="dmK-1b-tJ4"/>
-                            <constraint firstAttribute="bottom" secondItem="cTW-0b-CgG" secondAttribute="bottom" constant="7" id="fuZ-Ml-pXE"/>
-                            <constraint firstAttribute="trailing" secondItem="cTW-0b-CgG" secondAttribute="trailing" constant="7" id="hLZ-KF-Sqy"/>
                             <constraint firstItem="14d-QO-owa" firstAttribute="centerX" secondItem="9PT-om-ldU" secondAttribute="centerX" id="lW0-Vi-gDT"/>
                             <constraint firstItem="JoD-C5-elG" firstAttribute="top" secondItem="Aaw-aG-XRl" secondAttribute="bottom" constant="3" id="mbt-Jy-Nxg"/>
                             <constraint firstItem="9PT-om-ldU" firstAttribute="centerX" secondItem="ZNt-qa-bct" secondAttribute="centerX" id="neT-iq-0Hp"/>
                             <constraint firstItem="olE-bC-v4A" firstAttribute="centerX" secondItem="1U9-mq-nBW" secondAttribute="centerX" id="qFR-Fa-ACh"/>
                             <constraint firstAttribute="trailing" secondItem="mkh-tS-PgX" secondAttribute="trailing" constant="20" id="rIz-ao-a3O"/>
                             <constraint firstItem="zaR-on-ygL" firstAttribute="top" secondItem="ZNt-qa-bct" secondAttribute="top" id="s5i-JH-FCu"/>
-                            <constraint firstItem="cTW-0b-CgG" firstAttribute="top" secondItem="ZNt-qa-bct" secondAttribute="top" constant="7" id="upy-Yq-qcg"/>
                             <constraint firstItem="1U9-mq-nBW" firstAttribute="centerY" secondItem="ZNt-qa-bct" secondAttribute="centerY" id="wyZ-uM-cZ8"/>
                             <constraint firstItem="9PT-om-ldU" firstAttribute="leading" secondItem="Aaw-aG-XRl" secondAttribute="trailing" constant="30" id="xHS-Kh-W99"/>
                         </constraints>
@@ -334,7 +287,6 @@
                 <outlet property="blueTickMark" destination="2oQ-TY-iOH" id="bt7-OV-tWN"/>
                 <outlet property="cellBoxWidthConstraint" destination="6wr-EF-iGd" id="iLh-ct-so6"/>
                 <outlet property="cellBoxheightConstraint" destination="n7x-zt-iGc" id="8Pg-Zz-i4s"/>
-                <outlet property="completedView" destination="cTW-0b-CgG" id="JAN-B1-cmZ"/>
                 <outlet property="deleteButton" destination="1U9-mq-nBW" id="bJd-cJ-7oo"/>
                 <outlet property="deleteLabel" destination="olE-bC-v4A" id="hxe-Vt-b6G"/>
                 <outlet property="editButton" destination="9PT-om-ldU" id="Nl5-Y4-29z"/>
@@ -344,7 +296,6 @@
                 <outlet property="progressBar" destination="H2E-nZ-Vma" id="cKp-Ts-7V5"/>
                 <outlet property="repostButton" destination="ZBu-XA-Wnd" id="RUb-TB-6hU"/>
                 <outlet property="shiftApplicantImage" destination="gSn-S2-XTp" id="Prg-5h-ouQ"/>
-                <outlet property="shiftCompletedLabel" destination="OX2-wc-aiK" id="PVm-w2-nF0"/>
                 <outlet property="shiftDate" destination="vTd-gP-HLb" id="iqf-lg-H53"/>
                 <outlet property="shiftJobAddress" destination="1Y7-Y9-yRw" id="1Q6-Av-ZfX"/>
                 <outlet property="shiftJobTitle" destination="JW8-lr-HL5" id="h5V-Gg-erJ"/>

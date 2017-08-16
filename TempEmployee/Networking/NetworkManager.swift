@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-
+import SwiftyUserDefaults
 
 typealias SuccessHandler<T> = (Result<T>) -> Void
 
@@ -45,16 +45,30 @@ enum Result<T> {
 
 class NetworkManager {
 
-    static let shared = NetworkManager()
-    //typealias completion = (_ response : Any?, _ error :NetworkError) -> Void
     
+    // Can't init is singleton
+    private init() { }
+    
+    // MARK: Shared Instance
+    
+    static let shared = NetworkManager()
+    
+    // MARK: Local Variable
+    
+    let sessionManager : SessionManager = SessionManager()
+    let oauthHandler : OAuth2Handler = OAuth2Handler(
+        clientID: "1",
+        baseURLString: TemProvideRouter.baseURLString,
+        accessToken: Defaults[.accessToken] ?? "",
+        refreshToken: Defaults[.refreshToken] ?? ""
+    )
 
 }
 extension NetworkManager {
     
-    static func callServer(with_request request: URLRequestConvertible, completionHandler: @escaping (Result<[String:Any]>) -> Void){
+     func callServer(with_request request: URLRequestConvertible, completionHandler: @escaping (Result<[String:Any]>) -> Void){
         
-        Alamofire.request(request).responseJSON { response in
+        sessionManager.request(request).validate().responseJSON { response in
             if let errorData = response.result.error {
                 completionHandler(.Failure(errorData))
                 return

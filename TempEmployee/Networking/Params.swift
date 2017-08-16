@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 
 class Params {
     
-    public static func paramsForLogin(email : String = "admin@train4security.com" , password:String) -> [String:Any] {
+    public static func paramsForLogin(email : String = "admin@train4security.com" , password:String, token:String = "") -> [String:Any] {
         
         
         
@@ -20,7 +20,8 @@ class Params {
             "password": password,
             "client_id": "1",
             "client_secret": "test",
-            "grant_type": "password"
+            "grant_type": "password",
+            "device_token":token
             ]
     }
     
@@ -80,6 +81,14 @@ class Params {
             "client_secret": "test",
             "grant_type": "refresh_token",
             "refresh_token": Defaults[.refreshToken] ?? ""
+        ]
+        
+    }
+    
+    public static func paramsForUpdatingFCMToken(token:String)-> [String:Any]{
+        
+        return [
+            "device_token":token
         ]
         
     }

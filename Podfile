@@ -23,6 +23,10 @@ target 'TempEmployee' do
   pod 'CircleProgressBar', '~> 0.32’
   # Pods for SpringAnimation
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  
   target 'TempEmployeeTests' do
     inherit! :search_paths
     # Pods for testing

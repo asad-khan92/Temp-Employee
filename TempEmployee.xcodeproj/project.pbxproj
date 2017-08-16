@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0530661D1F42060A005760C5 /* OAuth2Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530661C1F42060A005760C5 /* OAuth2Handler.swift */; };
+		05D5128B1F43255E00F94419 /* FCMTokenUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */; };
+		05D5128E1F432F7500F94419 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05D5128D1F432F7500F94419 /* GoogleService-Info.plist */; };
 		42A4CAE20C415842B34000A4 /* Pods_TempEmployeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A105EABEDE02DD73324536 /* Pods_TempEmployeeTests.framework */; };
 		47330B921EE8102700A6F610 /* ShiftDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47330B911EE8102700A6F610 /* ShiftDetailController.swift */; };
 		475C47B41EEFEB1E009B55F1 /* AddShiftTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475C47B31EEFEB1E009B55F1 /* AddShiftTabController.swift */; };
@@ -126,6 +129,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0530661C1F42060A005760C5 /* OAuth2Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2Handler.swift; sourceTree = "<group>"; };
+		05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCMTokenUpdateService.swift; sourceTree = "<group>"; };
+		05D5128C1F43283400F94419 /* Temployer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Temployer.entitlements; sourceTree = "<group>"; };
+		05D5128D1F432F7500F94419 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E9CA7399729C01E603137DA /* Pods-TempEmployeeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempEmployeeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TempEmployeeUITests/Pods-TempEmployeeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		464A6F47A0A69193ED11BC27 /* Pods-TempEmployeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempEmployeeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TempEmployeeTests/Pods-TempEmployeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47330B911EE8102700A6F610 /* ShiftDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftDetailController.swift; sourceTree = "<group>"; };
@@ -266,6 +273,7 @@
 		477726191EDECBC400ACFBCD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				0530661C1F42060A005760C5 /* OAuth2Handler.swift */,
 				476515C81EEFF766008675E1 /* ShiftsService.swift */,
 				477726201EDECBF800ACFBCD /* LoginService.swift */,
 				4777261C1EDECBE100ACFBCD /* Params.swift */,
@@ -274,6 +282,7 @@
 				477980ED1EE6D80300855AED /* LicenceService.swift */,
 				4778ACF11EE8A0E1004D834E /* CreateShiftService.swift */,
 				47F05FEB1EE987C400353CDD /* GooglePalces.swift */,
+				05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */,
 				479B29F21EED971800075247 /* RatingService.swift */,
 			);
 			path = Networking;
@@ -357,6 +366,7 @@
 		47881CB81EDC5E6300FEC0EE /* TempEmployee */ = {
 			isa = PBXGroup;
 			children = (
+				05D5128C1F43283400F94419 /* Temployer.entitlements */,
 				477A0B851EE8895E00C1A32D /* Models */,
 				478619721EDF4B9500870F12 /* Views */,
 				4786196A1EDF3E1F00870F12 /* TableViewCells */,
@@ -366,6 +376,7 @@
 				478EB9AC1EDD85C8003CC1C0 /* Extensions */,
 				47881CB91EDC5E6300FEC0EE /* AppDelegate.swift */,
 				47881CBB1EDC5E6300FEC0EE /* ViewController.swift */,
+				05D5128D1F432F7500F94419 /* GoogleService-Info.plist */,
 				475FDA801EE2DB5E00BC117C /* AddShift.storyboard */,
 				47881CBD1EDC5E6300FEC0EE /* Main.storyboard */,
 				4791C97A1EDCAA7C0028972A /* ShowCase.storyboard */,
@@ -583,6 +594,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 8YDC93EE3T;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					47881CC91EDC5E6300FEC0EE = {
 						CreatedOnToolsVersion = 8.1;
@@ -662,6 +678,7 @@
 				478EB9D51EDD9189003CC1C0 /* HalisR-Bold.otf in Resources */,
 				478EB9D41EDD9189003CC1C0 /* HalisR-Black.otf in Resources */,
 				4791C97E1EDCAA7C0028972A /* ShowCase.storyboard in Resources */,
+				05D5128E1F432F7500F94419 /* GoogleService-Info.plist in Resources */,
 				475FDA7F1EE2D5B300BC117C /* HeaderView.xib in Resources */,
 				478EB9F11EDD9189003CC1C0 /* Lato-Regular.ttf in Resources */,
 			);
@@ -707,9 +724,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TempEmployee/Pods-TempEmployee-resources.sh",
+				"${PODS_ROOT}/Intercom/Intercom/Intercom.framework/Versions/A/Resources/Intercom.bundle",
+				"${PODS_ROOT}/Intercom/Intercom/Intercom.framework/Versions/A/Resources/IntercomTranslations.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -722,9 +743,44 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TempEmployee/Pods-TempEmployee-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BWWalkthrough/BWWalkthrough.framework",
+				"${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JVFloatLabeledTextField/JVFloatLabeledTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BWWalkthrough.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JVFloatLabeledTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -737,13 +793,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TempEmployeeUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		46E51919A33F9985D7774554 /* [CP] Embed Pods Frameworks */ = {
@@ -782,13 +841,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TempEmployee-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8F05ABAEB80B5029E35E445C /* [CP] Check Pods Manifest.lock */ = {
@@ -797,13 +859,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TempEmployeeTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F0DDFA45A3D5517C50869D32 /* [CP] Copy Pods Resources */ = {
@@ -831,12 +896,14 @@
 				477A0B841EE8854F00C1A32D /* BillViewController.swift in Sources */,
 				47F05FEA1EE983C400353CDD /* Location.swift in Sources */,
 				47F05FE91EE983C400353CDD /* MKMapViewExtension.swift in Sources */,
+				05D5128B1F43255E00F94419 /* FCMTokenUpdateService.swift in Sources */,
 				478EB9A41EDD85C3003CC1C0 /* UIStoryboard.swift in Sources */,
 				479B29F31EED971800075247 /* RatingService.swift in Sources */,
 				479D4F8B1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
 				478EB9A81EDD85C3003CC1C0 /* UIImage.swift in Sources */,
 				479C5ECF1EE4874500090094 /* AddShiftController.swift in Sources */,
 				4791C97D1EDCAA7C0028972A /* MyCustomPageViewController.swift in Sources */,
+				0530661D1F42060A005760C5 /* OAuth2Handler.swift in Sources */,
 				475DFF5E1EE5B1E4001B8229 /* DateRange.swift in Sources */,
 				4778ACF21EE8A0E1004D834E /* CreateShiftService.swift in Sources */,
 				47B6C8521EEF2E0E00175232 /* CGFloatExtension.swift in Sources */,
@@ -1030,12 +1097,13 @@
 			baseConfigurationReference = 48451DB79C1071DE42388965 /* Pods-TempEmployee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TempEmployee/Temployer.entitlements;
 				DEVELOPMENT_TEAM = 8YDC93EE3T;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TempEmployee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
 				PRODUCT_NAME = Temployer;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1047,12 +1115,13 @@
 			baseConfigurationReference = D7636ACE8DEF07F704C62F92 /* Pods-TempEmployee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TempEmployee/Temployer.entitlements;
 				DEVELOPMENT_TEAM = 8YDC93EE3T;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TempEmployee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
 				PRODUCT_NAME = Temployer;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;

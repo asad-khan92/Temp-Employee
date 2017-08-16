@@ -12,7 +12,7 @@ struct RateService{
     
     func post(shift:Shift , rating:Int, review:String ,completionHandler: @escaping (Result<Meta> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.postRating(shift.assigned_job_seeker_id!, shift.id,rating, review), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.postRating(shift.assigned_job_seeker_id!, shift.id,rating, review), completionHandler: {result in
             
             switch result {
                 

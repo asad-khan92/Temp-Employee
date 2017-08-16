@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyUserDefaults
+import Firebase
 
 enum TemProvideRouter: URLRequestConvertible {
     
@@ -27,6 +28,7 @@ enum TemProvideRouter: URLRequestConvertible {
         case repostShift(Int)
         case postRating(Int,Int,Int,String) // jobseeker ID, shift ID, Rating Int, Review text
         case refreshToken()
+        case updateFCMToken(token : String?)
   func asURLRequest() throws -> URLRequest {
    
     // create a variable of type HTTPMethod to set Api call type
@@ -39,7 +41,7 @@ enum TemProvideRouter: URLRequestConvertible {
         return .post
       case .deleteShift:
         return .delete
-      case .update,.repostShift:
+      case .update,.repostShift,.updateFCMToken:
         return .put
       }
     }
@@ -53,7 +55,7 @@ enum TemProvideRouter: URLRequestConvertible {
       case .getSIALicence:
         return nil
       case .login(let email, let password):
-        return (Params.paramsForLogin(email: email, password: password))
+        return (Params.paramsForLogin(email: email, password: password, token: Messaging.messaging().fcmToken!))
       case .create(let shift),.update(let shift):
         return (Params.paramsForPostShift(data: shift))
       case .postSlotId(_ , let slotID):
@@ -63,6 +65,9 @@ enum TemProvideRouter: URLRequestConvertible {
         
       case .refreshToken:
         return (Params.paramsForRefreshingToken())
+        
+      case .updateFCMToken(let str):
+        return Params.paramsForUpdatingFCMToken(token:str!)
       
       }
     }()
@@ -94,7 +99,8 @@ enum TemProvideRouter: URLRequestConvertible {
         
       case .refreshToken:
         relativePath = Constants.EndPoints.Post.refreshToken
-        
+      case .updateFCMToken:
+         relativePath = Constants.EndPoints.Put.updateFcmToken
       }
         
         var url = URL(string: TemProvideRouter.baseURLString)!

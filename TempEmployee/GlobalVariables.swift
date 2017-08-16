@@ -16,6 +16,7 @@ struct Constants {
         
         static let shiftPosted: String                  = "shiftPostedSuccessfully"
         static let refreshShiftsList: String            = "refreshShifts"
+        static let pushNotificationReceived: String     = "pushReceived"
     }
     
     struct EndPoints {
@@ -34,6 +35,9 @@ struct Constants {
             static let repostShift : String                 = "employers/repostShift"
             static let licences : String                    = "licenseTypes"
             static let TaxAndCharges :String                = "settings"
+        }
+        struct Put {
+            static let updateFcmToken                   = "deviceToken"
         }
         /**
          Repeats a string `times` times.

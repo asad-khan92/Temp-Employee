@@ -13,9 +13,9 @@ import SDWebImage
  
 class ShiftsCell: UITableViewCell {
     
-    @IBOutlet weak var shiftCompletedLabel: UILabel!
+    //@IBOutlet weak var shiftCompletedLabel: UILabel!
     @IBOutlet weak var progressBar: CircleProgressBar!
-    @IBOutlet weak var completedView: UIView!
+    //@IBOutlet weak var completedView: UIView!
     @IBOutlet weak var deleteLabel: UILabel!
     @IBOutlet weak var editLabel: UILabel!
     @IBOutlet weak var viewLabel: UILabel!
@@ -153,7 +153,7 @@ class ShiftsCell: UITableViewCell {
             self.countDown = 60 - component.minute! // difference in minutes
             self.updateTimer() // call once before timer starts updating value
             self.attachTimer() // also set shiftPostedDate
-            self.completedView.isHidden = true
+            //self.completedView.isHidden = true
             self.blueTickMark.isHidden = true
         }else{
             
@@ -163,7 +163,7 @@ class ShiftsCell: UITableViewCell {
             self.repostButton.isHidden = false
             self.shiftStatus.isHidden = true
             self.shiftApplicantImage.isHidden = true
-            self.completedView.isHidden = true
+            //self.completedView.isHidden = true
             self.blueTickMark.isHidden = true
         }
 
@@ -182,7 +182,7 @@ class ShiftsCell: UITableViewCell {
             self.progressTimer?.invalidate()
             self.progressBar.isHidden = true
             self.repostButton.isHidden = false
-            self.completedView.isHidden = true
+            //self.completedView.isHidden = true
             return
         }
         self.countDown -= 1

@@ -44,7 +44,7 @@ struct CreateShift {
     
     func getCharges(completionHandler: @escaping (Result<Charges> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.taxesAndCharges, completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.taxesAndCharges, completionHandler: {result in
             
             switch result {
                 
@@ -72,7 +72,7 @@ struct CreateShift {
     
     func createShift(shift:Shift ,completionHandler: @escaping (Result<Meta> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.create(shift), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.create(shift), completionHandler: {result in
             
             switch result {
                 
@@ -99,7 +99,7 @@ struct CreateShift {
     
     func updateShift(shift:Shift ,completionHandler: @escaping (Result<Meta> ) -> Void) {
         
-        NetworkManager.callServer(with_request: TemProvideRouter.update(shift), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.update(shift), completionHandler: {result in
             
             switch result {
                 

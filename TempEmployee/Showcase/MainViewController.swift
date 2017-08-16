@@ -12,6 +12,7 @@ import SwiftValidator
 import SwiftyUserDefaults
 import PKHUD
 import Intercom
+import Firebase
 
 class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate {
 
