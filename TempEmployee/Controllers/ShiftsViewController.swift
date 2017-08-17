@@ -77,7 +77,7 @@ class ShiftsViewController: UIViewController {
         
         
         //self.fetchShifts(service: ShiftsService(),showIndicator: false)
-        
+         NotificationCenter.default.addObserver(self, selector: #selector(self.handleRefresh(_:)), name: NSNotification.Name(rawValue: Constants.Notifications.pushNotificationReceived), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleRefresh(_:)), name: NSNotification.Name(rawValue: Constants.Notifications.shiftPosted), object: nil)
         
@@ -124,7 +124,7 @@ class ShiftsViewController: UIViewController {
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         // Do some reloading of data and update the table view's data source
         // Fetch more objects from a web service, for example...
-        
+        self.tabBarController?.selectedIndex = 0 
         self.fetchShifts(service: ShiftsService(),showIndicator: false)
         
     }

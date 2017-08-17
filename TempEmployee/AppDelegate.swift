@@ -119,7 +119,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         let data = response.notification.request.content.userInfo
         
-        NotificationCenter.default.post(name:NSNotification.Name(rawValue: Constants.Notifications.pushNotificationReceived), object: nil, userInfo: data)
+        self.showAlertController(with: "Alert", body: "")
+        
         
     }
     
@@ -134,6 +135,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     }
     
     /*------------------------------------------------Custom Methods-------------------------------------------------*/
+    
+    
     
     func registerForRemoteNotification(_ application : UIApplication){
         
@@ -200,26 +203,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         navigationController?.setViewControllers([controller], animated: false)
     }
     
-    func refreshToken()  {
+    
+    func showAlertController(with title : String, body:String) {
         
-        Intercom.registerUser(withEmail: Defaults[.email]!)
-        LoginService().refreshToken(completionHandler:{result in
+        let controller =   UIAlertController.init(title: title, message: body, preferredStyle: .alert)
+        
+        let action = UIAlertAction.init(title: "OK", style: .default) { (action) in
             
-            switch result {
-            case .Success(let user):
-                
-                //  print("User access token = \(user.access_token?.characters.count)")
-                if user.access_token != nil{
-                    Defaults[.accessToken] = user.access_token
-                    Defaults[.accessTokenExpiresIn] = user.expires_in!
-                    Defaults[.refreshToken] = user.refresh_token!
-                }
-                
-            case .Failure(let error):
-                print(error)
-            }
+
+             NotificationCenter.default.post(name:NSNotification.Name(rawValue: Constants.Notifications.pushNotificationReceived), object: nil, userInfo: nil)
             
-        })
+        }
+        controller.addAction(action)
+        
+        self.navigationController?.topViewController?.present(controller, animated: true, completion: nil)
     }
+    
+    
 }
 
