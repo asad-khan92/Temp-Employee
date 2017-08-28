@@ -114,7 +114,10 @@ enum TemProvideRouter: URLRequestConvertible {
     urlRequest.httpMethod = method.rawValue
     urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
     if Defaults[.hasUserRegistered]{
-        urlRequest.setValue("Bearer \(Defaults[.accessToken]!)", forHTTPHeaderField: "Authorization")
+        
+        let token = "Bearer " + Defaults[.accessToken]!
+        print(token)
+        urlRequest.setValue(token, forHTTPHeaderField: "Authorization")
     }
     var encoding : ParameterEncoding
     

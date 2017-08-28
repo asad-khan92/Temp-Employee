@@ -28,10 +28,11 @@ class AddShiftCell: UITableViewCell {
     @IBOutlet weak var hoursMinusButton: UIButton!
     @IBOutlet weak var dateDropDownButton: UIButton!
     @IBOutlet weak var startTimeDropDownButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
+    //@IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var addLicenceButton: UIButton!
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var addressErrorLabel: UILabel!
     @IBOutlet weak var rollErrorLabel: UILabel!
     @IBOutlet weak var requiredLicenceErrorLabel: UILabel!

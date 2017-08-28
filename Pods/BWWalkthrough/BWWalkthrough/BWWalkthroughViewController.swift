@@ -197,7 +197,7 @@ import UIKit
         }
     }
     
-    fileprivate func gotoPage(_ page:Int){
+    open func gotoPage(_ page:Int){
         
         if page < controllers.count{
             var frame = scrollview.frame

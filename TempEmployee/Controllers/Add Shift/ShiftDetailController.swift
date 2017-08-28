@@ -56,17 +56,17 @@ class ShiftDetailController: UIViewController {
         validator.validate(self)
     }
 
-    @IBAction func cancelPressed(_ sender: Any) {
-       let _ = self.navigationController?.popToRootViewController(animated: true)
+    @IBAction func backButtonPressed(_ sender: Any) {
+       let _ = self.navigationController?.popViewController(animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.siteInstructionField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
+        self.siteInstructionField.placeholderFont = UIFont.init(name: "HalisR-Regular", size: 12)!
         //self.specialInfoField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
-        self.detailsField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
-        self.contactNumberField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
-        self.reportingField.placeholderFont = UIFont.init(name: "Lato-Light", size: 12)!
+        self.detailsField.placeholderFont = UIFont.init(name: "HalisR-Regular", size: 12)!
+        self.contactNumberField.placeholderFont = UIFont.init(name: "HalisR-Regular", size: 12)!
+        self.reportingField.placeholderFont = UIFont.init(name: "HalisR-Regular", size: 12)!
         
         if self.isEditingShift!{
             

@@ -109,9 +109,10 @@ class BillViewController: UIViewController {
             self.postShift(service: CreateShift())
         }
     }
-    @IBAction func cancelPressed(_ sender: Any) {
+    @IBAction func backButtonPressed(_ sender: Any) {
         
-        self.popToRoot()
+        let _ = self.navigationController?.popViewController(animated: true)
+        //self.popToRoot()
     }
     func removeCurrencySignAndConvertToDouble(str : String) -> Double {
        return Double(str.replacingOccurrences(of: "£", with: ""))!

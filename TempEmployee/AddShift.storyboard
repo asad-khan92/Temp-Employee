@@ -16,11 +16,17 @@
         <array key="HalisR-Bold.otf">
             <string>HalisR-Bold</string>
         </array>
+        <array key="HalisR-Regular.otf">
+            <string>HalisR-Regular</string>
+        </array>
+        <array key="HalisR-SBlack.otf">
+            <string>HalisR-SBlack</string>
+        </array>
+        <array key="HalisR-SRegular.otf">
+            <string>HalisR-SRegular</string>
+        </array>
         <array key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
-        </array>
-        <array key="Lato-Light.ttf">
-            <string>Lato-Light</string>
         </array>
         <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
@@ -46,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD SHIFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bah-wj-FFs">
-                                <rect key="frame" x="127.5" y="46" width="122" height="29"/>
+                                <rect key="frame" x="126.5" y="40" width="122" height="29"/>
                                 <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -69,7 +75,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="481"/>
                                                     <subviews>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xvV-ce-1tu" customClass="UnderLineTextField" customModule="TempEmployeeTests" customModuleProvider="target">
-                                                            <rect key="frame" x="200" y="297" width="73" height="30"/>
+                                                            <rect key="frame" x="200" y="305" width="73" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="73" id="Crh-34-aAo"/>
                                                                 <constraint firstAttribute="height" constant="30" id="WLa-aq-t7p"/>
@@ -79,7 +85,7 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkA-cv-trl">
-                                                            <rect key="frame" x="272" y="297" width="33" height="29"/>
+                                                            <rect key="frame" x="272" y="305" width="33" height="29"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="33" id="gVQ-e5-ice"/>
@@ -88,7 +94,7 @@
                                                             <state key="normal" image="Minus Icon"/>
                                                         </button>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SIA Required Licence" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Vfk-tt-qwT" customClass="UnderLineTextField" customModule="TempEmployeeTests" customModuleProvider="target">
-                                                            <rect key="frame" x="39" y="174" width="298" height="30"/>
+                                                            <rect key="frame" x="39" y="180" width="298" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="4w0-ji-1Tz"/>
                                                             </constraints>
@@ -97,54 +103,68 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PC-uK-A7K">
-                                                            <rect key="frame" x="39" y="20" width="56" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                                                            <color key="textColor" red="0.38431372549019605" green="0.59215686274509804" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="39" y="20" width="56.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
+                                                            <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yvb-iD-IL3" customClass="UnderLineTextField" customModule="TempEmployeeTests" customModuleProvider="target">
-                                                            <rect key="frame" x="39" y="359" width="97" height="30"/>
+                                                            <rect key="frame" x="39" y="369" width="97" height="30"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxd-Tg-xav">
-                                                            <rect key="frame" x="39" y="359" width="137" height="30"/>
+                                                            <rect key="frame" x="39" y="369" width="112" height="30"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="GGI-LG-94N"/>
-                                                                <constraint firstAttribute="width" constant="137" id="p4V-ej-Y1p"/>
                                                             </constraints>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                                             <state key="normal" image="Drop Down Icon"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF3-w5-bqD">
-                                                            <rect key="frame" x="39" y="103" width="31.5" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                                                            <color key="textColor" red="0.38431372549019605" green="0.59215686274509804" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="39" y="105" width="31.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
+                                                            <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tV8-Q8-F91">
-                                                            <rect key="frame" x="39" y="282" width="67.5" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                                                            <color key="textColor" red="0.38431372549019605" green="0.59215686274509804" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="39" y="288" width="70.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
+                                                            <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmi-YZ-wlI">
-                                                            <rect key="frame" x="39" y="344" width="29.5" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                                                            <color key="textColor" red="0.38431372549019605" green="0.59215686274509804" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="39" y="352" width="30.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HalisR-SRegular" family="Halis R" pointSize="12"/>
+                                                            <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-av-QVH">
-                                                            <rect key="frame" x="38.5" y="432" width="297" height="34"/>
+                                                            <rect key="frame" x="38.5" y="437" width="297" height="29"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-yA-fdh">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="136" height="34"/>
-                                                                    <state key="normal" image="Cancel Button"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="136" height="29"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    <fontDescription key="fontDescription" name="HalisR-SBlack" family="Halis R" pointSize="13"/>
+                                                                    <state key="normal" title="BACK">
+                                                                        <color key="titleColor" red="1" green="0.50980392159999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="1" green="0.50980392159999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="16"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNt-sx-rpo">
-                                                                    <rect key="frame" x="161" y="0.0" width="136" height="34"/>
+                                                                    <rect key="frame" x="161" y="0.0" width="136" height="29"/>
                                                                     <color key="backgroundColor" red="0.96078431372549022" green="0.42352941176470588" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="136" id="L4H-5t-4rN"/>
@@ -153,29 +173,32 @@
                                                                     <state key="normal" title="NEXT"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="18"/>
+                                                                            <real key="value" value="16"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="Fmp-yA-fdh" firstAttribute="width" secondItem="eNt-sx-rpo" secondAttribute="width" id="Kfn-CR-dnB"/>
+                                                            </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LICENCE REQUIRED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjU-i5-jh2">
-                                                            <rect key="frame" x="39" y="159" width="114.5" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
+                                                            <rect key="frame" x="39" y="163" width="116.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
                                                             <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line Image" translatesAutoresizingMaskIntoConstraints="NO" id="rZa-J9-74X">
-                                                            <rect key="frame" x="39" y="83" width="298" height="2"/>
+                                                            <rect key="frame" x="39" y="85" width="298" height="2"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line Image" translatesAutoresizingMaskIntoConstraints="NO" id="eDB-1Y-AzY">
-                                                            <rect key="frame" x="39" y="139" width="298" height="2"/>
+                                                            <rect key="frame" x="39" y="143" width="298" height="2"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="2" id="HiT-94-Tvb"/>
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89h-5Q-EaR">
-                                                            <rect key="frame" x="39" y="174" width="298" height="32"/>
+                                                            <rect key="frame" x="39" y="180" width="298" height="32"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="32" id="buy-bS-dDE"/>
@@ -183,7 +206,7 @@
                                                             <state key="normal" image="Plus Icon"/>
                                                         </button>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Isa-xx-3QG">
-                                                            <rect key="frame" x="39" y="118" width="298" height="20"/>
+                                                            <rect key="frame" x="39" y="122" width="298" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="nxi-yY-jit"/>
                                                             </constraints>
@@ -192,20 +215,20 @@
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAr-1g-INf">
-                                                            <rect key="frame" x="39" y="219" width="316" height="60"/>
+                                                            <rect key="frame" x="39" y="225" width="316" height="60"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="60" id="OZK-cT-Yfh"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOURS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nir-Q0-hNe">
-                                                            <rect key="frame" x="294.5" y="282" width="42.5" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                                                            <color key="textColor" red="0.38431372549019605" green="0.59215686274509804" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="293.5" y="288" width="43.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
+                                                            <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4xu-93-WaQ" customClass="UnderLineTextField" customModule="TempEmployeeTests" customModuleProvider="target">
-                                                            <rect key="frame" x="39" y="296" width="97" height="30"/>
+                                                            <rect key="frame" x="39" y="304" width="97" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="tim-r4-oez"/>
                                                                 <constraint firstAttribute="width" constant="97" id="zRE-9f-DH5"/>
@@ -215,29 +238,28 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE PER HOUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azu-dR-YIY">
-                                                            <rect key="frame" x="237" y="344" width="100" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
+                                                            <rect key="frame" x="235" y="352" width="102" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
                                                             <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaP-NU-T2f">
-                                                            <rect key="frame" x="39" y="296" width="137" height="30"/>
+                                                            <rect key="frame" x="39" y="304" width="112" height="30"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="Bc8-y6-DUx"/>
-                                                                <constraint firstAttribute="width" constant="137" id="l9o-Zs-rGw"/>
                                                             </constraints>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                                                             <state key="normal" image="Drop Down Icon"/>
                                                         </button>
                                                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5w-dr-gty" customClass="UnderLineTextField" customModule="TempEmployeeTests" customModuleProvider="target">
-                                                            <rect key="frame" x="200" y="359" width="73" height="30"/>
+                                                            <rect key="frame" x="200" y="369" width="73" height="30"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssc-pT-iwX">
-                                                            <rect key="frame" x="272" y="359" width="33" height="29"/>
+                                                            <rect key="frame" x="272" y="369" width="33" height="29"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="29" id="Lce-TL-e4T"/>
@@ -246,7 +268,7 @@
                                                             <state key="normal" image="Minus Icon"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cN-X8-CoZ">
-                                                            <rect key="frame" x="304" y="359" width="33" height="29"/>
+                                                            <rect key="frame" x="304" y="369" width="33" height="29"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="33" id="PyX-K3-zgK"/>
@@ -255,7 +277,7 @@
                                                             <state key="normal" image="Plus Icon"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g8-WU-fJo">
-                                                            <rect key="frame" x="304" y="297" width="33" height="29"/>
+                                                            <rect key="frame" x="304" y="305" width="33" height="29"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="29" id="OW6-IW-jCp"/>
@@ -270,43 +292,43 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5o-jN-yV6">
-                                                            <rect key="frame" x="337" y="103" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="337" y="105" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQk-KL-3GZ">
-                                                            <rect key="frame" x="337" y="159" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="337" y="163" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbZ-vm-qYH">
-                                                            <rect key="frame" x="39" y="324" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="39" y="332" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y9-nE-syV">
-                                                            <rect key="frame" x="39" y="389" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="39" y="399" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEK-3P-kqu">
-                                                            <rect key="frame" x="337" y="326" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="337" y="334" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIi-3G-99p">
-                                                            <rect key="frame" x="337" y="387" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="337" y="397" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjc-iE-kD4" customClass="AutoCompleteTextField" customModule="TempEmployeeTests" customModuleProvider="target">
-                                                            <rect key="frame" x="39" y="35.5" width="298" height="47"/>
+                                                            <rect key="frame" x="39" y="37.5" width="298" height="47"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="47" id="YIn-Ct-L2g"/>
                                                             </constraints>
@@ -315,8 +337,8 @@
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you can add more than 1 licence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5F-bw-Lzc">
-                                                            <rect key="frame" x="39" y="202.5" width="175.5" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
+                                                            <rect key="frame" x="39" y="208.5" width="181.5" height="16"/>
+                                                            <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
                                                             <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -353,6 +375,8 @@
                                                         <constraint firstItem="8PC-uK-A7K" firstAttribute="top" secondItem="nTJ-1L-auz" secondAttribute="top" constant="20" id="Rf4-QO-Yp3"/>
                                                         <constraint firstItem="89h-5Q-EaR" firstAttribute="leading" secondItem="nTJ-1L-auz" secondAttribute="leading" constant="39" id="SQf-yv-Mwx"/>
                                                         <constraint firstItem="3cN-X8-CoZ" firstAttribute="top" secondItem="E5w-dr-gty" secondAttribute="top" id="T3J-xm-m0J"/>
+                                                        <constraint firstItem="sxd-Tg-xav" firstAttribute="width" secondItem="Yvb-iD-IL3" secondAttribute="width" constant="15" id="TuR-6k-EEy"/>
+                                                        <constraint firstItem="XaP-NU-T2f" firstAttribute="width" secondItem="4xu-93-WaQ" secondAttribute="width" constant="15" id="U7P-JP-QYo"/>
                                                         <constraint firstItem="ZQk-KL-3GZ" firstAttribute="trailing" secondItem="89h-5Q-EaR" secondAttribute="trailing" id="Ue0-Z7-qa2"/>
                                                         <constraint firstItem="E5w-dr-gty" firstAttribute="width" secondItem="xvV-ce-1tu" secondAttribute="width" id="WPn-wS-WSD"/>
                                                         <constraint firstItem="X5o-jN-yV6" firstAttribute="top" secondItem="PF3-w5-bqD" secondAttribute="top" id="XMY-QC-TGy"/>
@@ -420,7 +444,7 @@
                                         <connections>
                                             <outlet property="addLicenceButton" destination="89h-5Q-EaR" id="JCO-sz-qbI"/>
                                             <outlet property="addressErrorLabel" destination="MtY-zO-ZYI" id="aGY-GT-7o6"/>
-                                            <outlet property="cancelButton" destination="Fmp-yA-fdh" id="Owf-Sj-qAq"/>
+                                            <outlet property="backButton" destination="Fmp-yA-fdh" id="jhJ-PP-U69"/>
                                             <outlet property="dateDropDownButton" destination="sxd-Tg-xav" id="Z5j-HO-fL6"/>
                                             <outlet property="dateErrorLabel" destination="8Y9-nE-syV" id="mb4-2C-dc3"/>
                                             <outlet property="dateField" destination="Yvb-iD-IL3" id="2VN-A1-E3W"/>
@@ -451,7 +475,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bah-wj-FFs" firstAttribute="centerX" secondItem="ZOf-2t-FIn" secondAttribute="centerX" id="5uG-4K-wiK"/>
-                            <constraint firstItem="bah-wj-FFs" firstAttribute="top" secondItem="fqH-GU-wOc" secondAttribute="bottom" constant="26" id="AUm-3k-5Gj"/>
+                            <constraint firstItem="bah-wj-FFs" firstAttribute="top" secondItem="fqH-GU-wOc" secondAttribute="bottom" constant="20" id="AUm-3k-5Gj"/>
                             <constraint firstItem="wGQ-2y-wrd" firstAttribute="top" secondItem="ZOf-2t-FIn" secondAttribute="top" id="Ita-mC-cV7"/>
                             <constraint firstAttribute="trailing" secondItem="wGQ-2y-wrd" secondAttribute="trailing" id="LUD-l8-rA8"/>
                             <constraint firstItem="wGQ-2y-wrd" firstAttribute="height" secondItem="yNs-B7-V0F" secondAttribute="height" id="Mq5-CV-ZFn"/>
@@ -498,17 +522,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Hr9-Va-njQ">
-                                <rect key="frame" x="39" y="618" width="297" height="34"/>
+                                <rect key="frame" x="39" y="624" width="297" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDX-JS-Sje">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="34"/>
-                                        <state key="normal" image="Cancel Button"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="28"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Black" family="Halis R" pointSize="12"/>
+                                        <state key="normal" title="BACK">
+                                            <color key="titleColor" red="1" green="0.50980392159999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.50980392159999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="cancelPressed:" destination="e5c-9a-6g0" eventType="touchUpInside" id="GIb-qF-PDc"/>
+                                            <action selector="backButtonPressed:" destination="e5c-9a-6g0" eventType="touchUpInside" id="7X5-Ek-ZbW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsU-KM-3iy">
-                                        <rect key="frame" x="161" y="0.0" width="136" height="34"/>
+                                        <rect key="frame" x="161" y="0.0" width="136" height="28"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.42352941179999998" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="136" id="zEL-Wg-eWa"/>
@@ -517,7 +555,7 @@
                                         <state key="normal" title="NEXT"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="18"/>
+                                                <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -526,6 +564,9 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IDX-JS-Sje" firstAttribute="width" secondItem="WsU-KM-3iy" secondAttribute="width" id="VaQ-dR-pnm"/>
+                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T77-u5-Ldj" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                                 <rect key="frame" x="39.5" y="116" width="296" height="280"/>
@@ -536,7 +577,7 @@
                                             <constraint firstAttribute="height" constant="49" id="01h-dI-ggL"/>
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -546,13 +587,13 @@
                                                 <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" red="0.84313725490000002" green="0.8980392157" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -566,14 +607,14 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="REPORTING TO"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="TO"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="REPORTING TO"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fn-Fv-kdK">
                                         <rect key="frame" x="295.5" y="0.0" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -583,7 +624,7 @@
                                             <constraint firstAttribute="height" constant="49" id="VBv-lf-bUy"/>
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="phonePad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -593,13 +634,13 @@
                                                 <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" red="0.84313725490196079" green="0.89803921568627454" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -613,14 +654,14 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="CONTACT NUMBER"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="NUMBER"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="CONTACT NUMBER"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZv-lf-ZPZ">
                                         <rect key="frame" x="296" y="69" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -630,7 +671,7 @@
                                             <constraint firstAttribute="height" constant="49" id="lFi-WP-QHr"/>
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -640,13 +681,13 @@
                                                 <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" red="0.84313725490000002" green="0.8980392157" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -660,14 +701,14 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="DETAILS"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="DETAILS"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="DETAILS"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ab-xA-lHS">
                                         <rect key="frame" x="296" y="138" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -677,7 +718,7 @@
                                             <constraint firstAttribute="height" constant="49" id="xEj-2A-Igp"/>
                                         </constraints>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -687,34 +728,34 @@
                                                 <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" red="0.84313725490000002" green="0.8980392157" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                <real key="value" value="0.5"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="SITE INSTRUCTIONS"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="INSTRUCTIONS"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                <color key="value" red="0.69019607839999997" green="0.79607843140000001" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="INSTRUCTIONS"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0R-vN-H7H">
                                         <rect key="frame" x="295.5" y="207" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="12"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -794,7 +835,7 @@
                                 <rect key="frame" x="45" y="99" width="285" height="2"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR SHIFT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfG-kp-9QK">
-                                <rect key="frame" x="120.5" y="46" width="136" height="29"/>
+                                <rect key="frame" x="119.5" y="46" width="136" height="29"/>
                                 <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="22"/>
                                 <color key="textColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -860,18 +901,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3Ru-RJ-jTa">
-                                <rect key="frame" x="39" y="618" width="297" height="34"/>
+                                <rect key="frame" x="39" y="624" width="297" height="28"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3K-Q1-LKZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="34"/>
-                                        <state key="normal" image="Cancel Button"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="28"/>
+                                        <fontDescription key="fontDescription" name="HalisR-Black" family="Halis R" pointSize="12"/>
+                                        <state key="normal" title="BACK">
+                                            <color key="titleColor" red="1" green="0.50980392159999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.50980392159999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="cancelPressed:" destination="c6p-TZ-bRZ" eventType="touchUpInside" id="6iQ-ca-tPY"/>
-                                            <action selector="cancelPressed:" destination="e5c-9a-6g0" eventType="touchUpInside" id="BIf-rg-qja"/>
+                                            <action selector="backButtonPressed:" destination="c6p-TZ-bRZ" eventType="touchUpInside" id="kyT-Vb-a19"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFo-PJ-w7h">
-                                        <rect key="frame" x="161" y="0.0" width="136" height="34"/>
+                                        <rect key="frame" x="161" y="0.0" width="136" height="28"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.42352941179999998" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="136" id="lw0-NC-9rm"/>
@@ -880,7 +934,7 @@
                                         <state key="normal" title="GET COVERED"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="18"/>
+                                                <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -888,6 +942,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="d3K-Q1-LKZ" firstAttribute="width" secondItem="hFo-PJ-w7h" secondAttribute="width" id="xpc-71-rWf"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUR FEE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRh-ji-f2a">
                                 <rect key="frame" x="50" y="168.5" width="50" height="14.5"/>
@@ -1114,7 +1171,6 @@
     </scenes>
     <resources>
         <image name="Black Shade" width="375" height="196"/>
-        <image name="Cancel Button" width="136" height="34"/>
         <image name="Drop Down Icon" width="18" height="10"/>
         <image name="Line Image" width="272" height="2"/>
         <image name="Mask Group " width="375" height="667"/>

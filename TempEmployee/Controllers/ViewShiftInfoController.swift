@@ -128,18 +128,22 @@ class ViewShiftInfoController: UIViewController {
         }
         if let contactNumber = self.shift.jobSeeker?.phone!{
             
+            var stringURL : String
+            if contactNumber.hasPrefix("+") ||  contactNumber.hasPrefix("+44"){
+                
+                 let number = contactNumber.replacingOccurrences(of: "+", with: "")
+                 stringURL = "https://api.whatsapp.com/send?phone=\(number)&text=hello"
+            }else{
+                stringURL = "https://api.whatsapp.com/send?phone=44\(contactNumber)&text=hello"
+            }
             
-            let stringURL = "https://api.whatsapp.com/send?phone=\(contactNumber)&text=hello"
-            
-           
-             self.openSharedURl(str:stringURL , type: .whatsApp)
-            
-            
+            self.openSharedURl(str:stringURL , type: .whatsApp)
+        
+        
+  
         }
-        
-        
-    }
 
+    }
     func openSharedURl(str:String , type:ContactType) {
         
          let urlString = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)

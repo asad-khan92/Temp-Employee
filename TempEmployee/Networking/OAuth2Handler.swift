@@ -55,7 +55,7 @@ class OAuth2Handler: RequestAdapter, RequestRetrier {
     func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
         lock.lock() ; defer { lock.unlock() }
         
-        if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401 {
+        if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401  || response.statusCode == 400 {
             requestsToRetry.append(completion)
             
             if !isRefreshing {

@@ -24,13 +24,13 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presentWalkthrough()
+        
+       let timer =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(changePage), userInfo: nil, repeats: true)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       /* if needWalkthrough {
-            self.presentWalkthrough()
-        }*/
     }
 
     @IBAction func presentWalkthrough(){
@@ -62,6 +62,16 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
         // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
         validator.registerField(walkthrough.passwordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
 
+    }
+    
+    func changePage(){
+        
+        if self.walkthrough.currentPage == 2{
+            self.walkthrough.gotoPage(0)
+        }else{
+             self.walkthrough.gotoPage(self.walkthrough.currentPage + 1 )
+            
+        }
     }
 }
 

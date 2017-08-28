@@ -71,7 +71,7 @@ class AddShiftController: UIViewController {
         self.tableView.dataSource   = self
         self.tableView.delegate     = self
         self.mapView.delegate = self
-        self.FetchAllSIALicences(service: LicenceService())
+        
         
         centerMapOnLocation(location: initialLocation)
         
@@ -84,6 +84,9 @@ class AddShiftController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.FetchAllSIALicences(service: LicenceService())
+        
         if self.isEditingShift{
             
             self.price = Int((self.shift?.price_per_hour)!)
@@ -188,7 +191,7 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
         
         //cell.shiftStatus = shift.
         cell.nextButton.addTarget(self, action: #selector(nextButtonPressed),for: .touchUpInside)
-        cell.cancelButton.addTarget(self, action: #selector(cancelButtonPressed),for: .touchUpInside)
+        cell.backButton.addTarget(self, action: #selector(backButtonPressed),for: .touchUpInside)
         
         cell.addLicenceButton.addTarget(self, action: #selector(addLicence(_:)),for: .touchUpInside)
         
@@ -304,7 +307,7 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
         validator.validate(self)
     }
     
-    func cancelButtonPressed()  {
+    func backButtonPressed()  {
         self.clearPrefilledData()
         //let _ = self.navigationController?.popToRootViewController(animated: true)
         self.tabBarController?.selectedIndex = 0
@@ -513,7 +516,7 @@ extension AddShiftController{
     
     func FetchAllSIALicences(service:LicenceService) {
         
-        HUD.show(.progress,onView: self.view)
+        //HUD.show(.progress,onView: self.view)
         
         service.fetchSIALicence(with: {result in
             
@@ -521,7 +524,7 @@ extension AddShiftController{
                 
             case .Success(let response):
                 print(response)
-                HUD.flash(.success, delay: 0.0)
+                //HUD.flash(.success, delay: 0.0)
                 if response.success{
                     self.licences = response.licences
                 }else{

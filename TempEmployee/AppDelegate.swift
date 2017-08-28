@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         FirebaseApp.configure()
         
+       
         return true
     }
     
