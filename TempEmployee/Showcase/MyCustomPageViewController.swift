@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BWWalkthrough
 
 class MyCustomPageViewController: BWWalkthroughPageViewController {
 

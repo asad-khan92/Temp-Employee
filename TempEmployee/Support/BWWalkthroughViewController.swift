@@ -1,29 +1,29 @@
 /*
- The MIT License (MIT)
- 
- Copyright (c) 2015 Yari D'areglia @bitwaker
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
- */
+The MIT License (MIT)
+
+Copyright (c) 2015 Yari D'areglia @bitwaker
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 
 import UIKit
-
+import Spring
 // MARK: - Protocols -
 
 
@@ -39,8 +39,10 @@ import UIKit
     @objc optional func walkthroughRegisterButtonPressed()           // Called when "CREATE ACCOUNT" button is pressed
     @objc optional func walkthroughLoginButtonPressed()              // Called when "LOGIN" button is pressed
     
-    @objc optional func walkthroughGetBlowoutCoverButtonPressed()              // Called when "Get Blowout Cover" button is pressed
-    @objc optional func walkthroughForgetPasswordButtonPressed()              // Called when "Get Blowout Cover" button is pressed
+    @objc optional func walkthroughGetWorkButtonPressed()              // Called when "GET WORK" button is pressed
+    @objc optional func walkthroughForgotPasswordButtonPressed()              // Called when "FORGOT PASSWORD" button is pressed
+    
+    // @objc optional func walkthroughForgotPasswordButtonPressed()              // Called when "FORGOT PASSWORD" button is pressed
 }
 
 
@@ -59,7 +61,7 @@ import UIKit
     
     // MARK: - Public properties -
     
-    @IBInspectable var scrollViewZIndex:Int = 0;            // Note if you set this value via Attribute inspector it can only be an Integer (change it manually via User defined runtime attribute if you need a Float)
+     @IBInspectable var scrollViewZIndex:Int = 0;            // Note if you set this value via Attribute inspector it can only be an Integer (change it manually via User defined runtime attribute if you need a Float)
     
     
     weak open var delegate:BWWalkthroughViewControllerDelegate?
@@ -69,16 +71,11 @@ import UIKit
     @IBOutlet open var nextButton:UIButton?
     @IBOutlet open var prevButton:UIButton?
     @IBOutlet open var closeButton:UIButton?
-    @IBOutlet open var loginView: UIView!
-    
+    @IBOutlet open var closeButtonPressed: UIButton!
     @IBOutlet open var passwordField: UITextField!
-    @IBOutlet open var userNameField: UITextField!
+    @IBOutlet open var emailField: UITextField!
     
-    
-    @IBOutlet open var userNameErrorField: UILabel!
-    @IBOutlet open var passwordErrorLabel: UILabel!
-    
-    
+    @IBOutlet weak var loginView: SpringView!
     open var currentPage: Int {    // The index of the current page (readonly)
         get{
             let page = Int((scrollview.contentOffset.x / view.bounds.size.width))
@@ -98,12 +95,12 @@ import UIKit
             return self.controllers.count
         }
     }
-    
+    open var controllers = [UIViewController]()
     
     // MARK: - Private properties -
     
     open let scrollview = UIScrollView()
-    private var controllers = [UIViewController]()
+    
     private var lastViewConstraint: [NSLayoutConstraint]?
     
     
@@ -120,12 +117,13 @@ import UIKit
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    
+
     override open func viewDidLoad() {
         super.viewDidLoad()
         
         // Initialize UI Elements
-        
+           passwordField.isSecureTextEntry = true
+
         pageControl?.addTarget(self, action: #selector(BWWalkthroughViewController.pageControlDidTouch), for: UIControlEvents.touchUpInside)
         
         // Scrollview
@@ -180,21 +178,26 @@ import UIKit
         
         delegate?.walkthroughLoginButtonPressed?()
     }
-    @IBAction func getBlowoutCoverPressed(_ sender: UIButton) {
-        
-        delegate?.walkthroughGetBlowoutCoverButtonPressed?()
-    }
-    
-    @IBAction func forgotPasswordPressed(_ sender: Any) {
-        delegate?.walkthroughForgetPasswordButtonPressed?()
-    }
+   
     @IBAction func register(_ sender: Any) {
-        delegate?.walkthroughRegisterButtonPressed?()
+         delegate?.walkthroughRegisterButtonPressed?()
+    }
+    @IBAction func getWork(_ sender: Any) {
+        
+        delegate?.walkthroughGetWorkButtonPressed?()
+    }
+    @IBAction func forgotPassword(_ sender: Any) {
+        delegate?.walkthroughForgotPasswordButtonPressed?()
     }
     func pageControlDidTouch(){
         if let pc = pageControl{
             gotoPage(pc.currentPage)
         }
+    }
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        
+        delegate?.walkthroughCloseButtonPressed!()
     }
     
     open func gotoPage(_ page:Int){
@@ -232,8 +235,8 @@ import UIKit
         // cnst for position: 1st element
         if controllers.count == 1{
             scrollview.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[view]", options:[], metrics: nil, views: ["view":viewController.view]))
-            
-            // cnst for position: other elements
+        
+        // cnst for position: other elements
         } else {
             
             let previousVC = controllers[controllers.count-2]
@@ -249,7 +252,7 @@ import UIKit
             scrollview.addConstraints(lastViewConstraint!)
         }
     }
-    
+
     /// Update the UI to reflect the current walkthrough status
     fileprivate func updateUI(){
         
@@ -277,7 +280,7 @@ import UIKit
         for i in 0 ..< controllers.count {
             
             if let vc = controllers[i] as? BWWalkthroughPage{
-                
+            
                 let mx = ((scrollview.contentOffset.x + view.bounds.size.width) - (view.bounds.size.width * CGFloat(i))) / view.bounds.size.width
                 
                 // While sliding to the "next" slide (from right to left), the "current" slide changes its offset from 1.0 to 2.0 while the "next" slide changes it from 0.0 to 1.0

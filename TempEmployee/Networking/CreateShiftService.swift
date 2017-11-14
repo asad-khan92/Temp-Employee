@@ -72,7 +72,7 @@ struct CreateShift {
     
     func createShift(shift:Shift ,completionHandler: @escaping (Result<Meta> ) -> Void) {
         
-        NetworkManager.shared.callServer(with_request: TemProvideRouter.create(shift), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.create(job: shift), completionHandler: {result in
             
             switch result {
                 

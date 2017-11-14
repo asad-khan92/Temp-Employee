@@ -18,10 +18,11 @@ enum TemProvideRouter: URLRequestConvertible {
   //static let authenticationToken = "Basic xxx"
     
         case get
+        case registerEmployer(info:EmployerDetails)
         case getSIALicence
         case taxesAndCharges
-        case login(String,String)
-        case create(Shift)
+        case login(creds:Credential)
+        case create(job:Shift)
         case update(Shift)
         case postSlotId(Int,Int)
         case deleteShift(Int)
@@ -37,7 +38,7 @@ enum TemProvideRouter: URLRequestConvertible {
       switch self {
       case .get,.getSIALicence,.taxesAndCharges:
         return .get
-      case .login,.create,.postSlotId,.postRating,.refreshToken:
+      case .login,.create,.postSlotId,.postRating,.refreshToken,.registerEmployer:
         return .post
       case .deleteShift:
         return .delete
@@ -54,8 +55,8 @@ enum TemProvideRouter: URLRequestConvertible {
         return nil
       case .getSIALicence:
         return nil
-      case .login(let email, let password):
-        return (Params.paramsForLogin(email: email, password: password, token: Messaging.messaging().fcmToken!))
+      case .login(let creds):
+        return (Params.paramsForLogin(credential:creds, token: Messaging.messaging().fcmToken!))
       case .create(let shift),.update(let shift):
         return (Params.paramsForPostShift(data: shift))
       case .postSlotId(_ , let slotID):
@@ -69,7 +70,9 @@ enum TemProvideRouter: URLRequestConvertible {
       case .updateFCMToken(let str):
         return Params.paramsForUpdatingFCMToken(token:str!)
       
-      }
+      case .registerEmployer(let info):
+        return Params.paramsForEmployerCreation(employerDetails : info)
+        }
     }()
     let url: URL = {
       // build up and return the URL for each endpoint
@@ -101,6 +104,8 @@ enum TemProvideRouter: URLRequestConvertible {
         relativePath = Constants.EndPoints.Post.refreshToken
       case .updateFCMToken:
          relativePath = Constants.EndPoints.Put.updateFcmToken
+      case .registerEmployer:
+        relativePath = Constants.EndPoints.Post.RegisterEmployer
       }
         
         var url = URL(string: TemProvideRouter.baseURLString)!

@@ -11,13 +11,26 @@ import SwiftyUserDefaults
 
 class Params {
     
-    public static func paramsForLogin(email : String = "admin@train4security.com" , password:String, token:String = "") -> [String:Any] {
+    
+    public static func paramsForEmployerCreation(employerDetails employer: EmployerDetails ) -> [String:Any] {
+        
+        return [
+            "username": employer.email,
+            "password": employer.password,
+            "phone": employer.phoneNumber,
+            "client_id": "1",
+            "client_secret": "test",
+            "grant_type": "employer_signup"
+        ]
+    }
+    
+    public static func paramsForLogin(credential: Credential, token:String = "") -> [String:Any] {
         
         
         
         return [
-            "username": email,
-            "password": password,
+            "username": credential.email,
+            "password": credential.password,
             "client_id": "1",
             "client_secret": "test",
             "grant_type": "password",

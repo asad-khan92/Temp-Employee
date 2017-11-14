@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import BWWalkthrough
 import SwiftValidator
 import SwiftyUserDefaults
 import PKHUD
 import Intercom
 import Firebase
 
-class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate {
+class MainViewController: UIViewController {
 
     var needWalkthrough:Bool = true
     var walkthrough:BWWalkthroughViewController!
@@ -53,14 +52,6 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
             ()->() in
             self.needWalkthrough = false
         }
-        
-        
-        // Validation Rules are evaluated from left to right.
-        validator.registerField(walkthrough.userNameField , errorLabel: walkthrough.userNameErrorField , rules: [RequiredRule(),EmailRule(message: "Invalid email")])
-        
-        // You can pass in error labels with your rules
-        // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
-        validator.registerField(walkthrough.passwordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
 
     }
     
@@ -76,7 +67,7 @@ class MainViewController: UIViewController, BWWalkthroughViewControllerDelegate 
 }
 
 
-extension MainViewController:ValidationDelegate{
+extension MainViewController:BWWalkthroughViewControllerDelegate{
     
     func walkthroughCloseButtonPressed() {
         self.dismiss(animated: true, completion: nil)
@@ -91,7 +82,7 @@ extension MainViewController:ValidationDelegate{
     }
     
     func walkthroughRegisterButtonPressed(){
-     
+        self.walkthrough.registrationView.isHidden = false
     }
     func walkthroughLoginButtonPressed(){
         
@@ -100,18 +91,88 @@ extension MainViewController:ValidationDelegate{
     func walkthroughNextButtonPressed() {
         
     }
+    
+    // Login method
+    //
     func walkthroughGetBlowoutCoverButtonPressed(){
         
         
-        validator.validate(self)
+        validator.unregisterField(walkthrough.emailField)
+        validator.unregisterField(walkthrough.nPasswordField)
+        validator.unregisterField(walkthrough.phoneNumberField)
+        
+        
+        // Validation Rules are evaluated from left to right.
+        validator.registerField(walkthrough.userNameField , errorLabel: walkthrough.userNameErrorField , rules: [RequiredRule(),EmailRule(message: "Invalid email")])
+        
+        // You can pass in error labels with your rules
+        // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
+        validator.registerField(walkthrough.passwordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
+        
+        validator.validate({errors in
+            
+            if errors.count > 0{
+                
+                for (_, error) in errors {
+                    /* if let field = field as? UITextField {
+                     field.layer.borderColor = UIColor.red.cgColor
+                     field.layer.borderWidth = 1.0
+                     }*/
+                    error.errorLabel?.text = error.errorMessage // works if you added labels
+                    error.errorLabel?.isHidden = false
+                    error.errorLabel?.textColor = UIColor.red
+                }
+                
+            }else{
+                self.loginEmployer(fromService: LoginService(), withCreds:Credential(email:walkthrough.userNameField.text! , password: walkthrough.passwordField.text!))
+            }
+    
+        })
     }
     
-    
+    func walkthroughCreateAccountButtonPressed(){
+        
+        validator.unregisterField(walkthrough.userNameField)
+        validator.unregisterField(walkthrough.passwordField)
+        
+        // Validation Rules are evaluated from left to right.
+        validator.registerField(walkthrough.emailField , errorLabel: walkthrough.emailValidationErrorLabel , rules: [RequiredRule(),EmailRule(message: "Invalid email")])
+        
+        // You can pass in error labels with your rules
+        // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
+        validator.registerField(walkthrough.nPasswordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
+        
+         validator.registerField(walkthrough.phoneNumberField , errorLabel:walkthrough.numberValidationErrorLabel, rules: [RequiredRule()])
+        
+//         validator.registerField(walkthrough.nPasswordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
+//         validator.registerField(walkthrough.nPasswordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
+        
+        validator.validate({errors in
+            
+            if errors.count > 0{
+                
+                for (_, error) in errors {
+                    /* if let field = field as? UITextField {
+                     field.layer.borderColor = UIColor.red.cgColor
+                     field.layer.borderWidth = 1.0
+                     }*/
+                    error.errorLabel?.text = error.errorMessage // works if you added labels
+                    error.errorLabel?.isHidden = false
+                    error.errorLabel?.textColor = UIColor.red
+                }
+                
+            }else{
+                let emp = EmployerDetails(name:(walkthrough.nameField.text) ?? ""  , email:walkthrough.emailField.text! , phoneNumber:walkthrough.phoneNumberField.text! , password:walkthrough.nPasswordField.text!)
+                
+                self.signup(withEmployer: emp, service: RegisterService())
+            }
+        })
+    }
     func validationSuccessful() {
         // after user have corrected all the fields remove the error labels text
        // removeErrorLabelText()
         
-        self.loginEmployer(fromService: LoginService(), withEmail: walkthrough.userNameField.text!, password: walkthrough.passwordField.text!)
+        
     }
     
     func validationFailed(_ errors:[(Validatable ,ValidationError)]) {
@@ -141,10 +202,10 @@ extension MainViewController{
     
     
     
-    func loginEmployer(fromService service: LoginService,  withEmail email: String, password:String){
+    func loginEmployer(fromService service: LoginService,  withCreds creds: Credential){
         
         HUD.show(.progress)
-        service.loginEmployerWith(email: email, password: password, completionHandler: {result in
+        service.loginEmployerWith(credentials:creds, completionHandler: {result in
             
             
             switch result {
@@ -158,11 +219,11 @@ extension MainViewController{
                     Defaults[.accessToken] = user.access_token
                     Defaults[.accessTokenExpiresIn] = user.expires_in!
                     Defaults[.hasUserRegistered] = true
-                    Defaults[.email] = email
-                    Defaults[.password] = password
+                    Defaults[.email] = creds.email
+                    Defaults[.password] = creds.password
                     Defaults[.refreshToken] = user.refresh_token
-                     Intercom.registerUser(withEmail: email)
-                    self.moveToNextRegistrationStep()
+                    Intercom.registerUser(withEmail: creds.email)
+                    self.moveToHomeScreen()
                 }else{
                     HUD.flash(.error, delay: 1.0)
                     //self.errorAlert(description: user.message_detail!);
@@ -177,8 +238,41 @@ extension MainViewController{
         })
     }
     
-    
-    func moveToNextRegistrationStep()  {
+    func signup(withEmployer epmloyerInfo: EmployerDetails, service : RegisterService)  {
+        HUD.show(.progress)
+        service.createEmployer(withInfo :epmloyerInfo  , completionHandler: {result in
+            
+            
+            switch result {
+            case .Success(let user):
+                
+                //print("User access token = \(user.access_token?.characters.count)")
+                
+                
+                if user.access_token != nil{
+                    HUD.flash(.success, delay: 0.0)
+                    Defaults[.accessToken] = user.access_token
+                    Defaults[.accessTokenExpiresIn] = user.expires_in!
+                    Defaults[.hasUserRegistered] = true
+                    Defaults[.email] = epmloyerInfo.email
+                    Defaults[.password] = epmloyerInfo.password
+                    Defaults[.refreshToken] = user.refresh_token
+                    Intercom.registerUser(withEmail: epmloyerInfo.email)
+                    self.moveToNextRegistrationStep()
+                }else{
+                    HUD.flash(.error, delay: 1.0)
+                    //self.errorAlert(description: user.message_detail!);
+                }
+                
+            case .Failure(let error):
+                print(error)
+                HUD.flash(.error, delay: 1.0)
+                self.errorAlert(description: error.localizedDescription);
+            }
+            
+        })
+    }
+    func moveToHomeScreen()  {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -194,5 +288,20 @@ extension MainViewController{
         
         
     }
-    
+    func moveToNextRegistrationStep(){
+        
+        
+        
+        let storyboard = UIStoryboard(name: "Registration", bundle: nil)
+        
+        // instantiate your desired ViewController
+        let controller : PhoneNumberVerificationController  = storyboard.instantiateViewController(withIdentifier: "PhoneNumberVerificationController") as! PhoneNumberVerificationController
+        
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.dismiss(animated: true, completion: nil)
+        
+        appDelegate.navigationController?.pushViewController(controller, animated: true)
+        
+    }
 }

@@ -16,6 +16,10 @@ import Foundation
 
 typealias JSONDict = [String:AnyObject]
 
+struct Credential {
+    var email: String!
+    var password:String!
+}
 class Meta {
     
     var success : Bool
@@ -73,9 +77,9 @@ struct LoginService {
     
     
     
-    func loginEmployerWith(email:String, password:String ,completionHandler: @escaping (Result<LoginData> ) -> Void) {
+    func loginEmployerWith(credentials:Credential ,completionHandler: @escaping (Result<LoginData> ) -> Void) {
     
-        NetworkManager.shared.callServer(with_request: TemProvideRouter.login(email,password), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.login(creds: credentials), completionHandler: {result in
         
             switch result {
                 

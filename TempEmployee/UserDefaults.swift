@@ -19,13 +19,16 @@ extension UserDefaults {
 
 extension DefaultsKeys {
     // User Data fields to presist
+    
     static let accessToken = DefaultsKey<String?>(Constants.Employer.accessToken)
     static let email = DefaultsKey<String?>(Constants.Employer.email)
     static let password = DefaultsKey<String?>(Constants.Employer.password)
     static let accessTokenExpiresIn = DefaultsKey<Int>(Constants.Employer.accessTokenExpireIn)
+    static let employerID = DefaultsKey<Int?>(Constants.Employer.EmployerID)
     // Setting App Root VC flags
     static let hasUserRegistered = DefaultsKey<Bool>(Constants.Employer.Registered)
     static let refreshToken = DefaultsKey<String?>(Constants.Employer.refreshToken)
     
+    static let verificationCode = DefaultsKey<Int>(Constants.verificationCode)
     //static let hasUserSignedIn = DefaultsKey<Bool>(Constants.Employee.SignedIn)
 }

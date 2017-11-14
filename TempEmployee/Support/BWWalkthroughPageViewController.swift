@@ -47,6 +47,7 @@ open class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage 
     private var subviewsSpeed:[CGPoint] = Array()
     private var notAnimatableViews:[Int] = [] // Array of views' tags that should not be animated during the scroll/transition
     
+    @IBOutlet open var label: UILabel!
     // MARK: Inspectable Properties
     // Edit these values using the Attribute inspector or modify directly the "User defined runtime attributes" in IB
     @IBInspectable var speed:CGPoint = CGPoint(x: 0.0, y: 0.0);            // Note if you set this value via Attribute inspector it can only be an Integer (change it manually via User defined runtime attribute if you need a Float)

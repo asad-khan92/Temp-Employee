@@ -7,7 +7,6 @@ target 'TempEmployee' do
 
   # Pods for TempEmployee
 
-  pod "BWWalkthrough"
   pod "IQKeyboardManagerSwift"
   pod "Alamofire"
   pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'

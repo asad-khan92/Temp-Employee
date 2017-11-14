@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        IQKeyboardManager.sharedManager().enable = true
-        setRootViewController()
+        application.isStatusBarHidden = true
         
+        IQKeyboardManager.sharedManager().enable = true
         
         Intercom.setApiKey(INTERCOM_API_KEY, forAppId: INTERCOM_APP_ID)
         
@@ -36,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         FirebaseApp.configure()
         
-       
+        setRootViewController()
+        
         return true
     }
     

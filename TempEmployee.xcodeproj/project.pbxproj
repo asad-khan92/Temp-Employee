@@ -10,6 +10,19 @@
 		0530661D1F42060A005760C5 /* OAuth2Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530661C1F42060A005760C5 /* OAuth2Handler.swift */; };
 		05D5128B1F43255E00F94419 /* FCMTokenUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */; };
 		05D5128E1F432F7500F94419 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05D5128D1F432F7500F94419 /* GoogleService-Info.plist */; };
+		05D55AED1FB9BC6300109D5B /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AEC1FB9BC6300109D5B /* RegisterService.swift */; };
+		05D55AEE1FB9BC6300109D5B /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AEC1FB9BC6300109D5B /* RegisterService.swift */; };
+		05D55AF01FB9D51500109D5B /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D55AEF1FB9D51500109D5B /* Registration.storyboard */; };
+		05D55AF11FB9D51500109D5B /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D55AEF1FB9D51500109D5B /* Registration.storyboard */; };
+		05D55AF21FB9D51500109D5B /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D55AEF1FB9D51500109D5B /* Registration.storyboard */; };
+		05D55AF51FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AF41FB9E08400109D5B /* PhoneNumberVerificationController.swift */; };
+		05D55AF61FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AF41FB9E08400109D5B /* PhoneNumberVerificationController.swift */; };
+		05D55AF71FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AF41FB9E08400109D5B /* PhoneNumberVerificationController.swift */; };
+		05D55AFA1FB9E33500109D5B /* NumberVerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AF91FB9E33400109D5B /* NumberVerificationService.swift */; };
+		05D55AFB1FB9E33500109D5B /* NumberVerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AF91FB9E33400109D5B /* NumberVerificationService.swift */; };
+		05D55AFC1FB9E33500109D5B /* NumberVerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AF91FB9E33400109D5B /* NumberVerificationService.swift */; };
+		05FBC8311FBAE4AD0006123E /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FBC82F1FBAE4A60006123E /* BWWalkthroughViewController.swift */; };
+		05FBC8321FBAE4AD0006123E /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FBC8301FBAE4A80006123E /* BWWalkthroughPageViewController.swift */; };
 		42A4CAE20C415842B34000A4 /* Pods_TempEmployeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A105EABEDE02DD73324536 /* Pods_TempEmployeeTests.framework */; };
 		47330B921EE8102700A6F610 /* ShiftDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47330B911EE8102700A6F610 /* ShiftDetailController.swift */; };
 		475C47B41EEFEB1E009B55F1 /* AddShiftTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475C47B31EEFEB1E009B55F1 /* AddShiftTabController.swift */; };
@@ -133,6 +146,12 @@
 		05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCMTokenUpdateService.swift; sourceTree = "<group>"; };
 		05D5128C1F43283400F94419 /* Temployer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Temployer.entitlements; sourceTree = "<group>"; };
 		05D5128D1F432F7500F94419 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05D55AEC1FB9BC6300109D5B /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		05D55AEF1FB9D51500109D5B /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		05D55AF41FB9E08400109D5B /* PhoneNumberVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberVerificationController.swift; sourceTree = "<group>"; };
+		05D55AF91FB9E33400109D5B /* NumberVerificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberVerificationService.swift; sourceTree = "<group>"; };
+		05FBC82F1FBAE4A60006123E /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
+		05FBC8301FBAE4A80006123E /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		0E9CA7399729C01E603137DA /* Pods-TempEmployeeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempEmployeeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TempEmployeeUITests/Pods-TempEmployeeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		464A6F47A0A69193ED11BC27 /* Pods-TempEmployeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempEmployeeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TempEmployeeTests/Pods-TempEmployeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47330B911EE8102700A6F610 /* ShiftDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftDetailController.swift; sourceTree = "<group>"; };
@@ -270,9 +289,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05D55AEB1FB9BC3F00109D5B /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				05D55AEC1FB9BC6300109D5B /* RegisterService.swift */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		05D55AF31FB9E05000109D5B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				05D55AF41FB9E08400109D5B /* PhoneNumberVerificationController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		05D55AF81FB9E30B00109D5B /* NumberVerification */ = {
+			isa = PBXGroup;
+			children = (
+				05D55AF91FB9E33400109D5B /* NumberVerificationService.swift */,
+			);
+			path = NumberVerification;
+			sourceTree = "<group>";
+		};
+		05FBC82E1FBAE4910006123E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				05FBC8301FBAE4A80006123E /* BWWalkthroughPageViewController.swift */,
+				05FBC82F1FBAE4A60006123E /* BWWalkthroughViewController.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		477726191EDECBC400ACFBCD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				05D55AF81FB9E30B00109D5B /* NumberVerification */,
+				05D55AEB1FB9BC3F00109D5B /* CreateAccount */,
 				0530661C1F42060A005760C5 /* OAuth2Handler.swift */,
 				476515C81EEFF766008675E1 /* ShiftsService.swift */,
 				477726201EDECBF800ACFBCD /* LoginService.swift */,
@@ -291,6 +345,7 @@
 		477726221EDEE03400ACFBCD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				05D55AF31FB9E05000109D5B /* Register */,
 				479C5ECD1EE4871D00090094 /* Add Shift */,
 				4786196F1EDF480800870F12 /* Tabs */,
 				4791C9771EDCAA6A0028972A /* Showcase */,
@@ -366,6 +421,7 @@
 		47881CB81EDC5E6300FEC0EE /* TempEmployee */ = {
 			isa = PBXGroup;
 			children = (
+				05FBC82E1FBAE4910006123E /* Support */,
 				05D5128C1F43283400F94419 /* Temployer.entitlements */,
 				477A0B851EE8895E00C1A32D /* Models */,
 				478619721EDF4B9500870F12 /* Views */,
@@ -380,6 +436,7 @@
 				475FDA801EE2DB5E00BC117C /* AddShift.storyboard */,
 				47881CBD1EDC5E6300FEC0EE /* Main.storyboard */,
 				4791C97A1EDCAA7C0028972A /* ShowCase.storyboard */,
+				05D55AEF1FB9D51500109D5B /* Registration.storyboard */,
 				47881CC01EDC5E6300FEC0EE /* Assets.xcassets */,
 				47881CC21EDC5E6300FEC0EE /* LaunchScreen.storyboard */,
 				47881CC51EDC5E6300FEC0EE /* Info.plist */,
@@ -650,6 +707,7 @@
 				478EB9EA1EDD9189003CC1C0 /* Lato-Heavy.ttf in Resources */,
 				478EB9DF1EDD9189003CC1C0 /* HalisR-SLight.otf in Resources */,
 				478EB9E11EDD9189003CC1C0 /* HalisR-SRegular.otf in Resources */,
+				05D55AF01FB9D51500109D5B /* Registration.storyboard in Resources */,
 				478EB9F41EDD9189003CC1C0 /* Lato-Thin.ttf in Resources */,
 				478EB9EF1EDD9189003CC1C0 /* Lato-Medium.ttf in Resources */,
 				478EB9DE1EDD9189003CC1C0 /* HalisR-SExtraLight.otf in Resources */,
@@ -689,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				475FDA821EE2DB5E00BC117C /* AddShift.storyboard in Resources */,
+				05D55AF11FB9D51500109D5B /* Registration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				475FDA831EE2DB5E00BC117C /* AddShift.storyboard in Resources */,
+				05D55AF21FB9D51500109D5B /* Registration.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,7 +806,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TempEmployee/Pods-TempEmployee-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BWWalkthrough/BWWalkthrough.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -766,7 +825,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BWWalkthrough.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -895,16 +953,19 @@
 			files = (
 				477A0B841EE8854F00C1A32D /* BillViewController.swift in Sources */,
 				47F05FEA1EE983C400353CDD /* Location.swift in Sources */,
+				05FBC8311FBAE4AD0006123E /* BWWalkthroughViewController.swift in Sources */,
 				47F05FE91EE983C400353CDD /* MKMapViewExtension.swift in Sources */,
 				05D5128B1F43255E00F94419 /* FCMTokenUpdateService.swift in Sources */,
 				478EB9A41EDD85C3003CC1C0 /* UIStoryboard.swift in Sources */,
 				479B29F31EED971800075247 /* RatingService.swift in Sources */,
 				479D4F8B1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
 				478EB9A81EDD85C3003CC1C0 /* UIImage.swift in Sources */,
+				05D55AFA1FB9E33500109D5B /* NumberVerificationService.swift in Sources */,
 				479C5ECF1EE4874500090094 /* AddShiftController.swift in Sources */,
 				4791C97D1EDCAA7C0028972A /* MyCustomPageViewController.swift in Sources */,
 				0530661D1F42060A005760C5 /* OAuth2Handler.swift in Sources */,
 				475DFF5E1EE5B1E4001B8229 /* DateRange.swift in Sources */,
+				05D55AF51FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */,
 				4778ACF21EE8A0E1004D834E /* CreateShiftService.swift in Sources */,
 				47B6C8521EEF2E0E00175232 /* CGFloatExtension.swift in Sources */,
 				477980F21EE6FF4100855AED /* StringExtension.swift in Sources */,
@@ -917,11 +978,13 @@
 				478EB9B01EDD8BAB003CC1C0 /* GlobalVariables.swift in Sources */,
 				478F52031EEC993A00A351F6 /* RateViewController.swift in Sources */,
 				477980EE1EE6D80300855AED /* LicenceService.swift in Sources */,
+				05FBC8321FBAE4AD0006123E /* BWWalkthroughPageViewController.swift in Sources */,
 				477C43561EEDD97D00D38660 /* IntercomViewController.swift in Sources */,
 				477726211EDECBF800ACFBCD /* LoginService.swift in Sources */,
 				478EB9A71EDD85C3003CC1C0 /* UIViewController.swift in Sources */,
 				478EB9A61EDD85C3003CC1C0 /* UnderLineTextField.swift in Sources */,
 				4791C97C1EDCAA7C0028972A /* MainViewController.swift in Sources */,
+				05D55AED1FB9BC6300109D5B /* RegisterService.swift in Sources */,
 				478EB9A51EDD85C3003CC1C0 /* UIView.swift in Sources */,
 				475C47B41EEFEB1E009B55F1 /* AddShiftTabController.swift in Sources */,
 				47881CBC1EDC5E6300FEC0EE /* ViewController.swift in Sources */,
@@ -946,8 +1009,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D55AF61FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */,
 				47881CCF1EDC5E6300FEC0EE /* TempEmployeeTests.swift in Sources */,
 				479D4F8C1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
+				05D55AFB1FB9E33500109D5B /* NumberVerificationService.swift in Sources */,
+				05D55AEE1FB9BC6300109D5B /* RegisterService.swift in Sources */,
 				479D4F881EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -956,9 +1022,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D55AF71FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */,
 				47881CDA1EDC5E6300FEC0EE /* TempEmployeeUITests.swift in Sources */,
 				479D4F8D1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
 				479D4F891EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
+				05D55AFC1FB9E33500109D5B /* NumberVerificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1103,7 +1171,7 @@
 				INFOPLIST_FILE = TempEmployee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
+				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee;
 				PRODUCT_NAME = Temployer;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1121,7 +1189,7 @@
 				INFOPLIST_FILE = TempEmployee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
+				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee;
 				PRODUCT_NAME = Temployer;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;

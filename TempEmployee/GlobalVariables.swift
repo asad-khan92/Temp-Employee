@@ -11,7 +11,7 @@ import Foundation
 struct Constants {
     
     static let appName: String                          = "Temp Employee"
-    
+    static let verificationCode: String                 = "PhoneNumberVerificationCode"
     struct Notifications {
         
         static let shiftPosted: String                  = "shiftPostedSuccessfully"
@@ -26,6 +26,7 @@ struct Constants {
             static let CreateShift : String             = "employers/shifts"
             static let JobSeekerRating : String         = "employers/jobSeekerRating"
             static let refreshToken : String            = "refreshToken"
+            static let RegisterEmployer : String        = "employers"
         }
         
         
@@ -57,6 +58,7 @@ struct Constants {
     
     struct Employer {
         static let accessToken : String                 = "access_token"
+        static let EmployerID : String                  = "EmployerID"
         static let accessTokenExpireIn : String         = "accessTokenExpireIn"
         static let licencePosted : String               = "licencePosted"
         static let email : String                       = "employer_email"
