@@ -128,7 +128,14 @@ class ShiftsCell: UITableViewCell {
             self.moreOptionsView.isUserInteractionEnabled = true
         })
     }
-    
+    func setApplicationStatusRecieved(){
+        let app = "APPLICATIONS"
+        let str = NSMutableAttributedString(string: "\(app) RECIEVED")
+        str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 10)!], range: NSMakeRange(0, app.count))
+        str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 10)!], range: NSMakeRange(app.count, str.length - app.count ))
+        self.shiftStatus.attributedText = str
+        
+    }
     func attachTimerIfNeed(shift:Shift)  {
         
         guard  let component =  shift.isPostedWithinAnHour() else{
@@ -142,8 +149,9 @@ class ShiftsCell: UITableViewCell {
             let minStr = "MINS"
             let str = NSMutableAttributedString(string: "\(minStr) UNTILL COVERED")
             
-            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 10)!], range: NSMakeRange(0, minStr.characters.count))
-            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 10)!], range: NSMakeRange(minStr.characters.count, str.length - minStr.characters.count))
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 10)!], range: NSMakeRange(0, minStr.count))
+            
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 10)!], range: NSMakeRange(minStr.count, str.length - minStr.count))
             
             self.shiftStatus.attributedText = str
             self.shiftStatus.isHidden = false

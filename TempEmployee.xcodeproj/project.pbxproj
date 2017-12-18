@@ -7,7 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050AC8FD1FBEE21F00BD93E7 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050AC8FC1FBEE21F00BD93E7 /* DatePickerView.swift */; };
+		050AC8FF1FBF231900BD93E7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050AC8FE1FBF231900BD93E7 /* UIFont.swift */; };
+		0515BD5C1FBC779E0026CBDD /* UKPhoneNumberRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515BD5B1FBC779E0026CBDD /* UKPhoneNumberRule.swift */; };
+		0520ABC21FBD9C9000CC3D82 /* CompanyInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520ABC11FBD9C9000CC3D82 /* CompanyInfoController.swift */; };
+		0520D2951FBDB40000C70FE8 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D2941FBDB40000C70FE8 /* Company.swift */; };
+		0520D2981FBDBB2F00C70FE8 /* CompanyServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D2971FBDBB2F00C70FE8 /* CompanyServices.swift */; };
+		0520D29C1FBDC0FD00C70FE8 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D29A1FBDC0FD00C70FE8 /* CompanyCell.swift */; };
+		0520D29D1FBDC0FD00C70FE8 /* CompanyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0520D29B1FBDC0FD00C70FE8 /* CompanyCell.xib */; };
+		0520D2A01FBDC9F500C70FE8 /* CompanyAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D29E1FBDC9F500C70FE8 /* CompanyAccountCell.swift */; };
+		0520D2A11FBDC9F500C70FE8 /* CompanyAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0520D29F1FBDC9F500C70FE8 /* CompanyAccountCell.xib */; };
+		0520D2A71FBDF2F200C70FE8 /* AccountCreationSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D2A61FBDF2F200C70FE8 /* AccountCreationSuccessController.swift */; };
+		05212A481FC416B600C70305 /* CompletedShiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05212A471FC416B600C70305 /* CompletedShiftController.swift */; };
+		05212A4A1FC416CE00C70305 /* CoveredShiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05212A491FC416CE00C70305 /* CoveredShiftController.swift */; };
+		05212A4C1FC416DF00C70305 /* PostedShiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05212A4B1FC416DF00C70305 /* PostedShiftController.swift */; };
 		0530661D1F42060A005760C5 /* OAuth2Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530661C1F42060A005760C5 /* OAuth2Handler.swift */; };
+		05322A1B1FE3C0D500532CB0 /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05322A1A1FE3C0D500532CB0 /* ContractViewController.swift */; };
+		05322A1D1FE3D31A00532CB0 /* S3TransferManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05322A1C1FE3D31A00532CB0 /* S3TransferManager.swift */; };
+		05322A1E1FE3D31A00532CB0 /* S3TransferManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05322A1C1FE3D31A00532CB0 /* S3TransferManager.swift */; };
+		05322A201FE3D39300532CB0 /* ContractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05322A1F1FE3D39300532CB0 /* ContractService.swift */; };
+		05322A211FE3D39300532CB0 /* ContractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05322A1F1FE3D39300532CB0 /* ContractService.swift */; };
+		0537FC711FDFE337005FC572 /* ApplicantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC701FDFE337005FC572 /* ApplicantListController.swift */; };
+		0537FC721FDFE337005FC572 /* ApplicantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC701FDFE337005FC572 /* ApplicantListController.swift */; };
+		0537FC731FDFE337005FC572 /* ApplicantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC701FDFE337005FC572 /* ApplicantListController.swift */; };
+		0537FC751FDFE539005FC572 /* ApplicantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */; };
+		0537FC761FDFE539005FC572 /* ApplicantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */; };
+		0537FC771FDFE539005FC572 /* ApplicantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */; };
+		0537FC7A1FDFE758005FC572 /* ApplicantDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0537FC791FDFE758005FC572 /* ApplicantDetail.xib */; };
+		0537FC7B1FDFE758005FC572 /* ApplicantDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0537FC791FDFE758005FC572 /* ApplicantDetail.xib */; };
+		0537FC7C1FDFE758005FC572 /* ApplicantDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0537FC791FDFE758005FC572 /* ApplicantDetail.xib */; };
+		0537FC7E1FDFF40A005FC572 /* ApplicantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC7D1FDFF40A005FC572 /* ApplicantDetail.swift */; };
+		0537FC7F1FDFF40A005FC572 /* ApplicantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC7D1FDFF40A005FC572 /* ApplicantDetail.swift */; };
+		0537FC801FDFF40A005FC572 /* ApplicantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC7D1FDFF40A005FC572 /* ApplicantDetail.swift */; };
+		0537FC831FDFFCAE005FC572 /* ApplicantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC821FDFFCAE005FC572 /* ApplicantCell.swift */; };
+		0537FC841FDFFCAE005FC572 /* ApplicantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC821FDFFCAE005FC572 /* ApplicantCell.swift */; };
+		0537FC851FDFFCAE005FC572 /* ApplicantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC821FDFFCAE005FC572 /* ApplicantCell.swift */; };
+		054FF3A31FDEA9860025FF55 /* EmptyShiftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054FF3A21FDEA9860025FF55 /* EmptyShiftView.xib */; };
+		054FF3A41FDEA9860025FF55 /* EmptyShiftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054FF3A21FDEA9860025FF55 /* EmptyShiftView.xib */; };
+		05750A971FC32BE3007AE2A8 /* AppliedshiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05750A961FC32BE2007AE2A8 /* AppliedshiftsViewController.swift */; };
+		0579627A1FBC204A008A638F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057962791FBC204A008A638F /* RegisterViewController.swift */; };
 		05D5128B1F43255E00F94419 /* FCMTokenUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */; };
 		05D5128E1F432F7500F94419 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05D5128D1F432F7500F94419 /* GoogleService-Info.plist */; };
 		05D55AED1FB9BC6300109D5B /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D55AEC1FB9BC6300109D5B /* RegisterService.swift */; };
@@ -142,7 +180,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		050AC8FC1FBEE21F00BD93E7 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		050AC8FE1FBF231900BD93E7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		0515BD5B1FBC779E0026CBDD /* UKPhoneNumberRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKPhoneNumberRule.swift; sourceTree = "<group>"; };
+		0520ABC11FBD9C9000CC3D82 /* CompanyInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoController.swift; sourceTree = "<group>"; };
+		0520D2941FBDB40000C70FE8 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		0520D2971FBDBB2F00C70FE8 /* CompanyServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyServices.swift; sourceTree = "<group>"; };
+		0520D29A1FBDC0FD00C70FE8 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
+		0520D29B1FBDC0FD00C70FE8 /* CompanyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyCell.xib; sourceTree = "<group>"; };
+		0520D29E1FBDC9F500C70FE8 /* CompanyAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAccountCell.swift; sourceTree = "<group>"; };
+		0520D29F1FBDC9F500C70FE8 /* CompanyAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyAccountCell.xib; sourceTree = "<group>"; };
+		0520D2A61FBDF2F200C70FE8 /* AccountCreationSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationSuccessController.swift; sourceTree = "<group>"; };
+		05212A471FC416B600C70305 /* CompletedShiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedShiftController.swift; sourceTree = "<group>"; };
+		05212A491FC416CE00C70305 /* CoveredShiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredShiftController.swift; sourceTree = "<group>"; };
+		05212A4B1FC416DF00C70305 /* PostedShiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedShiftController.swift; sourceTree = "<group>"; };
 		0530661C1F42060A005760C5 /* OAuth2Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2Handler.swift; sourceTree = "<group>"; };
+		05322A1A1FE3C0D500532CB0 /* ContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
+		05322A1C1FE3D31A00532CB0 /* S3TransferManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3TransferManager.swift; sourceTree = "<group>"; };
+		05322A1F1FE3D39300532CB0 /* ContractService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractService.swift; sourceTree = "<group>"; };
+		0537FC701FDFE337005FC572 /* ApplicantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantListController.swift; sourceTree = "<group>"; };
+		0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantDetailView.swift; sourceTree = "<group>"; };
+		0537FC791FDFE758005FC572 /* ApplicantDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicantDetail.xib; sourceTree = "<group>"; };
+		0537FC7D1FDFF40A005FC572 /* ApplicantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantDetail.swift; sourceTree = "<group>"; };
+		0537FC821FDFFCAE005FC572 /* ApplicantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantCell.swift; sourceTree = "<group>"; };
+		054FF3A21FDEA9860025FF55 /* EmptyShiftView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyShiftView.xib; sourceTree = "<group>"; };
+		05750A961FC32BE2007AE2A8 /* AppliedshiftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppliedshiftsViewController.swift; sourceTree = "<group>"; };
+		057962791FBC204A008A638F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCMTokenUpdateService.swift; sourceTree = "<group>"; };
 		05D5128C1F43283400F94419 /* Temployer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Temployer.entitlements; sourceTree = "<group>"; };
 		05D5128D1F432F7500F94419 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -289,6 +352,191 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050AC8FB1FBEE20E00BD93E7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				05322A1C1FE3D31A00532CB0 /* S3TransferManager.swift */,
+				050AC8FC1FBEE21F00BD93E7 /* DatePickerView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0515BD5A1FBC776D0026CBDD /* Validator+UKNumber */ = {
+			isa = PBXGroup;
+			children = (
+				0515BD5B1FBC779E0026CBDD /* UKPhoneNumberRule.swift */,
+			);
+			name = "Validator+UKNumber";
+			sourceTree = "<group>";
+		};
+		0520ABBF1FBD9C3600CC3D82 /* NumberVerificationController */ = {
+			isa = PBXGroup;
+			children = (
+				05D55AF41FB9E08400109D5B /* PhoneNumberVerificationController.swift */,
+			);
+			path = NumberVerificationController;
+			sourceTree = "<group>";
+		};
+		0520ABC01FBD9C5000CC3D82 /* CompanyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0520ABC11FBD9C9000CC3D82 /* CompanyInfoController.swift */,
+			);
+			path = CompanyInfo;
+			sourceTree = "<group>";
+		};
+		0520D2921FBDA27D00C70FE8 /* CompanyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0520D2971FBDBB2F00C70FE8 /* CompanyServices.swift */,
+			);
+			path = CompanyInfo;
+			sourceTree = "<group>";
+		};
+		0520D2931FBDB3ED00C70FE8 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				0520D2941FBDB40000C70FE8 /* Company.swift */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		0520D2961FBDBA7B00C70FE8 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				4777261C1EDECBE100ACFBCD /* Params.swift */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		0520D2991FBDC0A400C70FE8 /* CompanyInfoCells */ = {
+			isa = PBXGroup;
+			children = (
+				0520D29A1FBDC0FD00C70FE8 /* CompanyCell.swift */,
+				0520D29B1FBDC0FD00C70FE8 /* CompanyCell.xib */,
+				0520D29E1FBDC9F500C70FE8 /* CompanyAccountCell.swift */,
+				0520D29F1FBDC9F500C70FE8 /* CompanyAccountCell.xib */,
+			);
+			name = CompanyInfoCells;
+			sourceTree = "<group>";
+		};
+		0520D2A21FBDE42500C70FE8 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				0530661C1F42060A005760C5 /* OAuth2Handler.swift */,
+			);
+			path = OAuth2;
+			sourceTree = "<group>";
+		};
+		0520D2A31FBDE43A00C70FE8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4777261D1EDECBE100ACFBCD /* TemProvideRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0520D2A41FBDE45000C70FE8 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				4777261A1EDECBD400ACFBCD /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		0520D2A51FBDF2B900C70FE8 /* AccountCreatedController */ = {
+			isa = PBXGroup;
+			children = (
+				0520D2A61FBDF2F200C70FE8 /* AccountCreationSuccessController.swift */,
+			);
+			path = AccountCreatedController;
+			sourceTree = "<group>";
+		};
+		05212A421FC4161A00C70305 /* PostedShifts */ = {
+			isa = PBXGroup;
+			children = (
+				05212A461FC4167100C70305 /* Completed */,
+				05212A451FC4166800C70305 /* Covered */,
+				05212A441FC4164E00C70305 /* Posted */,
+				05212A431FC4163F00C70305 /* Container */,
+			);
+			name = PostedShifts;
+			sourceTree = "<group>";
+		};
+		05212A431FC4163F00C70305 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				05750A961FC32BE2007AE2A8 /* AppliedshiftsViewController.swift */,
+			);
+			name = Container;
+			sourceTree = "<group>";
+		};
+		05212A441FC4164E00C70305 /* Posted */ = {
+			isa = PBXGroup;
+			children = (
+				05212A4B1FC416DF00C70305 /* PostedShiftController.swift */,
+			);
+			name = Posted;
+			sourceTree = "<group>";
+		};
+		05212A451FC4166800C70305 /* Covered */ = {
+			isa = PBXGroup;
+			children = (
+				05212A491FC416CE00C70305 /* CoveredShiftController.swift */,
+			);
+			name = Covered;
+			sourceTree = "<group>";
+		};
+		05212A461FC4167100C70305 /* Completed */ = {
+			isa = PBXGroup;
+			children = (
+				05212A471FC416B600C70305 /* CompletedShiftController.swift */,
+			);
+			name = Completed;
+			sourceTree = "<group>";
+		};
+		05322A191FE3C0AD00532CB0 /* ContractModule */ = {
+			isa = PBXGroup;
+			children = (
+				05322A1A1FE3C0D500532CB0 /* ContractViewController.swift */,
+			);
+			path = ContractModule;
+			sourceTree = "<group>";
+		};
+		0537FC6F1FDFE30C005FC572 /* ApplicantModule */ = {
+			isa = PBXGroup;
+			children = (
+				0537FC701FDFE337005FC572 /* ApplicantListController.swift */,
+				0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */,
+			);
+			name = ApplicantModule;
+			sourceTree = "<group>";
+		};
+		0537FC781FDFE734005FC572 /* ApplicantDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				0537FC791FDFE758005FC572 /* ApplicantDetail.xib */,
+				0537FC7D1FDFF40A005FC572 /* ApplicantDetail.swift */,
+			);
+			name = ApplicantDetailView;
+			sourceTree = "<group>";
+		};
+		0537FC811FDFFC8F005FC572 /* ApplicantCell */ = {
+			isa = PBXGroup;
+			children = (
+				0537FC821FDFFCAE005FC572 /* ApplicantCell.swift */,
+			);
+			name = ApplicantCell;
+			sourceTree = "<group>";
+		};
+		057962781FBC202F008A638F /* RegisterController */ = {
+			isa = PBXGroup;
+			children = (
+				057962791FBC204A008A638F /* RegisterViewController.swift */,
+			);
+			path = RegisterController;
+			sourceTree = "<group>";
+		};
 		05D55AEB1FB9BC3F00109D5B /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,7 +548,9 @@
 		05D55AF31FB9E05000109D5B /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				05D55AF41FB9E08400109D5B /* PhoneNumberVerificationController.swift */,
+				0520D2A51FBDF2B900C70FE8 /* AccountCreatedController */,
+				0520ABC01FBD9C5000CC3D82 /* CompanyInfo */,
+				0520ABBF1FBD9C3600CC3D82 /* NumberVerificationController */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -325,15 +575,17 @@
 		477726191EDECBC400ACFBCD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				0520D2A41FBDE45000C70FE8 /* NetworkManager */,
+				0520D2A31FBDE43A00C70FE8 /* Router */,
+				0520D2A21FBDE42500C70FE8 /* OAuth2 */,
+				0520D2961FBDBA7B00C70FE8 /* Parameters */,
+				0520D2921FBDA27D00C70FE8 /* CompanyInfo */,
 				05D55AF81FB9E30B00109D5B /* NumberVerification */,
 				05D55AEB1FB9BC3F00109D5B /* CreateAccount */,
-				0530661C1F42060A005760C5 /* OAuth2Handler.swift */,
 				476515C81EEFF766008675E1 /* ShiftsService.swift */,
 				477726201EDECBF800ACFBCD /* LoginService.swift */,
-				4777261C1EDECBE100ACFBCD /* Params.swift */,
-				4777261D1EDECBE100ACFBCD /* TemProvideRouter.swift */,
-				4777261A1EDECBD400ACFBCD /* NetworkManager.swift */,
 				477980ED1EE6D80300855AED /* LicenceService.swift */,
+				05322A1F1FE3D39300532CB0 /* ContractService.swift */,
 				4778ACF11EE8A0E1004D834E /* CreateShiftService.swift */,
 				47F05FEB1EE987C400353CDD /* GooglePalces.swift */,
 				05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */,
@@ -345,6 +597,7 @@
 		477726221EDEE03400ACFBCD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				05322A191FE3C0AD00532CB0 /* ContractModule */,
 				05D55AF31FB9E05000109D5B /* Register */,
 				479C5ECD1EE4871D00090094 /* Add Shift */,
 				4786196F1EDF480800870F12 /* Tabs */,
@@ -359,6 +612,7 @@
 		477A0B851EE8895E00C1A32D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0520D2931FBDB3ED00C70FE8 /* Company */,
 				479D4F8A1EE9D6FE00214DE3 /* ShiftStruct.swift */,
 				478148B91EEB311D006C94FE /* JobSeekerStruct.swift */,
 			);
@@ -368,6 +622,8 @@
 		4786196A1EDF3E1F00870F12 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0537FC811FDFFC8F005FC572 /* ApplicantCell */,
+				0520D2991FBDC0A400C70FE8 /* CompanyInfoCells */,
 				4786196B1EDF3E6B00870F12 /* ShiftsCell.swift */,
 				4786196C1EDF3E6B00870F12 /* ShiftsCell.xib */,
 				4775CE911EE49CD90089B59C /* AddShiftCell.swift */,
@@ -378,6 +634,8 @@
 		4786196F1EDF480800870F12 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				0537FC6F1FDFE30C005FC572 /* ApplicantModule */,
+				05212A421FC4161A00C70305 /* PostedShifts */,
 				478619701EDF482B00870F12 /* ShiftsViewController.swift */,
 				477C43551EEDD97D00D38660 /* IntercomViewController.swift */,
 				475C47B31EEFEB1E009B55F1 /* AddShiftTabController.swift */,
@@ -388,10 +646,12 @@
 		478619721EDF4B9500870F12 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0537FC781FDFE734005FC572 /* ApplicantDetailView */,
 				4791B5CF1EE026EA00EDA1CF /* FooterView.swift */,
 				4791B5D11EE0270100EDA1CF /* FooterView.xib */,
 				475FDA7E1EE2D5B300BC117C /* HeaderView.xib */,
 				477980EF1EE6EA3500855AED /* tagView.xib */,
+				054FF3A21FDEA9860025FF55 /* EmptyShiftView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -400,6 +660,7 @@
 			isa = PBXGroup;
 			children = (
 				47881CB81EDC5E6300FEC0EE /* TempEmployee */,
+				478EB9B11EDD9189003CC1C0 /* Resources */,
 				47881CCD1EDC5E6300FEC0EE /* TempEmployeeTests */,
 				47881CD81EDC5E6300FEC0EE /* TempEmployeeUITests */,
 				47881CB71EDC5E6300FEC0EE /* Products */,
@@ -421,15 +682,15 @@
 		47881CB81EDC5E6300FEC0EE /* TempEmployee */ = {
 			isa = PBXGroup;
 			children = (
+				050AC8FB1FBEE20E00BD93E7 /* Helpers */,
+				477726191EDECBC400ACFBCD /* Networking */,
 				05FBC82E1FBAE4910006123E /* Support */,
 				05D5128C1F43283400F94419 /* Temployer.entitlements */,
 				477A0B851EE8895E00C1A32D /* Models */,
 				478619721EDF4B9500870F12 /* Views */,
 				4786196A1EDF3E1F00870F12 /* TableViewCells */,
-				477726221EDEE03400ACFBCD /* Controllers */,
-				477726191EDECBC400ACFBCD /* Networking */,
-				478EB9B11EDD9189003CC1C0 /* Resources */,
 				478EB9AC1EDD85C8003CC1C0 /* Extensions */,
+				477726221EDEE03400ACFBCD /* Controllers */,
 				47881CB91EDC5E6300FEC0EE /* AppDelegate.swift */,
 				47881CBB1EDC5E6300FEC0EE /* ViewController.swift */,
 				05D5128D1F432F7500F94419 /* GoogleService-Info.plist */,
@@ -466,6 +727,7 @@
 		478EB9AC1EDD85C8003CC1C0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0515BD5A1FBC776D0026CBDD /* Validator+UKNumber */,
 				479D4F861EE9C4C300214DE3 /* AutoCompleteTextField.swift */,
 				47F05FE71EE983C400353CDD /* MKMapViewExtension.swift */,
 				47F05FE81EE983C400353CDD /* Location.swift */,
@@ -483,6 +745,7 @@
 				477980F11EE6FF4100855AED /* StringExtension.swift */,
 				477BF73B1EEAD70E00888994 /* TableViewExtension.swift */,
 				47B6C8511EEF2E0E00175232 /* CGFloatExtension.swift */,
+				050AC8FE1FBF231900BD93E7 /* UIFont.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -531,6 +794,7 @@
 		4791C9771EDCAA6A0028972A /* Showcase */ = {
 			isa = PBXGroup;
 			children = (
+				057962781FBC202F008A638F /* RegisterController */,
 				4791C9781EDCAA7C0028972A /* MainViewController.swift */,
 				4791C9791EDCAA7C0028972A /* MyCustomPageViewController.swift */,
 			);
@@ -698,6 +962,7 @@
 				475FDA811EE2DB5E00BC117C /* AddShift.storyboard in Resources */,
 				478EB9F01EDD9189003CC1C0 /* Lato-MediumItalic.ttf in Resources */,
 				478EB9DB1EDD9189003CC1C0 /* HalisR-SBlack.otf in Resources */,
+				054FF3A31FDEA9860025FF55 /* EmptyShiftView.xib in Resources */,
 				478EB9E01EDD9189003CC1C0 /* HalisR-SMedium.otf in Resources */,
 				478EB9D71EDD9189003CC1C0 /* HalisR-ExtraLight.otf in Resources */,
 				478EB9F31EDD9189003CC1C0 /* Lato-SemiboldItalic.ttf in Resources */,
@@ -705,13 +970,16 @@
 				47881CC41EDC5E6300FEC0EE /* LaunchScreen.storyboard in Resources */,
 				478EB9E51EDD9189003CC1C0 /* Lato-BlackItalic.ttf in Resources */,
 				478EB9EA1EDD9189003CC1C0 /* Lato-Heavy.ttf in Resources */,
+				0520D2A11FBDC9F500C70FE8 /* CompanyAccountCell.xib in Resources */,
 				478EB9DF1EDD9189003CC1C0 /* HalisR-SLight.otf in Resources */,
 				478EB9E11EDD9189003CC1C0 /* HalisR-SRegular.otf in Resources */,
 				05D55AF01FB9D51500109D5B /* Registration.storyboard in Resources */,
 				478EB9F41EDD9189003CC1C0 /* Lato-Thin.ttf in Resources */,
 				478EB9EF1EDD9189003CC1C0 /* Lato-Medium.ttf in Resources */,
 				478EB9DE1EDD9189003CC1C0 /* HalisR-SExtraLight.otf in Resources */,
+				0520D29D1FBDC0FD00C70FE8 /* CompanyCell.xib in Resources */,
 				478EB9E41EDD9189003CC1C0 /* Lato-Black.ttf in Resources */,
+				0537FC7A1FDFE758005FC572 /* ApplicantDetail.xib in Resources */,
 				4786196E1EDF3E6B00870F12 /* ShiftsCell.xib in Resources */,
 				478EB9EE1EDD9189003CC1C0 /* Lato-LightItalic.ttf in Resources */,
 				478EB9E61EDD9189003CC1C0 /* Lato-Bold.ttf in Resources */,
@@ -748,6 +1016,7 @@
 			files = (
 				475FDA821EE2DB5E00BC117C /* AddShift.storyboard in Resources */,
 				05D55AF11FB9D51500109D5B /* Registration.storyboard in Resources */,
+				0537FC7B1FDFE758005FC572 /* ApplicantDetail.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,7 +1025,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				475FDA831EE2DB5E00BC117C /* AddShift.storyboard in Resources */,
+				054FF3A41FDEA9860025FF55 /* EmptyShiftView.xib in Resources */,
 				05D55AF21FB9D51500109D5B /* Registration.storyboard in Resources */,
+				0537FC7C1FDFE758005FC572 /* ApplicantDetail.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,9 +1076,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TempEmployee/Pods-TempEmployee-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFDateHelper/AFDateHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/EPSignature/EPSignature.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JVFloatLabeledTextField/JVFloatLabeledTextField.framework",
@@ -824,9 +1098,12 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EPSignature.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JVFloatLabeledTextField.framework",
@@ -955,10 +1232,15 @@
 				47F05FEA1EE983C400353CDD /* Location.swift in Sources */,
 				05FBC8311FBAE4AD0006123E /* BWWalkthroughViewController.swift in Sources */,
 				47F05FE91EE983C400353CDD /* MKMapViewExtension.swift in Sources */,
+				0520D2A71FBDF2F200C70FE8 /* AccountCreationSuccessController.swift in Sources */,
 				05D5128B1F43255E00F94419 /* FCMTokenUpdateService.swift in Sources */,
+				050AC8FD1FBEE21F00BD93E7 /* DatePickerView.swift in Sources */,
+				05322A201FE3D39300532CB0 /* ContractService.swift in Sources */,
 				478EB9A41EDD85C3003CC1C0 /* UIStoryboard.swift in Sources */,
 				479B29F31EED971800075247 /* RatingService.swift in Sources */,
+				0515BD5C1FBC779E0026CBDD /* UKPhoneNumberRule.swift in Sources */,
 				479D4F8B1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
+				05322A1D1FE3D31A00532CB0 /* S3TransferManager.swift in Sources */,
 				478EB9A81EDD85C3003CC1C0 /* UIImage.swift in Sources */,
 				05D55AFA1FB9E33500109D5B /* NumberVerificationService.swift in Sources */,
 				479C5ECF1EE4874500090094 /* AddShiftController.swift in Sources */,
@@ -967,7 +1249,10 @@
 				475DFF5E1EE5B1E4001B8229 /* DateRange.swift in Sources */,
 				05D55AF51FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */,
 				4778ACF21EE8A0E1004D834E /* CreateShiftService.swift in Sources */,
+				0520D2A01FBDC9F500C70FE8 /* CompanyAccountCell.swift in Sources */,
 				47B6C8521EEF2E0E00175232 /* CGFloatExtension.swift in Sources */,
+				0537FC831FDFFCAE005FC572 /* ApplicantCell.swift in Sources */,
+				05750A971FC32BE3007AE2A8 /* AppliedshiftsViewController.swift in Sources */,
 				477980F21EE6FF4100855AED /* StringExtension.swift in Sources */,
 				4775CE921EE49CD90089B59C /* AddShiftCell.swift in Sources */,
 				47330B921EE8102700A6F610 /* ShiftDetailController.swift in Sources */,
@@ -978,20 +1263,30 @@
 				478EB9B01EDD8BAB003CC1C0 /* GlobalVariables.swift in Sources */,
 				478F52031EEC993A00A351F6 /* RateViewController.swift in Sources */,
 				477980EE1EE6D80300855AED /* LicenceService.swift in Sources */,
+				0520D29C1FBDC0FD00C70FE8 /* CompanyCell.swift in Sources */,
+				05212A4C1FC416DF00C70305 /* PostedShiftController.swift in Sources */,
+				05212A4A1FC416CE00C70305 /* CoveredShiftController.swift in Sources */,
 				05FBC8321FBAE4AD0006123E /* BWWalkthroughPageViewController.swift in Sources */,
+				050AC8FF1FBF231900BD93E7 /* UIFont.swift in Sources */,
 				477C43561EEDD97D00D38660 /* IntercomViewController.swift in Sources */,
 				477726211EDECBF800ACFBCD /* LoginService.swift in Sources */,
 				478EB9A71EDD85C3003CC1C0 /* UIViewController.swift in Sources */,
 				478EB9A61EDD85C3003CC1C0 /* UnderLineTextField.swift in Sources */,
+				0520ABC21FBD9C9000CC3D82 /* CompanyInfoController.swift in Sources */,
 				4791C97C1EDCAA7C0028972A /* MainViewController.swift in Sources */,
 				05D55AED1FB9BC6300109D5B /* RegisterService.swift in Sources */,
 				478EB9A51EDD85C3003CC1C0 /* UIView.swift in Sources */,
 				475C47B41EEFEB1E009B55F1 /* AddShiftTabController.swift in Sources */,
+				0520D2951FBDB40000C70FE8 /* Company.swift in Sources */,
+				05322A1B1FE3C0D500532CB0 /* ContractViewController.swift in Sources */,
+				0537FC7E1FDFF40A005FC572 /* ApplicantDetail.swift in Sources */,
 				47881CBC1EDC5E6300FEC0EE /* ViewController.swift in Sources */,
 				476515C91EEFF766008675E1 /* ShiftsService.swift in Sources */,
+				0537FC751FDFE539005FC572 /* ApplicantDetailView.swift in Sources */,
 				4777261E1EDECBE100ACFBCD /* Params.swift in Sources */,
 				479D4F871EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
 				477BF73C1EEAD70E00888994 /* TableViewExtension.swift in Sources */,
+				0537FC711FDFE337005FC572 /* ApplicantListController.swift in Sources */,
 				4786196D1EDF3E6B00870F12 /* ShiftsCell.swift in Sources */,
 				47881CBA1EDC5E6300FEC0EE /* AppDelegate.swift in Sources */,
 				477EC66E1EEC875E00E659E7 /* ViewShiftInfoController.swift in Sources */,
@@ -1000,7 +1295,10 @@
 				478EB9AA1EDD85C3003CC1C0 /* PHPhotoLibrary.swift in Sources */,
 				4777261F1EDECBE100ACFBCD /* TemProvideRouter.swift in Sources */,
 				478619711EDF482B00870F12 /* ShiftsViewController.swift in Sources */,
+				0579627A1FBC204A008A638F /* RegisterViewController.swift in Sources */,
+				05212A481FC416B600C70305 /* CompletedShiftController.swift in Sources */,
 				478EB9AB1EDD85C3003CC1C0 /* ColorExtension.swift in Sources */,
+				0520D2981FBDBB2F00C70FE8 /* CompanyServices.swift in Sources */,
 				4791B5D01EE026EA00EDA1CF /* FooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1013,7 +1311,13 @@
 				47881CCF1EDC5E6300FEC0EE /* TempEmployeeTests.swift in Sources */,
 				479D4F8C1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
 				05D55AFB1FB9E33500109D5B /* NumberVerificationService.swift in Sources */,
+				0537FC841FDFFCAE005FC572 /* ApplicantCell.swift in Sources */,
+				05322A1E1FE3D31A00532CB0 /* S3TransferManager.swift in Sources */,
+				0537FC721FDFE337005FC572 /* ApplicantListController.swift in Sources */,
+				05322A211FE3D39300532CB0 /* ContractService.swift in Sources */,
+				0537FC7F1FDFF40A005FC572 /* ApplicantDetail.swift in Sources */,
 				05D55AEE1FB9BC6300109D5B /* RegisterService.swift in Sources */,
+				0537FC761FDFE539005FC572 /* ApplicantDetailView.swift in Sources */,
 				479D4F881EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1022,11 +1326,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0537FC771FDFE539005FC572 /* ApplicantDetailView.swift in Sources */,
 				05D55AF71FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */,
 				47881CDA1EDC5E6300FEC0EE /* TempEmployeeUITests.swift in Sources */,
 				479D4F8D1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
 				479D4F891EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
+				0537FC731FDFE337005FC572 /* ApplicantListController.swift in Sources */,
+				0537FC851FDFFCAE005FC572 /* ApplicantCell.swift in Sources */,
 				05D55AFC1FB9E33500109D5B /* NumberVerificationService.swift in Sources */,
+				0537FC801FDFF40A005FC572 /* ApplicantDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

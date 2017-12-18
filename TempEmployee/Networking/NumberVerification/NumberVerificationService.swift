@@ -16,49 +16,49 @@ class Code: Meta {
         super.init(jsonDict: jsonDict)
         if self.success{
             let data = jsonDict["data"] as? [String:Any]
-            verificationCode = data!["verification_code"] as! NSNumber
+            verificationCode = (data!["verification_code"] as! NSNumber)
         }
     }
 }
 struct NumberVerificationService {
     
-    func setUserNumberVerified( jobseekerID:Int ,completionHandler: @escaping (Result<Meta> ) -> Void) {
+    func setUserNumberVerified( employerID:Int ,completionHandler: @escaping (Result<Meta> ) -> Void) {
         
-//        NetworkManager.shared.callServer(with_request: TemProvideRouter.phoneVerificationStatus(jobSeekerID:jobseekerID), completionHandler: {result in
-//            
-//            switch result {
-//                
-//            case .Success(let response):
-//                print (response )
-//                let object = Meta(jsonDict: response)
-//                print("parsed data = ", object)
-//                completionHandler(.Success(object))
-//                
-//            case .Failure(let error):
-//                completionHandler(.Failure(error))
-//            }
-//            
-//        })
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.setEmployerActiveStatus(empID: employerID), completionHandler: {result in
+            
+            switch result {
+                
+            case .Success(let response):
+                print (response )
+                let object = Meta(jsonDict: response as JSONDict)
+                print("parsed data = ", object)
+                completionHandler(.Success(object))
+                
+            case .Failure(let error):
+                completionHandler(.Failure(error))
+            }
+            
+        })
         
     }
     
-    func resendVerificationCode( jobseekerID:Int ,completionHandler: @escaping (Result<Code> ) -> Void) {
+    func resendVerificationCode( employerID:Int ,completionHandler: @escaping (Result<Code> ) -> Void) {
         
-//        NetworkManager.shared.callServer(with_request: TemProvideRouter.resendPhoneVerificationCode(jobSeekerID:jobseekerID), completionHandler: {result in
-//
-//            switch result {
-//
-//            case .Success(let response):
-//                print (response )
-//                let object = Code(jsonDict: response)
-//                print("parsed data = ", object)
-//                completionHandler(.Success(object))
-//
-//            case .Failure(let error):
-//                completionHandler(.Failure(error))
-//            }
-//
-//        })
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.resendPhoneVerificationCode(empID:employerID), completionHandler: {result in
+
+            switch result {
+
+            case .Success(let response):
+                print (response )
+                let object = Code(jsonDict: response as JSONDict)
+                print("parsed data = ", object)
+                completionHandler(.Success(object))
+
+            case .Failure(let error):
+                completionHandler(.Failure(error))
+            }
+
+        })
         
     }
 }

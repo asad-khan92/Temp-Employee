@@ -12,6 +12,9 @@ struct Constants {
     
     static let appName: String                          = "Temp Employee"
     static let verificationCode: String                 = "PhoneNumberVerificationCode"
+    static let appBlueThemeColorHexString: String       = "#6398FB"
+    static let appOrangeThemeColorHexString: String     = "#FF7D24"
+    
     struct Notifications {
         
         static let shiftPosted: String                  = "shiftPostedSuccessfully"
@@ -20,6 +23,7 @@ struct Constants {
     }
     
     struct EndPoints {
+        
         struct Post {
             static let Login : String                   = "employers/login"
             static let LicenceDetails : String          = "employers/licenseDetails"
@@ -27,18 +31,29 @@ struct Constants {
             static let JobSeekerRating : String         = "employers/jobSeekerRating"
             static let refreshToken : String            = "refreshToken"
             static let RegisterEmployer : String        = "employers"
+            static let ComapnyInfo : String             = "employers/companyInfo"
+            static let EmployerActive : String          = "employers/active/"
+            static let SendContract : String            = "employers/hireJobSeeker"
         }
         
         
         struct Get {
             
-            static let shifts : String                      = "employers/shifts"
-            static let repostShift : String                 = "employers/repostShift"
-            static let licences : String                    = "licenseTypes"
-            static let TaxAndCharges :String                = "settings"
+            static let shifts : String                        = "employers/shifts"
+            static let repostShift : String                   = "employers/repostShift"
+            static let licences : String                      = "licenseTypes"
+            static let TaxAndCharges :String                  = "settings"
+            static let ComapnyInfo : String                   = "employers/companyInfo"
+            static let ResendVerificationCode : String        = "/employers/resendCode/"
+            
+            static let PostedShifts :String                   = "employers/shifts/posted"
+            static let CoveredShifts :String                  = "employers/shifts/covered"
+            static let CompletedShifts :String                = "employers/shifts/completed"
+            static let Contract :String                       = "employers/contract"
         }
         struct Put {
             static let updateFcmToken                   = "deviceToken"
+            static let ComapnyInfo : String             = "employers/companyInfo"
         }
         /**
          Repeats a string `times` times.
@@ -57,22 +72,23 @@ struct Constants {
     }
     
     struct Employer {
-        static let accessToken : String                 = "access_token"
-        static let EmployerID : String                  = "EmployerID"
-        static let accessTokenExpireIn : String         = "accessTokenExpireIn"
-        static let licencePosted : String               = "licencePosted"
-        static let email : String                       = "employer_email"
-        static let password : String                    = "employer_password"
-        static let refreshToken : String                = "refresh_token"
-         static let Registered : String                 = "userRegistered"
-         static let LicencesUploaded : String           = "licencesUploaded"
-         static let ProfilePicUploaded : String         = "profilePicUploaded"
-         static let AccountDetailsUploaded : String     = "accountDetailsUploaded"
-         static let InterviewSlotBooked : String        = "interviewSlotBooked"
+        static let accessToken : String                     = "access_token"
+        static let EmployerID : String                      = "EmployerID"
+        static let accessTokenExpireIn : String             = "accessTokenExpireIn"
+        static let licencePosted : String                   = "licencePosted"
+        static let email : String                           = "employer_email"
+        static let password : String                        = "employer_password"
+        static let refreshToken : String                    = "refresh_token"
+        static let Registered : String                      = "userRegistered"
+        static let EmployerSignedIn : String                = "userSignedIn"
+         static let LicencesUploaded : String               = "licencesUploaded"
+         static let ProfilePicUploaded : String             = "profilePicUploaded"
+         static let AccountDetailsUploaded : String         = "accountDetailsUploaded"
+         static let InterviewSlotBooked : String            = "interviewSlotBooked"
         
-        static let scheduledInterviewDate : String      = "scheduledInterviewDate"
-        static let scheduledInterviewTime : String      = "scheduledInterviewTime"
-        static let scheduledInterviewAddress : String   = "scheduledInterviewAddress"
+        static let scheduledInterviewDate : String          = "scheduledInterviewDate"
+        static let scheduledInterviewTime : String          = "scheduledInterviewTime"
+        static let scheduledInterviewAddress : String       = "scheduledInterviewAddress"
     }
     
     struct licenceConstants {

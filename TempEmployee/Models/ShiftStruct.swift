@@ -57,14 +57,14 @@ struct Shift  {
     var special_info: String?
     var site_instructions: String?
     var required_licenses: [Licence]
-    var jobSeeker: JobSeeker?
-    var assign_status : AssignStatus!
+    var jobSeekers: [JobSeeker]?
+    //var assign_status : AssignStatus!
     var created_at : String!
-    var shift_status : ShiftStatus!
+    //var shift_status : ShiftStatus!
     var shift_mode : ShiftMode! =  ShiftMode(rawValue: 0)
     var totalCost: Float!
     
-    init(role:String?,from_time: String?, interview_time: String?,shift_hours: String?,address: String?,price_per_hour: Float!,shift_date: String?,reporting_to: String?,phone: String?,details: String?,special_info: String?,site_instructions: String?,required_licenses: [Licence],id:Int,assigned_job_seeker_id:Int?, lat: Double, lng:Double,assign_status:AssignStatus!, created_at:String?,shift_status:ShiftStatus,totalCost:Float!) {
+    init(role:String?,from_time: String?, interview_time: String?,shift_hours: String?,address: String?,price_per_hour: Float!,shift_date: String?,reporting_to: String?,phone: String?,details: String?,special_info: String?,site_instructions: String?,required_licenses: [Licence],id:Int,assigned_job_seeker_id:Int?, lat: Double, lng:Double, created_at:String?,totalCost:Float!) {
         
         self.id = id
         self.assigned_job_seeker_id = assigned_job_seeker_id
@@ -83,9 +83,9 @@ struct Shift  {
         self.special_info = special_info
         self.site_instructions = site_instructions
         self.required_licenses = required_licenses
-        self.assign_status = assign_status
+        //self.assign_status = assign_status
         self.created_at = created_at
-        self.shift_status = shift_status
+        //self.shift_status = shift_status
         self.totalCost = totalCost
         
     }

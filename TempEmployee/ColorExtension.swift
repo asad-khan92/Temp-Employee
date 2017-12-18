@@ -33,4 +33,8 @@ extension UIColor {
     class func ShiftHeaderFontColor() -> UIColor {
         return UIColor(hex: "6297FA")
     }
+    
+    class func blueThemeColor() -> UIColor {
+        return UIColor(hex: "5182FA")
+    }
 }

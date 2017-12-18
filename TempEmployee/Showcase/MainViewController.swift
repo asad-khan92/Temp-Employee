@@ -1,9 +1,5 @@
 //
 //  MainViewController.swift
-//  TB_Walkthrough
-//
-//  Created by Yari D'areglia on 12/03/16.
-//  Copyright © 2016 Bitwaker. All rights reserved.
 //
 
 import UIKit
@@ -12,6 +8,7 @@ import SwiftyUserDefaults
 import PKHUD
 import Intercom
 import Firebase
+import IQKeyboardManagerSwift
 
 class MainViewController: UIViewController {
 
@@ -20,16 +17,22 @@ class MainViewController: UIViewController {
     
     let validator = Validator()
     
+    var registerVC: RegisterViewController? {
+        return self.walkthrough.childViewControllers.flatMap({ $0 as? RegisterViewController }).first
+        // This works because `flatMap` removes nils
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presentWalkthrough()
         
-       let timer =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(changePage), userInfo: nil, repeats: true)
+       let _ =  Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(changePage), userInfo: nil, repeats: true)
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.registerVC?.delegate = self
     }
 
     @IBAction func presentWalkthrough(){
@@ -39,7 +42,7 @@ class MainViewController: UIViewController {
         let page_one = stb.instantiateViewController(withIdentifier: "page_1")
         let page_two = stb.instantiateViewController(withIdentifier: "page_2")
         let page_three = stb.instantiateViewController(withIdentifier: "page_3")
-        //let page_four = stb.instantiateViewController(withIdentifier: "page_4")
+        
         
         // Attach the pages to the master
         walkthrough.delegate = self
@@ -82,7 +85,11 @@ extension MainViewController:BWWalkthroughViewControllerDelegate{
     }
     
     func walkthroughRegisterButtonPressed(){
-        self.walkthrough.registrationView.isHidden = false
+        
+        self.walkthrough.registerContainerView.isHidden = false
+        
+        self.registerVC?.delegate = self
+        
     }
     func walkthroughLoginButtonPressed(){
         
@@ -94,20 +101,24 @@ extension MainViewController:BWWalkthroughViewControllerDelegate{
     
     // Login method
     //
+    func walkthroughGetWorkButtonPressed(){
+        walkthroughGetBlowoutCoverButtonPressed()
+    }
     func walkthroughGetBlowoutCoverButtonPressed(){
         
         
-        validator.unregisterField(walkthrough.emailField)
-        validator.unregisterField(walkthrough.nPasswordField)
-        validator.unregisterField(walkthrough.phoneNumberField)
+//        validator.unregisterField(walkthrough.registrationFormNameField)
+//        validator.unregisterField(walkthrough.registrationFormEmailField)
+//        validator.unregisterField(walkthrough.registrationFormNumberField)
+//        validator.unregisterField(walkthrough.registrationFormPasswordField)
         
         
         // Validation Rules are evaluated from left to right.
-        validator.registerField(walkthrough.userNameField , errorLabel: walkthrough.userNameErrorField , rules: [RequiredRule(),EmailRule(message: "Invalid email")])
+        validator.registerField(walkthrough.loginEmailField , errorLabel: walkthrough.loginEmailErrorLabel , rules: [RequiredRule(),EmailRule(message: "Invalid email")])
         
         // You can pass in error labels with your rules
         // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
-        validator.registerField(walkthrough.passwordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
+        validator.registerField(walkthrough.loginPasswordField , errorLabel:walkthrough.loginPasswordErrorLabel, rules: [RequiredRule()])
         
         validator.validate({errors in
             
@@ -124,50 +135,13 @@ extension MainViewController:BWWalkthroughViewControllerDelegate{
                 }
                 
             }else{
-                self.loginEmployer(fromService: LoginService(), withCreds:Credential(email:walkthrough.userNameField.text! , password: walkthrough.passwordField.text!))
+                self.loginEmployer(fromService: LoginService(), withCreds:Credential(email:walkthrough.loginEmailField.text! , password: walkthrough.loginPasswordField.text!))
             }
     
         })
     }
     
-    func walkthroughCreateAccountButtonPressed(){
-        
-        validator.unregisterField(walkthrough.userNameField)
-        validator.unregisterField(walkthrough.passwordField)
-        
-        // Validation Rules are evaluated from left to right.
-        validator.registerField(walkthrough.emailField , errorLabel: walkthrough.emailValidationErrorLabel , rules: [RequiredRule(),EmailRule(message: "Invalid email")])
-        
-        // You can pass in error labels with your rules
-        // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
-        validator.registerField(walkthrough.nPasswordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
-        
-         validator.registerField(walkthrough.phoneNumberField , errorLabel:walkthrough.numberValidationErrorLabel, rules: [RequiredRule()])
-        
-//         validator.registerField(walkthrough.nPasswordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
-//         validator.registerField(walkthrough.nPasswordField , errorLabel:walkthrough.passwordErrorLabel, rules: [RequiredRule()])
-        
-        validator.validate({errors in
-            
-            if errors.count > 0{
-                
-                for (_, error) in errors {
-                    /* if let field = field as? UITextField {
-                     field.layer.borderColor = UIColor.red.cgColor
-                     field.layer.borderWidth = 1.0
-                     }*/
-                    error.errorLabel?.text = error.errorMessage // works if you added labels
-                    error.errorLabel?.isHidden = false
-                    error.errorLabel?.textColor = UIColor.red
-                }
-                
-            }else{
-                let emp = EmployerDetails(name:(walkthrough.nameField.text) ?? ""  , email:walkthrough.emailField.text! , phoneNumber:walkthrough.phoneNumberField.text! , password:walkthrough.nPasswordField.text!)
-                
-                self.signup(withEmployer: emp, service: RegisterService())
-            }
-        })
-    }
+
     func validationSuccessful() {
         // after user have corrected all the fields remove the error labels text
        // removeErrorLabelText()
@@ -196,6 +170,28 @@ extension MainViewController:BWWalkthroughViewControllerDelegate{
 //    }
     
 }
+
+extension MainViewController: RegistrationDelegate{
+    
+    func closeRegistrationView() {
+        self.walkthrough.registerContainerView.isHidden = true
+    }
+    
+    func employerRegistered() {
+        
+        let storyboard = UIStoryboard(name: "Registration", bundle: nil)
+        
+        // instantiate your desired ViewController
+        let controller : PhoneNumberVerificationController  = storyboard.instantiateViewController(withIdentifier: "PhoneNumberVerificationController") as! PhoneNumberVerificationController
+        
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.dismiss(animated: true, completion: nil)
+        
+        appDelegate.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+}
 //// MARK - Networking call
 extension MainViewController{
     
@@ -218,7 +214,7 @@ extension MainViewController{
                     HUD.flash(.success, delay: 0.0)
                     Defaults[.accessToken] = user.access_token
                     Defaults[.accessTokenExpiresIn] = user.expires_in!
-                    Defaults[.hasUserRegistered] = true
+                    Defaults[.hasEmployerSignedIn] = true
                     Defaults[.email] = creds.email
                     Defaults[.password] = creds.password
                     Defaults[.refreshToken] = user.refresh_token
@@ -238,40 +234,7 @@ extension MainViewController{
         })
     }
     
-    func signup(withEmployer epmloyerInfo: EmployerDetails, service : RegisterService)  {
-        HUD.show(.progress)
-        service.createEmployer(withInfo :epmloyerInfo  , completionHandler: {result in
-            
-            
-            switch result {
-            case .Success(let user):
-                
-                //print("User access token = \(user.access_token?.characters.count)")
-                
-                
-                if user.access_token != nil{
-                    HUD.flash(.success, delay: 0.0)
-                    Defaults[.accessToken] = user.access_token
-                    Defaults[.accessTokenExpiresIn] = user.expires_in!
-                    Defaults[.hasUserRegistered] = true
-                    Defaults[.email] = epmloyerInfo.email
-                    Defaults[.password] = epmloyerInfo.password
-                    Defaults[.refreshToken] = user.refresh_token
-                    Intercom.registerUser(withEmail: epmloyerInfo.email)
-                    self.moveToNextRegistrationStep()
-                }else{
-                    HUD.flash(.error, delay: 1.0)
-                    //self.errorAlert(description: user.message_detail!);
-                }
-                
-            case .Failure(let error):
-                print(error)
-                HUD.flash(.error, delay: 1.0)
-                self.errorAlert(description: error.localizedDescription);
-            }
-            
-        })
-    }
+   
     func moveToHomeScreen()  {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -288,20 +251,5 @@ extension MainViewController{
         
         
     }
-    func moveToNextRegistrationStep(){
-        
-        
-        
-        let storyboard = UIStoryboard(name: "Registration", bundle: nil)
-        
-        // instantiate your desired ViewController
-        let controller : PhoneNumberVerificationController  = storyboard.instantiateViewController(withIdentifier: "PhoneNumberVerificationController") as! PhoneNumberVerificationController
-        
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.dismiss(animated: true, completion: nil)
-        
-        appDelegate.navigationController?.pushViewController(controller, animated: true)
-        
-    }
+   
 }

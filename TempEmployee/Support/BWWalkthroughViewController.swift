@@ -24,6 +24,8 @@ SOFTWARE.
 
 import UIKit
 import Spring
+import IQKeyboardManagerSwift
+
 // MARK: - Protocols -
 
 
@@ -72,10 +74,33 @@ import Spring
     @IBOutlet open var prevButton:UIButton?
     @IBOutlet open var closeButton:UIButton?
     @IBOutlet open var closeButtonPressed: UIButton!
-    @IBOutlet open var passwordField: UITextField!
-    @IBOutlet open var emailField: UITextField!
+    // Login form fields
+    @IBOutlet open var loginPasswordField: UITextField!
+    @IBOutlet open var loginEmailField: UITextField!
     
-    @IBOutlet weak var loginView: SpringView!
+    // Login form validations error labels
+    
+    @IBOutlet weak var loginEmailErrorLabel: UILabel!
+    @IBOutlet weak var loginPasswordErrorLabel: UILabel!
+    
+    // Register form validation failed errors labels
+    @IBOutlet weak var registrationFormNameErrorLabel: UILabel!
+    @IBOutlet weak var registrationFormPasswordErrorLabel: UILabel!
+    @IBOutlet weak var registrationFormNumberErrorLabel: UILabel!
+    @IBOutlet weak var registrationFormEmailErrorLabel: UILabel!
+    
+    // Register form validation failed errors labels
+    @IBOutlet weak var registrationFormPasswordField: UITextField!
+    @IBOutlet weak var registrationFormNumberField: UITextField!
+    @IBOutlet weak var registrationFormEmailField: UITextField!
+    @IBOutlet weak var registrationFormNameField: UITextField!
+    
+    @IBOutlet weak var registerContainerView: UIView!
+    
+    @IBOutlet weak var loginView: UIView!
+    
+   
+    
     open var currentPage: Int {    // The index of the current page (readonly)
         get{
             let page = Int((scrollview.contentOffset.x / view.bounds.size.width))
@@ -121,8 +146,7 @@ import Spring
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        // Initialize UI Elements
-           passwordField.isSecureTextEntry = true
+        
 
         pageControl?.addTarget(self, action: #selector(BWWalkthroughViewController.pageControlDidTouch), for: UIControlEvents.touchUpInside)
         
@@ -180,7 +204,7 @@ import Spring
     }
    
     @IBAction func register(_ sender: Any) {
-         delegate?.walkthroughRegisterButtonPressed?()
+         self.registerContainerView.isHidden = false
     }
     @IBAction func getWork(_ sender: Any) {
         
@@ -195,11 +219,20 @@ import Spring
         }
     }
     
+    @IBAction func closeRegistrationButtonPressed(_ sender: Any) {
+
+    }
+    @IBAction func closeLoginButtonPressed(_ sender: Any) {
+        self.loginView.isHidden = true
+    }
     @IBAction func closeButtonPressed(_ sender: Any) {
         
         delegate?.walkthroughCloseButtonPressed!()
     }
     
+    @IBAction func createAccountPressed(_ sender: Any) {
+        delegate?.walkthroughRegisterButtonPressed!()
+    }
     open func gotoPage(_ page:Int){
         
         if page < controllers.count{

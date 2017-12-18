@@ -166,32 +166,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         
         
-        // Job seeker not registeres set show case as root view controller
-        if !Defaults[.hasUserRegistered] {
+        // Employer not registeres set show case as root view controller
+        if !Defaults[.hasEmployerSignedIn] {
             
             // get your storyboard
             let storyboard = UIStoryboard(name: "ShowCase", bundle: nil)
-            
+
             // instantiate your desired ViewController
             let rootController : MainViewController  = storyboard.instantiateViewController(withIdentifier: "ShowCaseController") as! MainViewController
-            let nav = UINavigationController.init()
-            nav.setViewControllers([rootController], animated: true)
-             self.window?.rootViewController = nav
             
-            
+//                        let storyboard = UIStoryboard(name: "Registration", bundle: nil)
+//
+//                        // instantiate your desired ViewController
+//                        let rootController : CompanyInfoController  = storyboard.instantiateViewController(withIdentifier: "CompanyInfoController") as! CompanyInfoController
+
+            self.setRootController(root: rootController)
         }
             
-            // Job seeker regsitered but licence detail not uploaded take him to licenceContainerController
+            // Employer regsitered but licence detail not uploaded take him to licenceContainerController
         else {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             // instantiate your desired ViewController
             let rootController : UITabBarController  = storyboard.instantiateViewController(withIdentifier: "TabViewController") as! UITabBarController
-            
+            self.setRootController(root: rootController)
             /*let rootController : ThankViewController  = storyboard.instantiateViewController(withIdentifier: "ThankViewController") as! ThankViewController*/
             
-            self.window?.rootViewController = rootController
+            //self.window?.rootViewController = rootController
             DropDown.startListeningToKeyboard()
         }
         

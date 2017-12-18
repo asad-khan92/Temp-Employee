@@ -1,8 +1,12 @@
 PODS:
   - AFDateHelper (4.1.2)
   - Alamofire (4.4.0)
+  - AWSCore (2.6.6)
+  - AWSS3 (2.6.6):
+    - AWSCore (= 2.6.6)
   - CircleProgressBar (0.32)
   - DropDown (2)
+  - EPSignature (1.0.3)
   - Firebase/Core (4.1.0):
     - FirebaseAnalytics (= 4.0.3)
     - FirebaseCore (= 4.0.5)
@@ -30,15 +34,15 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
-  - Intercom (3.2.2)
-  - IQKeyboardManagerSwift (4.0.9)
+  - Intercom (4.1.3)
+  - IQKeyboardManagerSwift (5.0.6)
   - JVFloatLabeledTextField (1.1.1)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - PKHUD (4.2.2)
+  - PKHUD (4.2.3)
   - Protobuf (3.3.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
@@ -52,8 +56,10 @@ PODS:
 DEPENDENCIES:
   - AFDateHelper
   - Alamofire
+  - AWSS3
   - CircleProgressBar (~> 0.32)
   - DropDown
+  - EPSignature
   - Firebase/Core
   - Firebase/Messaging
   - Intercom
@@ -86,19 +92,22 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFDateHelper: b19c83daa132e398b34fbea085a1554ce07adfe9
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AWSCore: 64619e45b47678afab53ca0f9b4fa380ebee6f0b
+  AWSS3: 44c99957a049703e06b474f4b1898da215f2d922
   CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
+  EPSignature: 6c5c3ca674650a11b16c3cd5641a830bad4793f8
   Firebase: ebebf41db7f10e0c7668b6eaaa857fbe599aa478
   FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
   FirebaseCore: 7d876ea97a830cbe62ba7fbbe7670c833a324ba0
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebaseMessaging: b45ff9ef5d932600d3f78ff43168e7c5707aa7dc
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  Intercom: 10124a7bb91a1abbd622dc347dd87aa13297b1f7
-  IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
+  Intercom: 72319a42bcec50f5e377c160f10363de925ef23c
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  PKHUD: 9a3599e04d57676ec14746c40e423a52fb6588c0
+  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
@@ -107,6 +116,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: fb7efb3087dd2802f0e10cf81a2f01cf5fc9e992
+PODFILE CHECKSUM: 461abcfd12f91324cc269ad8df48e5115a0bc998
 
 COCOAPODS: 1.3.1

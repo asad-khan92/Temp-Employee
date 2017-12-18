@@ -18,7 +18,7 @@ struct EmployerDetails{
 
 class RegisterResponse:Meta{
     
-    var job_seeker_id : NSNumber?
+    var employer_id : NSNumber?
     var verificationCode : NSNumber?
     var access_token : String?
     var token_type : String?
@@ -27,7 +27,7 @@ class RegisterResponse:Meta{
     
     override init(jsonDict: JSONDict) {
         
-        job_seeker_id = jsonDict["data"]!["employer_id"] as? NSNumber
+        employer_id = jsonDict["data"]!["employer_id"] as? NSNumber
         verificationCode = jsonDict["data"]!["verification_code"] as? NSNumber
         access_token = jsonDict["data"]!["access_token"] as? String
         token_type = jsonDict["data"]!["token_type"] as? String

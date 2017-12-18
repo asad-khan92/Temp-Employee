@@ -7,7 +7,7 @@ target 'TempEmployee' do
 
   # Pods for TempEmployee
 
-  pod "IQKeyboardManagerSwift"
+  pod 'IQKeyboardManagerSwift'
   pod "Alamofire"
   pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'
   pod 'SwiftyJSON', '~> 3.1'
@@ -25,7 +25,8 @@ target 'TempEmployee' do
   
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
-  
+  pod 'EPSignature'
+  pod 'AWSS3'
   target 'TempEmployeeTests' do
     inherit! :search_paths
     # Pods for testing

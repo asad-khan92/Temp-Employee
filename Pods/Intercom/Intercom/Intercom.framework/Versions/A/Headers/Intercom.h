@@ -106,11 +106,6 @@ typedef NS_ENUM(NSUInteger, ICMPreviewPosition){
  */
 + (void)setUserHash:(NSString *)userHash;
 
-/*!
- @deprecated +[Intercom setHMAC:data:] is deprecated. Use +[Intercom setUserHash:] instead.
- */
-+ (void)setHMAC:(NSString *)hmac data:(NSString *)data __attribute((deprecated("'+[Intercom setHMAC:data:]' is deprecated. Use '+[Intercom setUserHash:]' instead.")));
-
 //=========================================================================================================
 /*! @name Working with anonymous users */
 //=========================================================================================================
@@ -162,14 +157,19 @@ typedef NS_ENUM(NSUInteger, ICMPreviewPosition){
 + (void)registerUserWithEmail:(NSString *)email;
 
 //=========================================================================================================
-/*! @name Resetting user data */
+/*! @name Logging the user out */
 //=========================================================================================================
 /*!
- reset is used to reset all local caches and user data Intercom has created. Reset will also close any active
+ logout is used to clear all local caches and user data Intercom has created. Logout will also close any active
  UI that is on screen. Use this at a time when you wish to log a user out of your app or change a user.
  Once called, Intercom for iOS will no longer communicate with Intercom until a further registration is made.
  */
-+ (void)reset;
++ (void)logout;
+
+/*!
+ @deprecated  +[Intercom reset] is deprecated. Use +[Intercom logout] instead.
+ */
++ (void)reset __attribute((deprecated("'+[Intercom reset]' is deprecated. 'Use +[Intercom logout]' instead.")));
 
 //=========================================================================================================
 /** @name Updating the user */
@@ -184,11 +184,6 @@ typedef NS_ENUM(NSUInteger, ICMPreviewPosition){
  @param userAttributes The attributes to update the user with.
  */
 + (void)updateUser:(ICMUserAttributes *)userAttributes;
-
-/*!
- @deprecated  +[Intercom updateUserWithAttributes:] is deprecated. Use +[Intercom updateUser:] instead.
- */
-+ (void)updateUserWithAttributes:(NSDictionary *)attributes __attribute((deprecated("'+[Intercom updateUserWithAttributes:]' is deprecated. 'Use +[Intercom updateUser:]' instead.")));
 
 /*!
  Log an event with a given name.
@@ -352,25 +347,6 @@ UIKIT_EXTERN NSString *const IntercomUnreadConversationCountDidChangeNotificatio
  screen, call this method so that Intercom's window can reflect these changes accordingly.
  */
 + (void)setNeedsStatusBarAppearanceUpdate;
-
-//=========================================================================================================
-/*! @name Deprecated methods */
-//=========================================================================================================
-
-/*!
- @deprecated +[Intercom setPreviewPosition:] is no longer supported, and will not work.
- */
-+ (void)setPreviewPosition:(ICMPreviewPosition)previewPosition __attribute((deprecated("'+[Intercom setPreviewPosition:]' is no longer supported and will not work")));
-
-/*!
- @deprecated  +[Intercom setPreviewPaddingWithX:y:] is deprecated. Use +[Intercom setBottomPadding:] instead.
- */
-+ (void)setPreviewPaddingWithX:(CGFloat)x y:(CGFloat)y __attribute((deprecated("'+[Intercom setPreviewPaddingWithX:y:]' is deprecated. Use '+[Intercom setBottomPadding:]' instead.")));
-
-/*!
- @deprecated +[Intercom setMessagesHidden:] is deprecated. Use +[Intercom setInAppMessagesVisible:] instead.
- */
-+ (void)setMessagesHidden:(BOOL)hidden __attribute((deprecated("'+[Intercom setMessagesHidden:]' is deprecated. 'Use +[Intercom setInAppMessagesVisible:]' instead.")));
 
 //=========================================================================================================
 /*! @name Intercom Notifications */

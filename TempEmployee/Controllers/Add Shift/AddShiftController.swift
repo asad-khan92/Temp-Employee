@@ -276,14 +276,6 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
                 
             })
             
-            
-//            Location.geocodeAddressString(text, completion: { (placemark, error) -> Void in
-//                if let coordinate = placemark?.location?.coordinate {
-//                    self?.addAnnotation(coordinate, address: text)
-//                    self?.mapView.setCenterCoordinate(coordinate, zoomLevel: 12, animated: true)
-//                    self?.coordinate = coordinate
-//                }
-//            })
         }
     }
     
@@ -322,7 +314,7 @@ extension AddShiftController: UITableViewDataSource, UITableViewDelegate ,Valida
         
         // Action triggered on selection
         dropDown.selectionAction = {  (index: Int, item: String) in
-            let  filteredArray = self.selectedLicences.filter{$0.id.intValue == self.licences[index].id as Int}
+            let  filteredArray = self.selectedLicences.filter{$0.id.intValue == self.licences[index].id as! Int}
             print(filteredArray)
             if filteredArray.count == 1{
                 return
