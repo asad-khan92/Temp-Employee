@@ -7,18 +7,20 @@
 //
 
 import UIKit
-import EPSignature
 import PKHUD
 import SwiftyUserDefaults
 
+
+protocol ContractSentDelegate {
+    func contractSentTo(jobseeker:String)
+}
 class ContractViewController: UIViewController {
     
-    @IBOutlet weak var signatureView: EPSignatureView!
-    @IBOutlet weak var signHereImgView: UIImageView!
+
     @IBOutlet weak var contract: UITextView!
     var shiftID : Int!
     var jobseeker : JobSeeker!
-     var signatureVC : EPSignatureViewController?
+    var delegate : ContractSentDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,29 +32,17 @@ class ContractViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func signContractPressed(_ sender: Any) {
-        
-        signatureVC = EPSignatureViewController(signatureDelegate: self, showsDate: true, showsSaveSignatureOption: true)
-        signatureVC?.signatureDelegate = self
-        signatureVC?.showsSaveSignatureOption = false
-        signatureVC?.subtitleText = "I agree to the terms and conditions"
-        signatureVC?.title = jobseeker.username
-        let nav = UINavigationController(rootViewController: signatureVC!)
-        present(nav, animated: true, completion: nil)
-        
-    }
+    
     
     @IBAction func sendContract(_ sender: Any) {
         
-        if let image = signHereImgView.image{
-            uploadSignImage(img: image)
             self.sendHireContract(service: ContractService(),shiftID:shiftID)//, shiftID:"https://s3.eu-west-2.amazonaws.com/tempemployee/\(Defaults[.employerID]!)/Signature.png")
-            
-        }else{
-            HUD.flash(.label("Please sign the contract"), delay: 4.0)
-        }
+        
     }
     
+    @IBAction func closeView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -63,20 +53,6 @@ class ContractViewController: UIViewController {
     }
     */
 
-}
-
-extension ContractViewController : EPSignatureDelegate{
-    
-    func epSignature(_: EPSignatureViewController, didCancel error : NSError) {
-        print("User canceled")
-    }
-    
-    func epSignature(_: EPSignatureViewController, didSign signatureImage : UIImage, boundingRect: CGRect) {
-        print(signatureImage)
-        signHereImgView.image = nil
-        signHereImgView.image = signatureImage
-        
-    }
 }
 
 // MARK : Networking calls
@@ -122,21 +98,17 @@ extension ContractViewController{
     
     func sendHireContract(service:ContractService, shiftID:Int ){
         
-        service.sendJobContractTo(jobseekerID:Int(jobseeker.jobseeker_id!)! , of: shiftID) { (result) in
+        HUD.show(.progress, onView: self.view)
+        
+        service.sendJobContractTo(jobseekerID:Int(jobseeker.jobseeker_id!)! , of: shiftID,contract: self.contract.text) { (result) in
+            HUD.hide()
             
             switch result {
                 
             case .Success(let data):
-                let n: Int! = self.navigationController?.viewControllers.count
+                self.dismiss(animated: true, completion: nil)
+                self.delegate?.contractSentTo(jobseeker: self.jobseeker.jobseeker_id)
                 
-//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//
-//
-//                //let pendingShiftViewController = appDelegate.navigationController?.viewControllers[n-2] as! PendingShiftViewController
-//                let mainTabContrller : MainTabController? = appDelegate.navigationController?.viewControllers.filter{$0 is MainTabController}.first as? MainTabController
-//                if let vc = mainTabContrller{
-//                    self.navigationController?.popToViewController(vc, animated: true)
-//                }
                 print(data)
                 
             case .Failure(let error):

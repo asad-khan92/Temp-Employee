@@ -137,11 +137,11 @@
                                     <constraint firstAttribute="height" constant="1.5" id="46T-M9-tec"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MINS UNTIL COVERED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhn-SS-QbS">
-                                <rect key="frame" x="217" y="113" width="80" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MINS UNTIL COVERED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhn-SS-QbS">
+                                <rect key="frame" x="217" y="113" width="80" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="53M-wv-PqC"/>
-                                    <constraint firstAttribute="height" constant="24" id="LGl-Tu-siz"/>
+                                    <constraint firstAttribute="height" constant="27" id="LGl-Tu-siz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
                                 <nil key="textColor"/>
@@ -290,6 +290,7 @@
                 <outlet property="deleteButton" destination="1U9-mq-nBW" id="bJd-cJ-7oo"/>
                 <outlet property="deleteLabel" destination="olE-bC-v4A" id="hxe-Vt-b6G"/>
                 <outlet property="editButton" destination="9PT-om-ldU" id="Nl5-Y4-29z"/>
+                <outlet property="editButtonWidthConstraint" destination="8jn-hX-bsa" id="4x9-c1-f4L"/>
                 <outlet property="editLabel" destination="14d-QO-owa" id="ZHy-IR-srO"/>
                 <outlet property="hideMoreButton" destination="mkh-tS-PgX" id="F1r-ao-o7A"/>
                 <outlet property="moreOptionsView" destination="ZNt-qa-bct" id="Vic-PB-T2d"/>

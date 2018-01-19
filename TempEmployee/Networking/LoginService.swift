@@ -107,6 +107,25 @@ struct LoginService {
       
     }
     
+    func forgotPassword(js_email :String , completionHandler : @escaping (Result<Meta> ) -> Void){
+        
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.forgotPassword(email: js_email), completionHandler: {result in
+            
+            switch result {
+                
+            case .Success(let response):
+                
+                let object = Meta(jsonDict: response as JSONDict)
+                completionHandler(.Success(object))
+                
+            case .Failure(let error):
+                completionHandler(.Failure(error))
+            }
+            
+        })
+        
+    }
+    
     func refreshToken(completionHandler: @escaping (Result<LoginData> ) -> Void) {
         
         NetworkManager.shared.callServer(with_request: TemProvideRouter.refreshToken(), completionHandler: {result in

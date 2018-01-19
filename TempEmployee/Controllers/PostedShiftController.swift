@@ -83,7 +83,9 @@ extension PostedShiftController : UITableViewDelegate,UITableViewDataSource{
         
         
         let cell = self.tableView.dequeueReusableCell(withIdentifier:self.reuseIndentifier , for: indexPath) as! ShiftsCell
+        
         let shift = self.shifts[indexPath.row]
+        
         cell.shiftJobAddress.text = shift.address
         cell.shiftJobTitle.text = shift.role?.uppercased()
         cell.shiftDate.text = shift.convertShiftDate()
@@ -94,8 +96,27 @@ extension PostedShiftController : UITableViewDelegate,UITableViewDataSource{
         cell.viewButton.addTarget(self, action: #selector(viewShift(_:)), for: .touchUpInside)
         cell.repostButton.addTarget(self, action: #selector(repostShift(_:)), for: .touchUpInside)
         cell.progressBar.setProgress(self.returnProgress(value: indexPath.row), animated: true)
-        
-        if let js = shift.jobSeekers{
+       
+        // first if contract has been sent to any applicant
+        if shift.shift_status == .CONTRACTSENT{
+            
+            let app = "CONTRACT"
+            let str = NSMutableAttributedString(string: "\(app) SENT")
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 11)!], range: NSMakeRange(0, app.count))
+            str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 11)!], range: NSMakeRange(app.count, str.length - app.count ))
+            
+            cell.shiftStatus.attributedText = str
+            cell.progressBar.isHidden = true
+            cell.repostButton.isHidden = true
+            cell.shiftApplicantImage.isHidden = true
+            cell.blueTickMark.image = UIImage.init(named: "Contract Sent Icon")
+            cell.blueTickMark.isHidden = false
+            //cell.hideMoreButton.isHidden = true
+            cell.editLabel.isHidden = true
+            cell.editButtonWidthConstraint.constant = 0
+        }
+            
+        else if  shift.jobSeekers!.count > 0 {
             
             cell.progressBar.progressBarProgressColor = UIColor.orange
             cell.progressBar.setProgress(1.0, animated: false)
@@ -104,16 +125,19 @@ extension PostedShiftController : UITableViewDelegate,UITableViewDataSource{
             cell.repostButton.isHidden = true
             cell.shiftApplicantImage.isHidden = true
             cell.blueTickMark.isHidden = true
-            
+            cell.editLabel.isHidden = true
+            cell.editButtonWidthConstraint.constant = 0
             cell.progressBar.setHintTextGenerationBlock({ (progress) -> String? in
-                return "\(js.count)"
+                return "\(shift.jobSeekers!.count)"
             })
         }
-         else if shift.created_at != nil{
-                
-                cell.attachTimerIfNeed(shift:shift)
-            
+        else if shift.created_at != nil{
+            //cell.hideMoreButton.isHidden = false
+            cell.attachTimerIfNeed(shift:shift)
+            cell.editLabel.isHidden = false
         }
+        
+        
         
         return cell
     }
@@ -125,9 +149,13 @@ extension PostedShiftController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let shift = self.shifts[indexPath.row]
-//        let index : IndexPath = self.tableView.indexPath(of: sender)!
-//        let sObj = self.shifts[index.row]
-        self.viewShiftData(shift: shift)
+        
+        if shift.jobSeekers!.count > 0{
+            self.viewShiftData(shift: shift)
+        }else {
+            self.edit(shift: shift)
+        }
+        
     }
     func returnProgress(value:Int)-> CGFloat{
         
@@ -155,15 +183,6 @@ extension PostedShiftController : UITableViewDelegate,UITableViewDataSource{
     func repostShift(_ sender:UIButton)  {
         let index : IndexPath = self.tableView.indexPath(of: sender)!
         let sObj = self.shifts[index.row]
-//        //
-//        //
-//        sObj.shift_mode  = ShiftMode(rawValue: 2)
-//        let storyboard = UIStoryboard.init(name: "AddShift", bundle: nil)
-//
-//        let addShiftVC : AddShiftController = storyboard.instantiateViewController()
-//        addShiftVC.shift = sObj
-//        addShiftVC.isEditingShift = true
-//        self.navigationController?.pushViewController(addShiftVC, animated: true)
         respostShift(service: ShiftsService(), shiftID: sObj.id)
     }
     
@@ -180,15 +199,15 @@ extension PostedShiftController{
                 
             case .Success(let response):
                 if response.success{
-                    HUD.flash(.success, delay: 0.0)
+                    //HUD.flash(.success, delay: 0.0)
                     self.shifts = response.shifts
                     
                 }else{
-                    HUD.flash(.error, delay: 0.0)
+                 //   HUD.flash(.error, delay: 0.0)
                     
                 }
             case .Failure(let error):
-                HUD.flash(.error, delay: 0.0)
+               // HUD.flash(.error, delay: 0.0)
                 self.errorAlert(description: error.localizedDescription)
             }
         }
@@ -202,20 +221,21 @@ extension PostedShiftController{
         
         service.repostShift(id: shiftID) { (result) in
             
+            HUD.hide()
             switch result{
                 
             case .Success(let response):
                 print(response)
-                HUD.hide()
+                
                 if response.success{
                     
                     self.getAllPostedShifts(service: ShiftsService())
                 }else{
-                    HUD.hide()
+                    
                     self.errorAlert(description: response.message)
                 }
             case .Failure(let error):
-                HUD.hide()
+                
                 self.errorAlert(description: error.localizedDescription)
                 print(error)
             }
@@ -229,11 +249,12 @@ extension PostedShiftController{
         
         service.deleteShift(id: shift.id!,completionHandler: {result in
             
+            HUD.hide()
             switch result{
                 
             case .Success(let response):
                 print(response)
-                HUD.hide()
+                
                 if response.success{
                     if let index = self.shifts.index(where: { $0.id == shift.id }) {
                         
@@ -243,11 +264,11 @@ extension PostedShiftController{
                     }
                     
                 }else{
-                    HUD.hide()
+                   
                     self.errorAlert(description: response.message)
                 }
             case .Failure(let error):
-                HUD.hide()
+                
                 self.errorAlert(description: error.localizedDescription)
                 print(error)
             }

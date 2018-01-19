@@ -30,9 +30,6 @@
 		0537FC711FDFE337005FC572 /* ApplicantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC701FDFE337005FC572 /* ApplicantListController.swift */; };
 		0537FC721FDFE337005FC572 /* ApplicantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC701FDFE337005FC572 /* ApplicantListController.swift */; };
 		0537FC731FDFE337005FC572 /* ApplicantListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC701FDFE337005FC572 /* ApplicantListController.swift */; };
-		0537FC751FDFE539005FC572 /* ApplicantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */; };
-		0537FC761FDFE539005FC572 /* ApplicantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */; };
-		0537FC771FDFE539005FC572 /* ApplicantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */; };
 		0537FC7A1FDFE758005FC572 /* ApplicantDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0537FC791FDFE758005FC572 /* ApplicantDetail.xib */; };
 		0537FC7B1FDFE758005FC572 /* ApplicantDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0537FC791FDFE758005FC572 /* ApplicantDetail.xib */; };
 		0537FC7C1FDFE758005FC572 /* ApplicantDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0537FC791FDFE758005FC572 /* ApplicantDetail.xib */; };
@@ -45,6 +42,9 @@
 		054FF3A31FDEA9860025FF55 /* EmptyShiftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054FF3A21FDEA9860025FF55 /* EmptyShiftView.xib */; };
 		054FF3A41FDEA9860025FF55 /* EmptyShiftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 054FF3A21FDEA9860025FF55 /* EmptyShiftView.xib */; };
 		05750A971FC32BE3007AE2A8 /* AppliedshiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05750A961FC32BE2007AE2A8 /* AppliedshiftsViewController.swift */; };
+		057909BD1FF4E9CC009E76B2 /* ExpiredShiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057909BC1FF4E9CC009E76B2 /* ExpiredShiftController.swift */; };
+		057909BE1FF4E9CC009E76B2 /* ExpiredShiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057909BC1FF4E9CC009E76B2 /* ExpiredShiftController.swift */; };
+		057909BF1FF4E9CC009E76B2 /* ExpiredShiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057909BC1FF4E9CC009E76B2 /* ExpiredShiftController.swift */; };
 		0579627A1FBC204A008A638F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057962791FBC204A008A638F /* RegisterViewController.swift */; };
 		05D5128B1F43255E00F94419 /* FCMTokenUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */; };
 		05D5128E1F432F7500F94419 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05D5128D1F432F7500F94419 /* GoogleService-Info.plist */; };
@@ -199,12 +199,12 @@
 		05322A1C1FE3D31A00532CB0 /* S3TransferManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3TransferManager.swift; sourceTree = "<group>"; };
 		05322A1F1FE3D39300532CB0 /* ContractService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractService.swift; sourceTree = "<group>"; };
 		0537FC701FDFE337005FC572 /* ApplicantListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantListController.swift; sourceTree = "<group>"; };
-		0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantDetailView.swift; sourceTree = "<group>"; };
 		0537FC791FDFE758005FC572 /* ApplicantDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicantDetail.xib; sourceTree = "<group>"; };
 		0537FC7D1FDFF40A005FC572 /* ApplicantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantDetail.swift; sourceTree = "<group>"; };
 		0537FC821FDFFCAE005FC572 /* ApplicantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantCell.swift; sourceTree = "<group>"; };
 		054FF3A21FDEA9860025FF55 /* EmptyShiftView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyShiftView.xib; sourceTree = "<group>"; };
 		05750A961FC32BE2007AE2A8 /* AppliedshiftsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppliedshiftsViewController.swift; sourceTree = "<group>"; };
+		057909BC1FF4E9CC009E76B2 /* ExpiredShiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredShiftController.swift; sourceTree = "<group>"; };
 		057962791FBC204A008A638F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		05D5128A1F43255E00F94419 /* FCMTokenUpdateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCMTokenUpdateService.swift; sourceTree = "<group>"; };
 		05D5128C1F43283400F94419 /* Temployer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Temployer.entitlements; sourceTree = "<group>"; };
@@ -361,6 +361,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		0513C3D81FEA7D6B00F1A702 /* ViewShift */ = {
+			isa = PBXGroup;
+			children = (
+				05322A191FE3C0AD00532CB0 /* ContractModule */,
+				0537FC6F1FDFE30C005FC572 /* ApplicantModule */,
+				477EC66D1EEC875E00E659E7 /* ViewShiftInfoController.swift */,
+			);
+			path = ViewShift;
+			sourceTree = "<group>";
+		};
 		0515BD5A1FBC776D0026CBDD /* Validator+UKNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +465,7 @@
 		05212A421FC4161A00C70305 /* PostedShifts */ = {
 			isa = PBXGroup;
 			children = (
+				057909BB1FF4E942009E76B2 /* Expired */,
 				05212A461FC4167100C70305 /* Completed */,
 				05212A451FC4166800C70305 /* Covered */,
 				05212A441FC4164E00C70305 /* Posted */,
@@ -507,9 +518,9 @@
 			isa = PBXGroup;
 			children = (
 				0537FC701FDFE337005FC572 /* ApplicantListController.swift */,
-				0537FC741FDFE539005FC572 /* ApplicantDetailView.swift */,
 			);
 			name = ApplicantModule;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0537FC781FDFE734005FC572 /* ApplicantDetailView */ = {
@@ -527,6 +538,14 @@
 				0537FC821FDFFCAE005FC572 /* ApplicantCell.swift */,
 			);
 			name = ApplicantCell;
+			sourceTree = "<group>";
+		};
+		057909BB1FF4E942009E76B2 /* Expired */ = {
+			isa = PBXGroup;
+			children = (
+				057909BC1FF4E9CC009E76B2 /* ExpiredShiftController.swift */,
+			);
+			name = Expired;
 			sourceTree = "<group>";
 		};
 		057962781FBC202F008A638F /* RegisterController */ = {
@@ -597,12 +616,11 @@
 		477726221EDEE03400ACFBCD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				05322A191FE3C0AD00532CB0 /* ContractModule */,
+				0513C3D81FEA7D6B00F1A702 /* ViewShift */,
 				05D55AF31FB9E05000109D5B /* Register */,
 				479C5ECD1EE4871D00090094 /* Add Shift */,
 				4786196F1EDF480800870F12 /* Tabs */,
 				4791C9771EDCAA6A0028972A /* Showcase */,
-				477EC66D1EEC875E00E659E7 /* ViewShiftInfoController.swift */,
 				478F52041EEC995C00A351F6 /* ThankViewController.swift */,
 				478F52021EEC993A00A351F6 /* RateViewController.swift */,
 			);
@@ -634,7 +652,6 @@
 		4786196F1EDF480800870F12 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				0537FC6F1FDFE30C005FC572 /* ApplicantModule */,
 				05212A421FC4161A00C70305 /* PostedShifts */,
 				478619701EDF482B00870F12 /* ShiftsViewController.swift */,
 				477C43551EEDD97D00D38660 /* IntercomViewController.swift */,
@@ -1246,6 +1263,7 @@
 				479C5ECF1EE4874500090094 /* AddShiftController.swift in Sources */,
 				4791C97D1EDCAA7C0028972A /* MyCustomPageViewController.swift in Sources */,
 				0530661D1F42060A005760C5 /* OAuth2Handler.swift in Sources */,
+				057909BD1FF4E9CC009E76B2 /* ExpiredShiftController.swift in Sources */,
 				475DFF5E1EE5B1E4001B8229 /* DateRange.swift in Sources */,
 				05D55AF51FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */,
 				4778ACF21EE8A0E1004D834E /* CreateShiftService.swift in Sources */,
@@ -1282,7 +1300,6 @@
 				0537FC7E1FDFF40A005FC572 /* ApplicantDetail.swift in Sources */,
 				47881CBC1EDC5E6300FEC0EE /* ViewController.swift in Sources */,
 				476515C91EEFF766008675E1 /* ShiftsService.swift in Sources */,
-				0537FC751FDFE539005FC572 /* ApplicantDetailView.swift in Sources */,
 				4777261E1EDECBE100ACFBCD /* Params.swift in Sources */,
 				479D4F871EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
 				477BF73C1EEAD70E00888994 /* TableViewExtension.swift in Sources */,
@@ -1313,11 +1330,11 @@
 				05D55AFB1FB9E33500109D5B /* NumberVerificationService.swift in Sources */,
 				0537FC841FDFFCAE005FC572 /* ApplicantCell.swift in Sources */,
 				05322A1E1FE3D31A00532CB0 /* S3TransferManager.swift in Sources */,
+				057909BE1FF4E9CC009E76B2 /* ExpiredShiftController.swift in Sources */,
 				0537FC721FDFE337005FC572 /* ApplicantListController.swift in Sources */,
 				05322A211FE3D39300532CB0 /* ContractService.swift in Sources */,
 				0537FC7F1FDFF40A005FC572 /* ApplicantDetail.swift in Sources */,
 				05D55AEE1FB9BC6300109D5B /* RegisterService.swift in Sources */,
-				0537FC761FDFE539005FC572 /* ApplicantDetailView.swift in Sources */,
 				479D4F881EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1326,7 +1343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0537FC771FDFE539005FC572 /* ApplicantDetailView.swift in Sources */,
+				057909BF1FF4E9CC009E76B2 /* ExpiredShiftController.swift in Sources */,
 				05D55AF71FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */,
 				47881CDA1EDC5E6300FEC0EE /* TempEmployeeUITests.swift in Sources */,
 				479D4F8D1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
@@ -1479,7 +1496,7 @@
 				INFOPLIST_FILE = TempEmployee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
 				PRODUCT_NAME = Temployer;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1497,7 +1514,7 @@
 				INFOPLIST_FILE = TempEmployee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
 				PRODUCT_NAME = Temployer;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;

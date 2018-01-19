@@ -13,9 +13,11 @@ import DropDown
 import Intercom
 import Firebase
 import UserNotifications
+import AWSS3
+import AWSCore
 
 let INTERCOM_APP_ID = "u2oc79rp"
-let INTERCOM_API_KEY = "ios_sdk-28fca06bd4b1824de40d5558d1f571b7b7303004"
+let INTERCOM_API_KEY = "ios_sdk-caf453789fc1dc7411664e9d01a0f342e6b55359"//ios_sdk-28fca06bd4b1824de40d5558d1f571b7b7303004"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate, MessagingDelegate {
@@ -31,6 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         IQKeyboardManager.sharedManager().enable = true
         
         Intercom.setApiKey(INTERCOM_API_KEY, forAppId: INTERCOM_APP_ID)
+        
+        let credentialProvider = AWSStaticCredentialsProvider(accessKey:Constants.S3Credentials.accessKey , secretKey:Constants.S3Credentials.secretkey )
+        
+        let configuration = AWSServiceConfiguration(region: .EUWest2 , credentialsProvider: credentialProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
         
         self.registerForRemoteNotification(application);
         
@@ -78,12 +85,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         print(Messaging.messaging().fcmToken ?? "No token found")
         
-        //        if Defaults[.hasUserSignedIn]{
-        //            FCMTokenUpdateService().updateUserFCM(token: Messaging.messaging().fcmToken!) { (result) in
-        //
-        //                print(result);
-        //            }
-        //        }
+                if Defaults[.accessToken] != nil{
+                    FCMTokenUpdateService().updateUserFCM(token: Messaging.messaging().fcmToken!) { (result) in
+        
+                        print(result);
+                    }
+                }
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

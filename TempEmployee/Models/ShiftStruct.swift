@@ -27,14 +27,15 @@ public enum AssignStatus :Int{
 
 public enum ShiftStatus :Int{
     
-    case SHIFT_TO_BE_COVERED = 0
-    case SHIFT_ASSIGNED = 1
-    case SHIFT_COMPLETED = 2
+    case PENDING = 0
+    case CONTRACTSENT = 1 // Employer has approved a jobseeker
+    case SIGNED = 2
     case SHIFT_EMPLOYEE_ABSENT = 3
-    case SHIFT_CANCELLED = 4
-    case SHIFT_EMPLOYEE_ISPAID = 5
-    case SHIFT_EXPIRED = 6
-    
+    case CANCELLEDBYJOBSEEKER = 4
+    case CANCELLEDBYEMPLOYER = 5
+    case JOBSEEKERABSENT = 6
+    case COMPLETED = 7
+    case EXPIRED = 8
 }
 
 struct Shift  {
@@ -43,7 +44,7 @@ struct Shift  {
     var assigned_job_seeker_id: Int?
     var role: String?
     var from_time: String?
-    var interview_time: String?
+    //var interview_time: String?
     var shift_hours: String?
     var address: String?
     var price_per_hour: Float!
@@ -62,15 +63,16 @@ struct Shift  {
     var created_at : String!
     //var shift_status : ShiftStatus!
     var shift_mode : ShiftMode! =  ShiftMode(rawValue: 0)
-    var totalCost: Float!
+    var totalCost: Float?
+    var shift_status :ShiftStatus!
     
-    init(role:String?,from_time: String?, interview_time: String?,shift_hours: String?,address: String?,price_per_hour: Float!,shift_date: String?,reporting_to: String?,phone: String?,details: String?,special_info: String?,site_instructions: String?,required_licenses: [Licence],id:Int,assigned_job_seeker_id:Int?, lat: Double, lng:Double, created_at:String?,totalCost:Float!) {
+    init(role:String?,from_time: String?,shift_hours: String?,address: String?,price_per_hour: Float!,shift_date: String?,reporting_to: String?,phone: String?,details: String?,special_info: String?,site_instructions: String?,required_licenses: [Licence],id:Int,assigned_job_seeker_id:Int?, lat: Double, lng:Double, created_at:String?,totalCost:Float?,shift_status:ShiftStatus!) {
         
         self.id = id
         self.assigned_job_seeker_id = assigned_job_seeker_id
         self.role = role
         self.from_time = from_time
-        self.interview_time = interview_time
+        //self.interview_time = interview_time
         self.shift_hours = shift_hours
         self.shift_date = shift_date
         self.address = address
@@ -85,7 +87,7 @@ struct Shift  {
         self.required_licenses = required_licenses
         //self.assign_status = assign_status
         self.created_at = created_at
-        //self.shift_status = shift_status
+        self.shift_status = shift_status
         self.totalCost = totalCost
         
     }

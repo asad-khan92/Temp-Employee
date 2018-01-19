@@ -36,18 +36,35 @@ class AppliedshiftsViewController: UIViewController {
         
             
             
-            let completedVC : CompletedShiftController = storyboard.instantiateViewController()
+        let completedVC : CompletedShiftController = storyboard.instantiateViewController()
             
-            let postedVC : PostedShiftController = storyboard.instantiateViewController()
+        
+        let postedVC : PostedShiftController = storyboard.instantiateViewController()
             
+      
+        let expiredVC : ExpiredShiftController = storyboard.instantiateViewController()
             
-            
-            viewControllers = [coveredVC,postedVC,completedVC]
+        
+        viewControllers = [coveredVC,postedVC,completedVC,expiredVC]
             
        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleRefresh(_:)), name: NSNotification.Name(rawValue: Constants.Notifications.pushNotificationReceived), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleRefresh(_:)), name: NSNotification.Name(rawValue: Constants.Notifications.shiftPosted), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleRefresh(_:)), name: NSNotification.Name(rawValue: Constants.Notifications.refreshShiftsList), object: nil)
+        
         
         tabButtons[selectedIndex].isSelected = true
         tabSelected(tabButtons[selectedIndex])
+    }
+    
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        self.tabBarController?.selectedIndex = 0
+        //self.fetchShifts(service: ShiftsService(),showIndicator: false)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,6 +115,7 @@ class AppliedshiftsViewController: UIViewController {
     }
    
     @IBAction func postANewJob(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 1
     }
     
 }

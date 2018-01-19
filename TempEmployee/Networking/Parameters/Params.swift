@@ -127,11 +127,12 @@ class Params {
         
     }
     
-    public static func paramForSendingContractTo(jsID:Int,shiftID:Int)-> [String:Any]{
+    public static func paramForSendingContractTo(jsID:Int,shiftID:Int,contract:String)-> [String:Any]{
         
         return [
             "jobseeker_id": jsID,
-            "shift_id" : shiftID
+            "shift_id" : shiftID,
+            "contract":contract
         ]
         
     }

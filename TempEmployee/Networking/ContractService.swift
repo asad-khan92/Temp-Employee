@@ -45,9 +45,9 @@ struct ContractService {
         
     }
     
-    func sendJobContractTo( jobseekerID:Int,of shiftID:Int,completionHandler: @escaping (Result<Meta> ) -> Void){
+    func sendJobContractTo( jobseekerID:Int,of shiftID:Int,contract:String,completionHandler: @escaping (Result<Meta> ) -> Void){
         
-        NetworkManager.shared.callServer(with_request: TemProvideRouter.sendContract(jobseekerID: jobseekerID, shiftID: shiftID), completionHandler: {result in
+        NetworkManager.shared.callServer(with_request: TemProvideRouter.sendContract(jobseekerID: jobseekerID, shiftID: shiftID,contractText: contract), completionHandler: {result in
             
             switch result {
                 

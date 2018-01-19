@@ -99,6 +99,11 @@ extension MainViewController:BWWalkthroughViewControllerDelegate{
         
     }
     
+    func walkthroughForgotPasswordButtonPressed(){
+        
+        self.forgotPassword(userEmail:walkthrough.loginEmailField.text! , service: LoginService())
+    }
+    
     // Login method
     //
     func walkthroughGetWorkButtonPressed(){
@@ -195,8 +200,24 @@ extension MainViewController: RegistrationDelegate{
 //// MARK - Networking call
 extension MainViewController{
     
-    
-    
+    func forgotPassword(userEmail:String, service : LoginService){
+        HUD.show(.progress, onView: walkthrough.view)
+        service.forgotPassword(js_email: userEmail) { (result) in
+            switch result{
+                
+            case .Success(let response):
+                print(response)
+                if response.success{
+                    HUD.flash(.label("An email has been sent to your email address"), onView: self.walkthrough.view, delay: 4, completion: nil)
+                }else{
+                    HUD.flash(.label(response.message), onView: self.walkthrough.view, delay: 4, completion: nil)
+                }
+            case .Failure(let error):
+                HUD.flash(.label(error.localizedDescription), onView: self.walkthrough.view, delay: 4, completion: nil)
+                print(error)
+            }
+        }
+    }
     
     func loginEmployer(fromService service: LoginService,  withCreds creds: Credential){
         

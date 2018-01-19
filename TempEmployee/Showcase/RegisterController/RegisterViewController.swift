@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController {
                 // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
                 validator.registerField(passwordField , errorLabel:passwordValidationErrorLabel, rules: [RequiredRule()])
         
-                 validator.registerField(numberField , errorLabel:numberValidationErrorLabel, rules: [RequiredRule(), PhoneNumberRule(country: "Pakistan")])
+                 validator.registerField(numberField , errorLabel:numberValidationErrorLabel, rules: [RequiredRule(), PhoneNumberRule(country: "UK")])
         
         
     }

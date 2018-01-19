@@ -27,6 +27,7 @@ target 'TempEmployee' do
   pod 'Firebase/Messaging'
   pod 'EPSignature'
   pod 'AWSS3'
+ 
   target 'TempEmployeeTests' do
     inherit! :search_paths
     # Pods for testing

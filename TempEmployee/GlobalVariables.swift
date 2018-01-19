@@ -34,6 +34,7 @@ struct Constants {
             static let ComapnyInfo : String             = "employers/companyInfo"
             static let EmployerActive : String          = "employers/active/"
             static let SendContract : String            = "employers/hireJobSeeker"
+            static let ForgotPassword : String          = "forgotPassword"
         }
         
         
@@ -49,6 +50,7 @@ struct Constants {
             static let PostedShifts :String                   = "employers/shifts/posted"
             static let CoveredShifts :String                  = "employers/shifts/covered"
             static let CompletedShifts :String                = "employers/shifts/completed"
+            static let ExpiredShifts : String                 = "employers/shifts/expired"
             static let Contract :String                       = "employers/contract"
         }
         struct Put {

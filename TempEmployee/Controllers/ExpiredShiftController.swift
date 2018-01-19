@@ -1,14 +1,14 @@
 //
-//  CompletedShiftController.swift
+//  ExpiredShiftController.swift
 //  TempEmployee
 //
-//  Created by Asad Khan on 11/21/17.
+//  Created by Asad Khan on 12/28/17.
 //  Copyright © 2017 Attribe. All rights reserved.
 //
 
 import UIKit
 import PKHUD
-class CompletedShiftController: UIViewController {
+class ExpiredShiftController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,15 +23,15 @@ class CompletedShiftController: UIViewController {
     let reuseIndentifier = "ShiftsCell"
     
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad called")
         self.tableView.register(UINib(nibName: reuseIndentifier, bundle: nil), forCellReuseIdentifier: reuseIndentifier)
-       
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,25 +45,17 @@ class CompletedShiftController: UIViewController {
     func setTableView()  {
         
         if shifts.count > 0{
-            removeEmptyView()
+            tableView.reloadData()
+            tableView.backgroundView = nil
             return
         }
-        setEmptyView()
-    }
-    
-    func removeEmptyView(){
-        
-        tableView.reloadData()
-        tableView.backgroundView = nil
-    }
-    func setEmptyView(){
         
         let view = Bundle.main.loadNibNamed("EmptyShiftView", owner: self, options: nil)?.first as? UIView
         let label = view?.viewWithTag(401) as! UILabel
         label.text = "No shift data found"
         self.tableView.backgroundView = view
+        
     }
-    
     func edit(shift: Shift!) {
         
         let storyboard = UIStoryboard.init(name: "AddShift", bundle: nil)
@@ -103,8 +95,9 @@ class CompletedShiftController: UIViewController {
         self.edit(shift: sObj)
     }
     
+    
 }
-extension CompletedShiftController : UITableViewDelegate,UITableViewDataSource{
+extension ExpiredShiftController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
@@ -116,12 +109,12 @@ extension CompletedShiftController : UITableViewDelegate,UITableViewDataSource{
         cell.shiftRate.text = "£\(shift.totalCost!)"
         
         let app = "SHIFT"
-        let str = NSMutableAttributedString(string: "\(app) COMPLETED")
+        let str = NSMutableAttributedString(string: "\(app) EXPIRED")
         str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Light", size: 11)!], range: NSMakeRange(0, app.count))
         str.addAttributes([NSFontAttributeName:UIFont(name:"Lato-Bold", size: 11)!], range: NSMakeRange(app.count, str.length - app.count ))
         
         cell.shiftStatus.attributedText = str
-        cell.shiftStatus.textColor = UIColor.blueThemeColor()
+        cell.shiftStatus.textColor = UIColor.red
         
         cell.blueTickMark.isHidden = true
         cell.shiftApplicantImage.isHidden = true
@@ -135,7 +128,6 @@ extension CompletedShiftController : UITableViewDelegate,UITableViewDataSource{
         cell.editButton.addTarget(self, action: #selector(editShift(_:)), for: .touchUpInside)
         cell.viewButton.addTarget(self, action: #selector(viewShift(_:)), for: .touchUpInside)
         
-        
         return cell
     }
     
@@ -146,11 +138,11 @@ extension CompletedShiftController : UITableViewDelegate,UITableViewDataSource{
 }
 
 // MARK: - Networking
-extension CompletedShiftController{
+extension ExpiredShiftController{
     
     func getAllCompletedShifts(service:ShiftsService){
         
-        service.fetchCompleted { (result) in
+        service.fetchExpired { (result) in
             switch result {
                 
             case .Success(let response):
@@ -159,11 +151,10 @@ extension CompletedShiftController{
                     self.shifts = response.shifts
                 }else{
                     HUD.flash(.error, delay: 0.0)
-                    self.setEmptyView()
+                    
                 }
             case .Failure(let error):
                 HUD.flash(.error, delay: 0.0)
-                self.setEmptyView()
                 self.errorAlert(description: error.localizedDescription)
             }
         }
@@ -202,4 +193,5 @@ extension CompletedShiftController{
             }
         })
     }
+    
 }

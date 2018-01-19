@@ -13,9 +13,8 @@ import SDWebImage
  
 class ShiftsCell: UITableViewCell {
     
-    //@IBOutlet weak var shiftCompletedLabel: UILabel!
+    
     @IBOutlet weak var progressBar: CircleProgressBar!
-    //@IBOutlet weak var completedView: UIView!
     @IBOutlet weak var deleteLabel: UILabel!
     @IBOutlet weak var editLabel: UILabel!
     @IBOutlet weak var viewLabel: UILabel!
@@ -33,8 +32,10 @@ class ShiftsCell: UITableViewCell {
     @IBOutlet weak var shiftJobTitle: UILabel!
     @IBOutlet weak var shiftDate: UILabel!
     @IBOutlet weak var repostButton: UIButton!
-   
     @IBOutlet weak var blueTickMark: UIImageView!
+    
+    @IBOutlet weak var editButtonWidthConstraint: NSLayoutConstraint!
+    
     var progressTimer : Timer?
     var shiftPostedDate = 0.0
     
@@ -190,6 +191,7 @@ class ShiftsCell: UITableViewCell {
             self.progressTimer?.invalidate()
             self.progressBar.isHidden = true
             self.repostButton.isHidden = false
+            self.shiftStatus.isHidden = true
             //self.completedView.isHidden = true
             return
         }

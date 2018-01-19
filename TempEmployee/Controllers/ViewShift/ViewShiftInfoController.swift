@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import SDWebImage
+import IQKeyboardManagerSwift
 
 enum ContactType :Int{
     
@@ -17,8 +18,8 @@ enum ContactType :Int{
 }
 class ViewShiftInfoController: UIViewController {
 
+    @IBOutlet weak var InformationView: IQPreviousNextView!
     @IBOutlet weak var applicantsContainerView: UIView!
-    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var backPressed: UIButton!
     @IBOutlet weak var shiftCostLabel: UILabel!
@@ -27,10 +28,13 @@ class ViewShiftInfoController: UIViewController {
     @IBOutlet weak var timendHourLabel: UILabel!
     @IBOutlet weak var datelabel: UILabel!
     @IBOutlet weak var rollLabel: UILabel!
-
+    @IBOutlet weak var editPressed: UIButton!
+    
     var shift: Shift!
     var selectedPointAnnotation:MKPointAnnotation?
-    
+    var applicantDetail : ApplicantDetail!
+    var applicantListController : ApplicantListController!
+    //var contractSent : Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,16 +56,19 @@ class ViewShiftInfoController: UIViewController {
             self.editPressed.isHidden = true
         }
         
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ApplicantListController") as! ApplicantListController
-        controller.jobID = shift.id
-        controller.jobseekerArray = shift.jobSeekers!
+         applicantListController = self.storyboard?.instantiateViewController(withIdentifier: "ApplicantListController") as! ApplicantListController
+        applicantListController.jobID = shift.id
+        applicantListController.jobseekerArray = shift.jobSeekers!
+        applicantListController.delegate = self
+        applicantListController.contractSend = false
+        if shift.shift_status == ShiftStatus.CONTRACTSENT{
+            applicantListController.contractSend = true
+        }
+        addChildViewController(applicantListController) // Calls the viewWillAppear method of the ViewController you are adding
+        applicantListController.view.frame = self.applicantsContainerView.bounds
+        applicantsContainerView.addSubview(applicantListController.view)
         
-        
-        addChildViewController(controller) // Calls the viewWillAppear method of the ViewController you are adding
-        controller.view.frame = self.applicantsContainerView.bounds
-        applicantsContainerView.addSubview(controller.view)
-        
-        controller.didMove(toParentViewController: self) // Call the viewDidAppear method of the ViewController you are adding
+        applicantListController.didMove(toParentViewController: self) // Call the viewDidAppear method of the ViewController you are adding
         
     }
     @IBAction func ratingButtonPressed(_ sender: UIButton) {
@@ -80,73 +87,26 @@ class ViewShiftInfoController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    @IBAction func callButtonPressed(_ sender: Any) {
+   
+    @IBAction func backPressed(_ sender: Any) {
         
-//        if self.shift.jobSeeker?.phone == nil{
-//            
-//            self.errorAlert(description: "\(self.shift.jobSeeker?.username) have not provided his contact number")
-//            return
-//        }
-//        if let contactNumber = self.shift.jobSeeker?.phone!{
-//            
-//            let str = "tel:\(contactNumber)"
-//            self.openSharedURl(str:str , type: .call)
-//            
-//            
-//        }
-        
-        
-    }
-    @IBAction func whatsAppButtonPressed(_ sender: Any) {
-        
-        
-       
-//        if self.shift.jobSeeker?.phone == nil{
-//
-//            self.errorAlert(description: "\(self.shift.jobSeeker?.username) have not provided his WhatsApp contact")
-//            return
-//        }
-//        if let contactNumber = self.shift.jobSeeker?.phone!{
-//
-//            var stringURL : String
-//            if contactNumber.hasPrefix("+") ||  contactNumber.hasPrefix("+44"){
-//
-//                 let number = contactNumber.replacingOccurrences(of: "+", with: "")
-//                 stringURL = "https://api.whatsapp.com/send?phone=\(number)&text=hello"
-//            }else{
-//                stringURL = "https://api.whatsapp.com/send?phone=44\(contactNumber)&text=hello"
-//            }
-//
-//            self.openSharedURl(str:stringURL , type: .whatsApp)
-//
-//
-//
-//        }
-
-    }
-    func openSharedURl(str:String , type:ContactType) {
-        
-         let urlString = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let url = URL(string: urlString!)
-        if url == nil{
-            
+        if applicantDetail != nil {
+            applicantDetail.removeFromSuperview()
+            applicantDetail = nil
             return
         }
-        
-        if UIApplication.shared.canOpenURL(url!) {
-            UIApplication.shared.open(url!, options: [:], completionHandler: { reult in
-                
-                print("\(url) \(reult)")
-            })
+        if applicantsContainerView.isHidden{
             
+            applicantsContainerView.isHidden = false
+            
+            self.InformationView.isHidden = false
+            
+            applicantDetail.removeFromSuperview()
+            return
         }
-
-    }
-    @IBAction func backPressed(_ sender: Any) {
       let  _ =  self.navigationController?.popToRootViewController(animated: true)
     }
-    @IBOutlet weak var editPressed: UIButton!
+    
     @IBAction func editPressed(_ sender: Any) {
         
         let storyboard = UIStoryboard.init(name: "AddShift", bundle: nil)
@@ -167,6 +127,15 @@ class ViewShiftInfoController: UIViewController {
         selectedPointAnnotation!.coordinate = coordinate
         selectedPointAnnotation!.title = address
         mapView.addAnnotation(selectedPointAnnotation!)
+    }
+    
+    func showContractControllertTo(jobseeker : JobSeeker, jobID :Int){
+        
+        let dest = self.storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController
+        dest.shiftID = jobID
+        dest.jobseeker = jobseeker
+        dest.delegate = self
+        present(dest, animated: true, completion: nil)
     }
 }
 
@@ -196,4 +165,37 @@ extension ViewShiftInfoController:MKMapViewDelegate{
         
     }
 }
+extension ViewShiftInfoController:ApplicantListControllerDelegate{
+    
+    
+    
+    
+    func showApplicantDetail(applicant: JobSeeker) {
+        
+         applicantDetail = Bundle.main.loadNibNamed("ApplicantDetail", owner: self, options: nil)?.first as! ApplicantDetail?
+        applicantDetail?.applicant =  applicant
+         applicantDetail.jobSeekerAlreadyHired = false
+        if shift.shift_status == .CONTRACTSENT{
+            applicantDetail.jobSeekerAlreadyHired = true
+        }
+        applicantDetail.delegate = self
+        applicantDetail?.frame = self.InformationView.frame
+        applicantDetail?.frame.origin = CGPoint.init(x: 0.0, y: self.InformationView.frame.origin.y - 80)
+        
+        view.addSubview(applicantDetail!)
+    }
+}
 
+extension ViewShiftInfoController:ContractSentDelegate{
+    
+    func contractSentTo(jobseeker: String) {
+        applicantDetail?.removeFromSuperview()
+        applicantListController.filterApplicantList(applicantID: jobseeker)
+        
+    }
+}
+extension ViewShiftInfoController:ApplicantDetailDelegate{
+    func hire(jobseeker: JobSeeker) {
+        self.showContractControllertTo(jobseeker: jobseeker,jobID :shift.id)
+    }
+}

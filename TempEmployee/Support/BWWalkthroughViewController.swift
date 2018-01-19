@@ -25,7 +25,7 @@ SOFTWARE.
 import UIKit
 import Spring
 import IQKeyboardManagerSwift
-
+import SwiftValidator
 // MARK: - Protocols -
 
 
@@ -99,7 +99,7 @@ import IQKeyboardManagerSwift
     
     @IBOutlet weak var loginView: UIView!
     
-   
+    let validator = Validator()
     
     open var currentPage: Int {    // The index of the current page (readonly)
         get{
@@ -211,7 +211,20 @@ import IQKeyboardManagerSwift
         delegate?.walkthroughGetWorkButtonPressed?()
     }
     @IBAction func forgotPassword(_ sender: Any) {
-        delegate?.walkthroughForgotPasswordButtonPressed?()
+        
+        validator.registerField(self.loginEmailField, rules: [EmailRule()])
+        validator.validateField(self.loginEmailField) { (error) in
+            
+            if let emailError = error{
+                
+                self.errorAlert(description: emailError.errorMessage)
+            }else{
+                
+                delegate?.walkthroughForgotPasswordButtonPressed?()
+            }
+        }
+        
+       
     }
     func pageControlDidTouch(){
         if let pc = pageControl{

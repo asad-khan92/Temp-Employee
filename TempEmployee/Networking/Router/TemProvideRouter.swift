@@ -38,8 +38,10 @@ enum TemProvideRouter: URLRequestConvertible {
         case getPostedShift
         case getCompletedShift
         case getCoveredShift
-        case sendContract(jobseekerID: Int, shiftID : Int)
+        case getExpiredShift
+        case sendContract(jobseekerID: Int, shiftID : Int,contractText:String)
         case getContract(empID:Int)
+        case forgotPassword(email:String)
     
   func asURLRequest() throws -> URLRequest {
    
@@ -47,9 +49,9 @@ enum TemProvideRouter: URLRequestConvertible {
     
     var method: HTTPMethod {
       switch self {
-      case .get,.getSIALicence,.taxesAndCharges,.getCompanyInfo,.resendPhoneVerificationCode,.getPostedShift,.getCompletedShift,.getCoveredShift,.getContract:
+      case .get,.getSIALicence,.taxesAndCharges,.getCompanyInfo,.resendPhoneVerificationCode,.getPostedShift,.getCompletedShift,.getCoveredShift,.getContract,.getExpiredShift:
         return .get
-      case .login,.create,.postSlotId,.postRating,.refreshToken,.registerEmployer,.postCompanyInfo,.setEmployerActiveStatus,.sendContract:
+      case .login,.create,.postSlotId,.postRating,.refreshToken,.registerEmployer,.postCompanyInfo,.setEmployerActiveStatus,.sendContract,.forgotPassword:
         return .post
       case .deleteShift:
         return .delete
@@ -62,7 +64,7 @@ enum TemProvideRouter: URLRequestConvertible {
     // In case of GET and DELETE call return nil
     let params: ([String: Any]?) = {
       switch self {
-      case .get ,.deleteShift,.repostShift,.taxesAndCharges,.getCompanyInfo,.resendPhoneVerificationCode,.getPostedShift,.getCompletedShift,.getCoveredShift,.getContract:
+      case .get ,.deleteShift,.repostShift,.taxesAndCharges,.getCompanyInfo,.resendPhoneVerificationCode,.getPostedShift,.getCompletedShift,.getCoveredShift,.getContract,.getExpiredShift:
         return nil
       case .getSIALicence:
         return nil
@@ -93,8 +95,10 @@ enum TemProvideRouter: URLRequestConvertible {
       case .setEmployerActiveStatus:
         return Params.paramForEmployerStatus()
         
-      case .sendContract(let jobseekerID, let shiftID):
-        return Params.paramForSendingContractTo(jsID: jobseekerID, shiftID: shiftID)
+      case .sendContract(let jobseekerID, let shiftID, let contractText):
+        return Params.paramForSendingContractTo(jsID: jobseekerID, shiftID: shiftID,contract: contractText)
+      case .forgotPassword(let email):
+        return ["email":email]
         }
     }()
     let url: URL = {
@@ -148,6 +152,10 @@ enum TemProvideRouter: URLRequestConvertible {
         relativePath = Constants.EndPoints.Get.Contract
       case .sendContract:
         relativePath = Constants.EndPoints.Post.SendContract
+      case .getExpiredShift:
+        relativePath = Constants.EndPoints.Get.ExpiredShifts
+      case .forgotPassword:
+        relativePath = Constants.EndPoints.Post.ForgotPassword
       }
         
         var url = URL(string: TemProvideRouter.baseURLString)!

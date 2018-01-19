@@ -10,9 +10,9 @@ import Foundation
 
 
 struct JobSeeker {
-    let jobseeker_id :String?
-    let email : String?
-    let username : String?
+    let jobseeker_id :String!
+    let email : String!
+    let username : String!
     let phone : String?
     let city : String?
     let post_code : String?
