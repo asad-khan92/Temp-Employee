@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController {
                 // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
                 validator.registerField(passwordField , errorLabel:passwordValidationErrorLabel, rules: [RequiredRule()])
         
-                 validator.registerField(numberField , errorLabel:numberValidationErrorLabel, rules: [RequiredRule(), PhoneNumberRule(country: "UK")])
+                 validator.registerField(numberField , errorLabel:numberValidationErrorLabel, rules: [RequiredRule(), PhoneNumberRule(country: "Pakistan")])
         
         
     }
@@ -67,6 +67,8 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
+        self.clearAllFields()
+        self.clearAllErrorLabel()
         delegate?.closeRegistrationView()
     }
     func moveToNextRegistrationStep(){
@@ -75,7 +77,21 @@ class RegisterViewController: UIViewController {
         delegate?.employerRegistered()
         
     }
+    func clearAllFields(){
+        
+        self.nameField.text = ""
+        self.emailField.text = ""
+        self.passwordField.text = ""
+        self.numberField.text = ""
+    }
     
+    func clearAllErrorLabel(){
+
+        self.passwordValidationErrorLabel.text = ""
+        self.numberValidationErrorLabel.text = ""
+        self.emailValidationErrorLabel.text = ""
+        self.nameValidationErrorLabel.text = ""
+    }
 }
 
 extension RegisterViewController : ValidationDelegate{

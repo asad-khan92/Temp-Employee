@@ -586,34 +586,6 @@
             </objects>
             <point key="canvasLocation" x="2240" y="1259"/>
         </scene>
-        <!--My Custom Page View Controller-->
-        <scene sceneID="0cL-E2-cYx">
-            <objects>
-                <viewController storyboardIdentifier="page_4" id="sf7-mV-kg1" customClass="MyCustomPageViewController" customModule="Temployer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6wb-01-FiL"/>
-                        <viewControllerLayoutGuide type="bottom" id="Jgv-U7-5UG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lAG-DB-oDw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0039215686269999999" green="0.1450980392" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
-                            <point key="value" x="1" y="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
-                            <point key="value" x="1" y="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="InOut"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateAlpha" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Gl-LQ-Acw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2856" y="1259"/>
-        </scene>
         <!--Register View Controller-->
         <scene sceneID="Vkz-cc-yia">
             <objects>
@@ -684,6 +656,29 @@
                                     <constraint firstAttribute="width" constant="285" id="K64-Ct-TAO"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wKp-YA-TDw">
+                                <rect key="frame" x="60" y="152" width="255" height="43"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Iii-7k-PlJ"/>
+                                    <constraint firstAttribute="width" constant="255" id="X3r-eF-Iy9"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Text Field" translatesAutoresizingMaskIntoConstraints="NO" id="xDt-CQ-hme">
+                                <rect key="frame" x="45" y="152" width="285" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="OG8-Xe-QsJ"/>
+                                    <constraint firstAttribute="height" constant="43" id="deo-CE-SsO"/>
+                                </constraints>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="+44xxxxxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMf-Xu-3YD">
                                 <rect key="frame" x="60" y="203" width="255" height="43"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -735,29 +730,6 @@
                                 <color key="textColor" red="0.72235785590000001" green="0.0" blue="0.029831843470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wKp-YA-TDw">
-                                <rect key="frame" x="60" y="152" width="255" height="43"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="Iii-7k-PlJ"/>
-                                    <constraint firstAttribute="width" constant="255" id="X3r-eF-Iy9"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HalisR-Regular" family="Halis R" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Text Field" translatesAutoresizingMaskIntoConstraints="NO" id="xDt-CQ-hme">
-                                <rect key="frame" x="45" y="152" width="285" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="285" id="OG8-Xe-QsJ"/>
-                                    <constraint firstAttribute="height" constant="43" id="deo-CE-SsO"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Text Field" translatesAutoresizingMaskIntoConstraints="NO" id="6MG-06-D9L">
                                 <rect key="frame" x="45" y="254" width="285" height="43"/>
                                 <constraints>
