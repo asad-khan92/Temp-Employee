@@ -37,19 +37,25 @@ class RegisterViewController: UIViewController {
     
     let validator = Validator()
     
+    let dummyNumber = "+440000000000"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
   //       Validation Rules are evaluated from left to right.
+        
+        validator.registerField(nameField, errorLabel: nameValidationErrorLabel , rules: [RequiredRule()])
+        
         validator.registerField(emailField, errorLabel: emailValidationErrorLabel , rules: [RequiredRule(),EmailRule(message: "Invalid email")])
         
                 // You can pass in error labels with your rules
                 // You can pass in custom error messages to regex rules (such as ZipCodeRule and EmailRule)
                 validator.registerField(passwordField , errorLabel:passwordValidationErrorLabel, rules: [RequiredRule()])
         
-                 validator.registerField(numberField , errorLabel:numberValidationErrorLabel, rules: [RequiredRule(), PhoneNumberRule(country: "Pakistan")])
+                 validator.registerField(numberField , errorLabel:numberValidationErrorLabel, rules: [RequiredRule(), PhoneNumberRule(country: "UK")])
         
-        
+        self.numberField.delegate = self
+        self.numberField.text = dummyNumber
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,6 +100,28 @@ class RegisterViewController: UIViewController {
     }
 }
 
+extension RegisterViewController : UITextFieldDelegate{
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == numberField{
+            if textField.text == dummyNumber{
+                textField.text = "+44"
+            }
+        }
+       
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    
+        
+        if textField == numberField{
+            if textField.text?.length == 3 && string == ""{
+                return false
+            }
+        }
+        return true
+    }
+}
 extension RegisterViewController : ValidationDelegate{
     
     func validationSuccessful() {

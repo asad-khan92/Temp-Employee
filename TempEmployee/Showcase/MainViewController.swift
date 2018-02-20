@@ -224,7 +224,7 @@ extension MainViewController{
         HUD.show(.progress)
         service.loginEmployerWith(credentials:creds, completionHandler: {result in
             
-            
+            HUD.hide()
             switch result {
             case .Success(let user):
                 

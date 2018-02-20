@@ -24,6 +24,25 @@ class CompanyInfoController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let label = UILabel.init()
+        label.frame = CGRect.init(origin: CGPoint.init(x: 0.0, y: 0.0), size: CGSize.init(width:tableView.frame.width, height: 50))
+        label.font = UIFont.init(name: "HalisR-Bold", size: 20)
+        label.textAlignment = .center
+        label.backgroundColor = UIColor.clear
+        if #available(iOS 11.0, *) {
+            label.textColor = UIColor(named: "Theme Blue Color")
+        } else {
+            // Fallback on earlier versions
+            label.textColor = UIColor.init(hex:"#6398FB")
+        }
+       
+       
+            label.text = "COMPANY INFORMATION"
+       
+        
+        
+        self.tableView.tableHeaderView = label
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,26 +147,26 @@ extension CompanyInfoController : UITableViewDataSource, UITableViewDelegate{
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let label = UILabel.init()
-        label.frame = CGRect.init(origin: CGPoint.init(x: 0.0, y: 0.0), size: CGSize.init(width:tableView.frame.width, height: 50))
-        label.font = UIFont.init(name: "HalisR-Bold", size: 20)
-        label.textAlignment = .center
-        label.backgroundColor = UIColor.clear
-        if #available(iOS 11.0, *) {
-            label.textColor = UIColor(named: "Theme Blue Color")
-        } else {
-            // Fallback on earlier versions
-            label.textColor = UIColor.init(hex:"#6398FB")
-        }
-        label.text = "PAYMENT INFORMATION"
-        if section == 0{
-           label.text = "COMPANY INFORMATION"
-        }
-        
-        return label 
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//        let label = UILabel.init()
+//        label.frame = CGRect.init(origin: CGPoint.init(x: 0.0, y: 0.0), size: CGSize.init(width:tableView.frame.width, height: 50))
+//        label.font = UIFont.init(name: "HalisR-Bold", size: 20)
+//        label.textAlignment = .center
+//        label.backgroundColor = UIColor.clear
+//        if #available(iOS 11.0, *) {
+//            label.textColor = UIColor(named: "Theme Blue Color")
+//        } else {
+//            // Fallback on earlier versions
+//            label.textColor = UIColor.init(hex:"#6398FB")
+//        }
+//        label.text = "PAYMENT INFORMATION"
+//        if section == 0{
+//           label.text = "COMPANY INFORMATION"
+//        }
+//        
+//        return label 
+//    }
   
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -217,7 +236,13 @@ extension CompanyInfoController{
             
             switch result{
                 
-            case .Success( _):
+            case .Success(let meta):
+                if meta.code == 400{
+                    if let detail = meta.message_detail{
+                        self.errorAlert(description: detail)
+                    }
+                    return
+                }
                 Defaults[.hasEmployerSignedIn] = true
                 self.moveToNextController()
             case .Failure(let error):

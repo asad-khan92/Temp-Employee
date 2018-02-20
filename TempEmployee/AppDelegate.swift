@@ -190,8 +190,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
             self.setRootController(root: rootController)
         }
             
-            // Employer regsitered but licence detail not uploaded take him to licenceContainerController
-        else {
+    // Employer regsitered but licence detail not uploaded take him to licenceContainerController
+     else {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             

@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftyUserDefaults
-
+import Firebase
 class Params {
     
     
@@ -21,7 +21,9 @@ class Params {
             "phone": employer.phoneNumber,
             "client_id": "1",
             "client_secret": "test",
-            "grant_type": "employer_signup"
+            "grant_type": "employer_signup",
+            "device_id":"iosdummydeviceid",
+            "device_type":"iOS"
         ]
     }
     
