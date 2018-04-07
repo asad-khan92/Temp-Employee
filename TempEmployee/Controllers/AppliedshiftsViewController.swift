@@ -12,6 +12,9 @@ import Intercom
 class AppliedshiftsViewController: UIViewController {
 
     
+    @IBOutlet weak var postJobButton: UIButton!
+    @IBOutlet weak var highlightView: HightlightView!
+    @IBOutlet weak var highlightInfoView: UIView!
     @IBOutlet var tabButtons: [UIButton]!
     @IBOutlet weak var container: UIView!
     
@@ -25,6 +28,7 @@ class AppliedshiftsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //view.addGestureRecognizer(screenEdgePanGesture)
         view.isUserInteractionEnabled = true
         self.navigationController?.navigationBar.isHidden = true
@@ -57,6 +61,8 @@ class AppliedshiftsViewController: UIViewController {
         
         tabButtons[selectedIndex].isSelected = true
         tabSelected(tabButtons[selectedIndex])
+        
+        
     }
     
     func handleRefresh(_ refreshControl: UIRefreshControl) {
@@ -71,12 +77,24 @@ class AppliedshiftsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //self.fetchShifts(service: ShiftsService(), showIndicator: false)
         
         Intercom.setLauncherVisible(true)
         Intercom.setBottomPadding(32)
+        
+        highlightView.highlightedView = self.postJobButton
+        
+        self.view.bringSubview(toFront: highlightView)
+        self.view.bringSubview(toFront: highlightInfoView)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

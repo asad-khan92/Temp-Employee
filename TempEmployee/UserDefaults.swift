@@ -32,5 +32,5 @@ extension DefaultsKeys {
     static let refreshToken = DefaultsKey<String?>(Constants.Employer.refreshToken)
     
     static let verificationCode = DefaultsKey<Int>(Constants.verificationCode)
-    //static let hasUserSignedIn = DefaultsKey<Bool>(Constants.Employee.SignedIn)
+    static let name = DefaultsKey<String?>("EmployerName")
 }

@@ -136,6 +136,7 @@ extension CompanyInfoController : UITableViewDataSource, UITableViewDelegate{
 
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompanyCell", for: indexPath) as! CompanyCell
             companyCell = cell
+            cell.nameField.text = Defaults[.name]!
             return cell
         }else{
             self.tableView.register(UINib.init(nibName:"CompanyAccountCell" , bundle:Bundle.main), forCellReuseIdentifier: "CompanyAccountCell")

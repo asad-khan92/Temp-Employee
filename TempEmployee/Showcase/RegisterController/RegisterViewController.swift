@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
     
     let validator = Validator()
     
-    let dummyNumber = "+440000000000"
+    let dummyNumber = "MOBILE PHONE NUMBER"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,9 +105,9 @@ extension RegisterViewController : UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if textField == numberField{
-            if textField.text == dummyNumber{
+          //  if textField.text == dummyNumber{
                 textField.text = "+44"
-            }
+          //  }
         }
        
     }
@@ -170,7 +170,7 @@ extension RegisterViewController{
                     Defaults[.password] = epmloyerInfo.password
                     Defaults[.refreshToken] = user.refresh_token
                     Defaults[.verificationCode] = user.verificationCode as! Int
-                    
+                    Defaults[.name] = epmloyerInfo.name
                     DispatchQueue.main.async() {
                         self.moveToNextRegistrationStep()
                         Intercom.registerUser(withEmail: epmloyerInfo.email)

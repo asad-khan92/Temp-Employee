@@ -155,14 +155,14 @@ extension CompletedShiftController{
                 
             case .Success(let response):
                 if response.success{
-                    HUD.flash(.success, delay: 0.0)
+                  //  HUD.flash(.success, delay: 0.0)
                     self.shifts = response.shifts
                 }else{
-                    HUD.flash(.error, delay: 0.0)
+                  //  HUD.flash(.error, delay: 0.0)
                     self.setEmptyView()
                 }
             case .Failure(let error):
-                HUD.flash(.error, delay: 0.0)
+              //  HUD.flash(.error, delay: 0.0)
                 self.setEmptyView()
                 self.errorAlert(description: error.localizedDescription)
             }

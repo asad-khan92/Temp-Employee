@@ -162,8 +162,8 @@
                     <color key="progressTintColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="0.3672945205" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="trackTintColor" red="0.38431372549999998" green="0.59215686270000001" blue="0.98039215690000003" alpha="0.3672945205" colorSpace="custom" customColorSpace="sRGB"/>
                 </progressView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LICENSES HELD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te6-bI-3E9">
-                    <rect key="frame" x="40" y="323.33333333333331" width="136" height="22.333333333333314"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LICENCES HELD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te6-bI-3E9">
+                    <rect key="frame" x="40" y="323.33333333333331" width="137.66666666666666" height="22.333333333333314"/>
                     <fontDescription key="fontDescription" name="HalisR-Bold" family="Halis R" pointSize="17"/>
                     <color key="textColor" red="0.31764705882352939" green="0.50980392156862742" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>

@@ -245,7 +245,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift cost" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0a-LS-cWa">
-                                        <rect key="frame" x="40" y="160" width="76.5" height="21"/>
+                                        <rect key="frame" x="40" y="160" width="72.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£89.8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVB-99-NHs">
-                                        <rect key="frame" x="290.5" y="160" width="45.5" height="21"/>
+                                        <rect key="frame" x="289.5" y="160" width="46.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -277,7 +277,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line Image" translatesAutoresizingMaskIntoConstraints="NO" id="zHg-zX-mVj">
-                                        <rect key="frame" x="40" y="189" width="296" height="2"/>
+                                        <rect key="frame" x="40" y="190" width="296" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="SYj-PN-36d"/>
                                         </constraints>
@@ -294,7 +294,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUP-to-hx5">
-                                        <rect key="frame" x="0.0" y="199" width="375" height="193.5"/>
+                                        <rect key="frame" x="0.0" y="200" width="375" height="192.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -1137,6 +1137,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77C-LN-p5L" customClass="HightlightView" customModule="Temployer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask Group" translatesAutoresizingMaskIntoConstraints="NO" id="lE9-Bm-X7f">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <gestureRecognizers/>
@@ -1365,6 +1369,26 @@
                                     <action selector="postANewJob:" destination="DQa-nM-1g3" eventType="touchUpInside" id="dQ5-43-L8R"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYL-kJ-bhJ">
+                                <rect key="frame" x="65" y="426" width="245" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get your first shift covered. Post a shift now." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5r-HN-cyg">
+                                        <rect key="frame" x="8" y="0.0" width="229" height="55"/>
+                                        <fontDescription key="fontDescription" name="HalisR-SBook" family="Halis R" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="HRQ-oY-3M5"/>
+                                    <constraint firstItem="O5r-HN-cyg" firstAttribute="leading" secondItem="WYL-kJ-bhJ" secondAttribute="leading" constant="8" id="ItJ-JQ-po1"/>
+                                    <constraint firstAttribute="width" constant="245" id="b2Z-71-F5b"/>
+                                    <constraint firstItem="O5r-HN-cyg" firstAttribute="top" secondItem="WYL-kJ-bhJ" secondAttribute="top" id="b6Q-6k-aFp"/>
+                                    <constraint firstAttribute="trailing" secondItem="O5r-HN-cyg" secondAttribute="trailing" constant="8" id="cJW-Ff-DGo"/>
+                                    <constraint firstAttribute="bottom" secondItem="O5r-HN-cyg" secondAttribute="bottom" id="uv6-cg-lZB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1373,13 +1397,19 @@
                             <constraint firstItem="6y3-c1-Mc9" firstAttribute="leading" secondItem="V3O-gl-dje" secondAttribute="leading" id="CJg-4l-YHe"/>
                             <constraint firstItem="lE9-Bm-X7f" firstAttribute="leading" secondItem="V3O-gl-dje" secondAttribute="leading" id="ENa-jU-9RF"/>
                             <constraint firstItem="lE9-Bm-X7f" firstAttribute="top" secondItem="V3O-gl-dje" secondAttribute="top" id="ESC-s0-kJC"/>
+                            <constraint firstItem="LSB-MY-XMa" firstAttribute="top" secondItem="WYL-kJ-bhJ" secondAttribute="bottom" constant="35" id="JZN-Uq-YYC"/>
                             <constraint firstItem="T4P-CC-yac" firstAttribute="top" secondItem="lE9-Bm-X7f" secondAttribute="bottom" id="RbE-SZ-a49"/>
+                            <constraint firstItem="T4P-CC-yac" firstAttribute="top" secondItem="77C-LN-p5L" secondAttribute="bottom" id="U2x-LM-IIZ"/>
                             <constraint firstItem="LSB-MY-XMa" firstAttribute="top" secondItem="bQQ-4x-fYm" secondAttribute="bottom" constant="8" id="UE2-lg-L2H"/>
                             <constraint firstItem="LSB-MY-XMa" firstAttribute="centerX" secondItem="V3O-gl-dje" secondAttribute="centerX" id="VK4-m5-bVR"/>
                             <constraint firstAttribute="trailing" secondItem="6y3-c1-Mc9" secondAttribute="trailing" id="Yh1-1M-I4K"/>
                             <constraint firstItem="6y3-c1-Mc9" firstAttribute="top" secondItem="V3O-gl-dje" secondAttribute="top" id="dV0-aZ-lLu"/>
+                            <constraint firstItem="77C-LN-p5L" firstAttribute="top" secondItem="7u7-KC-GZR" secondAttribute="bottom" id="dzT-Kd-iEc"/>
                             <constraint firstItem="bQQ-4x-fYm" firstAttribute="leading" secondItem="V3O-gl-dje" secondAttribute="leading" constant="10" id="fPD-SO-WlL"/>
+                            <constraint firstItem="WYL-kJ-bhJ" firstAttribute="centerX" secondItem="LSB-MY-XMa" secondAttribute="centerX" id="haM-c9-9lg"/>
+                            <constraint firstItem="77C-LN-p5L" firstAttribute="leading" secondItem="EsZ-Ol-EkU" secondAttribute="leading" id="kl8-vl-Lk9"/>
                             <constraint firstItem="T4P-CC-yac" firstAttribute="top" secondItem="LSB-MY-XMa" secondAttribute="bottom" constant="26" id="ojq-Mt-qAe"/>
+                            <constraint firstItem="77C-LN-p5L" firstAttribute="trailing" secondItem="EsZ-Ol-EkU" secondAttribute="trailing" id="pUc-bT-Mc3"/>
                             <constraint firstAttribute="trailing" secondItem="bQQ-4x-fYm" secondAttribute="trailing" constant="10" id="wDb-KP-boJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EsZ-Ol-EkU"/>
@@ -1389,6 +1419,9 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="container" destination="bQQ-4x-fYm" id="DiL-Ia-vux"/>
+                        <outlet property="highlightInfoView" destination="WYL-kJ-bhJ" id="QcK-jb-pW0"/>
+                        <outlet property="highlightView" destination="77C-LN-p5L" id="GhO-Uf-klA"/>
+                        <outlet property="postJobButton" destination="LSB-MY-XMa" id="eY4-RX-l9c"/>
                         <outletCollection property="dotButtons" destination="hDD-Ap-FLO" collectionClass="NSMutableArray" id="Qr4-Qo-qhf"/>
                         <outletCollection property="dotButtons" destination="plu-mC-x3v" collectionClass="NSMutableArray" id="yb3-Bg-9Tb"/>
                         <outletCollection property="dotButtons" destination="z1a-uy-5ss" collectionClass="NSMutableArray" id="vdZ-nN-ssX"/>
@@ -1401,7 +1434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COc-P5-aJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2889" y="1003"/>
+            <point key="canvasLocation" x="2888.8000000000002" y="1002.5487256371815"/>
         </scene>
         <!--Covered Shift Controller-->
         <scene sceneID="3MD-o1-RlD">

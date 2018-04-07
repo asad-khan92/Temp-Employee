@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0500883B206F907500F1DE0B /* HightlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500883A206F907500F1DE0B /* HightlightView.swift */; };
+		0500883C206F907500F1DE0B /* HightlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500883A206F907500F1DE0B /* HightlightView.swift */; };
+		0500883D206F907500F1DE0B /* HightlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500883A206F907500F1DE0B /* HightlightView.swift */; };
 		050AC8FD1FBEE21F00BD93E7 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050AC8FC1FBEE21F00BD93E7 /* DatePickerView.swift */; };
 		050AC8FF1FBF231900BD93E7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050AC8FE1FBF231900BD93E7 /* UIFont.swift */; };
 		0515BD5C1FBC779E0026CBDD /* UKPhoneNumberRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515BD5B1FBC779E0026CBDD /* UKPhoneNumberRule.swift */; };
@@ -180,6 +183,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0500883A206F907500F1DE0B /* HightlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HightlightView.swift; sourceTree = "<group>"; };
 		050AC8FC1FBEE21F00BD93E7 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		050AC8FE1FBF231900BD93E7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0515BD5B1FBC779E0026CBDD /* UKPhoneNumberRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKPhoneNumberRule.swift; sourceTree = "<group>"; };
@@ -352,6 +356,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05008839206F903400F1DE0B /* HighlightView */ = {
+			isa = PBXGroup;
+			children = (
+				0500883A206F907500F1DE0B /* HightlightView.swift */,
+			);
+			name = HighlightView;
+			sourceTree = "<group>";
+		};
 		050AC8FB1FBEE20E00BD93E7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,6 +675,7 @@
 		478619721EDF4B9500870F12 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				05008839206F903400F1DE0B /* HighlightView */,
 				0537FC781FDFE734005FC572 /* ApplicantDetailView */,
 				4791B5CF1EE026EA00EDA1CF /* FooterView.swift */,
 				4791B5D11EE0270100EDA1CF /* FooterView.xib */,
@@ -699,10 +712,10 @@
 		47881CB81EDC5E6300FEC0EE /* TempEmployee */ = {
 			isa = PBXGroup;
 			children = (
+				05D5128C1F43283400F94419 /* Temployer.entitlements */,
 				050AC8FB1FBEE20E00BD93E7 /* Helpers */,
 				477726191EDECBC400ACFBCD /* Networking */,
 				05FBC82E1FBAE4910006123E /* Support */,
-				05D5128C1F43283400F94419 /* Temployer.entitlements */,
 				477A0B851EE8895E00C1A32D /* Models */,
 				478619721EDF4B9500870F12 /* Views */,
 				4786196A1EDF3E1F00870F12 /* TableViewCells */,
@@ -1301,6 +1314,7 @@
 				47881CBC1EDC5E6300FEC0EE /* ViewController.swift in Sources */,
 				476515C91EEFF766008675E1 /* ShiftsService.swift in Sources */,
 				4777261E1EDECBE100ACFBCD /* Params.swift in Sources */,
+				0500883B206F907500F1DE0B /* HightlightView.swift in Sources */,
 				479D4F871EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
 				477BF73C1EEAD70E00888994 /* TableViewExtension.swift in Sources */,
 				0537FC711FDFE337005FC572 /* ApplicantListController.swift in Sources */,
@@ -1329,6 +1343,7 @@
 				479D4F8C1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
 				05D55AFB1FB9E33500109D5B /* NumberVerificationService.swift in Sources */,
 				0537FC841FDFFCAE005FC572 /* ApplicantCell.swift in Sources */,
+				0500883C206F907500F1DE0B /* HightlightView.swift in Sources */,
 				05322A1E1FE3D31A00532CB0 /* S3TransferManager.swift in Sources */,
 				057909BE1FF4E9CC009E76B2 /* ExpiredShiftController.swift in Sources */,
 				0537FC721FDFE337005FC572 /* ApplicantListController.swift in Sources */,
@@ -1345,6 +1360,7 @@
 			files = (
 				057909BF1FF4E9CC009E76B2 /* ExpiredShiftController.swift in Sources */,
 				05D55AF71FB9E08400109D5B /* PhoneNumberVerificationController.swift in Sources */,
+				0500883D206F907500F1DE0B /* HightlightView.swift in Sources */,
 				47881CDA1EDC5E6300FEC0EE /* TempEmployeeUITests.swift in Sources */,
 				479D4F8D1EE9D6FE00214DE3 /* ShiftStruct.swift in Sources */,
 				479D4F891EE9C4C300214DE3 /* AutoCompleteTextField.swift in Sources */,
@@ -1491,6 +1507,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TempEmployee/Temployer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8YDC93EE3T;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TempEmployee/Info.plist;
@@ -1498,6 +1516,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
 				PRODUCT_NAME = Temployer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1509,6 +1528,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TempEmployee/Temployer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8YDC93EE3T;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TempEmployee/Info.plist;
@@ -1516,6 +1537,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.limited.TempEmployee007;
 				PRODUCT_NAME = Temployer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
